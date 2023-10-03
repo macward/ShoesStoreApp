@@ -11,7 +11,8 @@ import SwiftUI
 struct ShoeStoreWithReduxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
+                .preferredColorScheme(.light)
         }
     }
 }
