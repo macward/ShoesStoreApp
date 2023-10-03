@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShoeCardView: View {
+struct ProductCardView: View {
     
     var product: Product
     
@@ -40,5 +40,5 @@ struct ShoeCardView: View {
 }
 
 #Preview {
-    ShoeCardView(product: .init(image: "nike_1"))
+    ProductCardView(product: .init(image: "nike_1"))
 }

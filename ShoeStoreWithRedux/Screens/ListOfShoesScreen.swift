@@ -24,7 +24,7 @@ struct ListOfShoesScreen: View {
         ScrollView {
             LazyVGrid(columns: gridItemLayout, spacing: 20) {
                 ForEach((0..<10), id: \.self) { _ in
-                    ShoeCardView(product: .init(image: "nike_\(Int.random(in: 1...10))"))
+                    ProductCardView(product: .init(image: "nike_\(Int.random(in: 1...10))"))
                 }
             }
         }
