@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ShoeCardView: View {
+    
+    var product: Product
+    
     var body: some View {
         VStack (spacing: 20) {
             // Shoe image
@@ -15,10 +18,11 @@ struct ShoeCardView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.grayLite.gradient)
                     .aspectRatio(contentMode: .fit)
-                Image("shoe_red")
+                Image(product.image)
                     .resizable()
                     .scaledToFit()
                     .aspectRatio(contentMode: .fit)
+                    .shadow(color: .black.opacity(0.3), radius: 12, x: 4, y: 4)
             }
             // description
             VStack {
@@ -36,5 +40,5 @@ struct ShoeCardView: View {
 }
 
 #Preview {
-    ShoeCardView()
+    ShoeCardView(product: .init(image: "nike_1"))
 }

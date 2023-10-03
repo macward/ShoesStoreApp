@@ -23,6 +23,7 @@
 		50AA63082ACBBF7E008DC0DD /* Satoshi-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63042ACBBF7D008DC0DD /* Satoshi-Black.ttf */; };
 		50AA63092ACBBF7E008DC0DD /* Satoshi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */; };
 		50AA630D2ACBBFE2008DC0DD /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */; };
+		50AA630F2ACBD80E008DC0DD /* MainSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		50AA63042ACBBF7D008DC0DD /* Satoshi-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.ttf"; sourceTree = "<group>"; };
 		50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.ttf"; sourceTree = "<group>"; };
 		50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.ttf"; sourceTree = "<group>"; };
+		50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				50AA62E22ACB79CA008DC0DD /* HeaderCardView.swift */,
 				50AA62E42ACBB18B008DC0DD /* SectionHeaderAction.swift */,
 				50AA62EA2ACBBAE5008DC0DD /* CustomNav.swift */,
+				50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				50AA62E32ACB79CA008DC0DD /* HeaderCardView.swift in Sources */,
 				50AA62E52ACBB18B008DC0DD /* SectionHeaderAction.swift in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
+				50AA630F2ACBD80E008DC0DD /* MainSliderView.swift in Sources */,
 				50AA62E92ACBB56F008DC0DD /* ShoeDetailView.swift in Sources */,
 				50AA62EB2ACBBAE5008DC0DD /* CustomNav.swift in Sources */,
 				50AA62E72ACBB4B6008DC0DD /* ListOfShoesScreen.swift in Sources */,

@@ -9,15 +9,22 @@ import SwiftUI
 
 struct ListOfShoesScreen: View {
     
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
-    let text: String
+    
+    var text: String
     @Binding var path: NavigationPath
     
+    
+    
+//    init(text: String) {
+//        self.text = text
+//    }
+//    
     var body: some View {
+        let gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
         ScrollView {
             LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                ForEach((0...11), id: \.self) { _ in
-                    ShoeCardView()
+                ForEach((0..<10), id: \.self) { _ in
+                    ShoeCardView(product: .init(image: "nike_\(Int.random(in: 1...10))"))
                 }
             }
         }
