@@ -10,6 +10,12 @@
 		502048F12ACC7BF700487F57 /* ProductsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F02ACC7BF700487F57 /* ProductsGridView.swift */; };
 		502048F72ACC80F000487F57 /* ProductSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F62ACC80F000487F57 /* ProductSliderView.swift */; };
 		502048F92ACC81CB00487F57 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F82ACC81CB00487F57 /* TabView.swift */; };
+		502048FB2ACCEE8F00487F57 /* CONST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048FA2ACCEE8F00487F57 /* CONST.swift */; };
+		502048FE2ACD162D00487F57 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048FD2ACD162D00487F57 /* Buttons.swift */; };
+		502049002ACD2F5C00487F57 /* ScrollTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048FF2ACD2F5C00487F57 /* ScrollTemp.swift */; };
+		502049022ACD2FD700487F57 /* VerticalSizeControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */; };
+		502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049032ACD313100487F57 /* FlipHorizontal.swift */; };
+		502049062ACD376E00487F57 /* ColorControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049052ACD376E00487F57 /* ColorControlView.swift */; };
 		50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA62CA2ACB74A1008DC0DD /* Main.swift */; };
 		50AA62CF2ACB74A3008DC0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */; };
 		50AA62D22ACB74A3008DC0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62D12ACB74A3008DC0DD /* Preview Assets.xcassets */; };
@@ -32,6 +38,12 @@
 		502048F02ACC7BF700487F57 /* ProductsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGridView.swift; sourceTree = "<group>"; };
 		502048F62ACC80F000487F57 /* ProductSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSliderView.swift; sourceTree = "<group>"; };
 		502048F82ACC81CB00487F57 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		502048FA2ACCEE8F00487F57 /* CONST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONST.swift; sourceTree = "<group>"; };
+		502048FD2ACD162D00487F57 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		502048FF2ACD2F5C00487F57 /* ScrollTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTemp.swift; sourceTree = "<group>"; };
+		502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSizeControlView.swift; sourceTree = "<group>"; };
+		502049032ACD313100487F57 /* FlipHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipHorizontal.swift; sourceTree = "<group>"; };
+		502049052ACD376E00487F57 /* ColorControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorControlView.swift; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* ShoeStoreWithRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeStoreWithRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +109,14 @@
 			path = Lists;
 			sourceTree = "<group>";
 		};
+		502048FC2ACD160B00487F57 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				502048FD2ACD162D00487F57 /* Buttons.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		50AA62BE2ACB74A1008DC0DD = {
 			isa = PBXGroup;
 			children = (
@@ -150,10 +170,14 @@
 		50AA62D92ACB7602008DC0DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				502048FC2ACD160B00487F57 /* Buttons */,
 				502048F52ACC803700487F57 /* Lists */,
 				502048F42ACC803200487F57 /* Sliders */,
 				502048F32ACC802C00487F57 /* Headers */,
 				502048F22ACC7F7A00487F57 /* Cards */,
+				502048FF2ACD2F5C00487F57 /* ScrollTemp.swift */,
+				502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */,
+				502049052ACD376E00487F57 /* ColorControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				50AA62E02ACB78DC008DC0DD /* DebugViewLimit.swift */,
+				502048FA2ACCEE8F00487F57 /* CONST.swift */,
+				502049032ACD313100487F57 /* FlipHorizontal.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -256,9 +282,15 @@
 				50AA62E12ACB78DC008DC0DD /* DebugViewLimit.swift in Sources */,
 				502048F72ACC80F000487F57 /* ProductSliderView.swift in Sources */,
 				50AA62E32ACB79CA008DC0DD /* SliderCardView.swift in Sources */,
+				502048FB2ACCEE8F00487F57 /* CONST.swift in Sources */,
 				50AA62E52ACBB18B008DC0DD /* SectionHeaderAction.swift in Sources */,
+				502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
+				502049002ACD2F5C00487F57 /* ScrollTemp.swift in Sources */,
 				502048F12ACC7BF700487F57 /* ProductsGridView.swift in Sources */,
+				502048FE2ACD162D00487F57 /* Buttons.swift in Sources */,
+				502049062ACD376E00487F57 /* ColorControlView.swift in Sources */,
+				502049022ACD2FD700487F57 /* VerticalSizeControlView.swift in Sources */,
 				50AA630F2ACBD80E008DC0DD /* MainSliderView.swift in Sources */,
 				50AA62E92ACBB56F008DC0DD /* ShoeDetailView.swift in Sources */,
 				50AA62E72ACBB4B6008DC0DD /* ListOfShoesScreen.swift in Sources */,

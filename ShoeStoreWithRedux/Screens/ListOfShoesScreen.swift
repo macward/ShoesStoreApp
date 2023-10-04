@@ -9,24 +9,24 @@ import SwiftUI
 
 struct ListOfShoesScreen: View {
     
-    
     var text: String
     @Binding var path: NavigationPath
+    @State var presentProductPage: Bool = false
     
-    
-    
-//    init(text: String) {
-//        self.text = text
-//    }
-//    
     var body: some View {
         let gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
         ScrollView {
             LazyVGrid(columns: gridItemLayout, spacing: 20) {
                 ForEach((0..<10), id: \.self) { _ in
                     ProductCardView(product: .init(image: "nike_\(Int.random(in: 1...10))"))
+                        .onTapGesture {
+                            presentProductPage.toggle()
+                        }
                 }
             }
+            .fullScreenCover(isPresented: $presentProductPage, content: {
+                ShoeDetailView()
+            })
         }
         .contentMargins(16, for: .scrollContent)
         .navigationTitle(text)

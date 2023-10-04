@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainSliderView: View {
     
+    @Namespace var namespace
     var prducts: [Product]
     
     var body: some View {
@@ -74,6 +75,7 @@ struct MainSliderView: View {
                 content
                     .offset(x: scrollOffset(proxy))
             }
+            .matchedGeometryEffect(id: "product_image", in: namespace)
     }
     
     func scrollOffset(_ phase: GeometryProxy) -> CGFloat {
