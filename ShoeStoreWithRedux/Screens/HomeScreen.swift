@@ -22,21 +22,21 @@ struct HomeScreen: View {
     @State private var mainSliderProducts: [Product] = [
         .init(image: "nike_3"),
         .init(image: "nike_1"),
-        .init(image: "adidas_6"),
-        .init(image: "puma_3"),
-        .init(image: "adidas_1"),
-        .init(image: "puma_4"),
-        .init(image: "puma_1")
+        .init(image: "nike_6"),
+        .init(image: "nike_3"),
+        .init(image: "nike_1"),
+        .init(image: "nike_4"),
+        .init(image: "nike_1")
     ]
     
     @State private var topSellsSliderProducts: [Product] = [
-        .init(image: "adidas_6"),
-        .init(image: "puma_4"),
-        .init(image: "nike_7"),
-        .init(image: "puma_6"),
-        .init(image: "adidas_5"),
-        .init(image: "nike_11"),
-        .init(image: "nike_10")
+        .init(image: "nike_12"),
+        .init(image: "nike_14"),
+        .init(image: "nike_16"),
+        .init(image: "nike_18"),
+        .init(image: "nike_20"),
+        .init(image: "nike_22"),
+        .init(image: "nike_24")
     ]
     
     @State private var allProducts: [Product] = [
@@ -60,7 +60,11 @@ struct HomeScreen: View {
                 ScrollView {
                     VStack {
                         // Main Slider
-                        MainSliderView(magnify: $magnifyFeatured, namespace: namespace, prducts: mainSliderProducts, selectedIndex: $selectedIndex)
+                        MainSliderView(magnify: $magnifyFeatured, namespace: namespace, prducts: mainSliderProducts, selectedIndex: $selectedIndex) { product in
+                            SliderCardView(product: product, namespace: namespace)
+                            //SliderCardV2(product: product, namespace: namespace)
+                        }
+                    
                         
                         // Popular Slider
                         ProductSliderView(sectionTitle: "Popular", products: topSellsSliderProducts) {
@@ -90,17 +94,19 @@ struct HomeScreen: View {
                 if magnifyFeatured {
                     ForEach (mainSliderProducts) { product in
                         if product.id == selectedIndex {
-                            ShoeDetailView(product: product, namespace: namespace, show: $magnifyFeatured)
+                            ShoeDetailView(product: product, namespace: namespace, magnify: $magnifyFeatured)
                                 .zIndex(1)
                                 .containerRelativeFrame([.horizontal, .vertical])
                                 .transition(.asymmetric(
                                     insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                                    removal: .opacity.animation(.easeInOut(duration: 0.1))
+                                    removal: .opacity.animation(.easeInOut(duration: 0.7))
                                     )
                                 )
                         }
                     }
                 }
+                
+                
                 
             }
         }

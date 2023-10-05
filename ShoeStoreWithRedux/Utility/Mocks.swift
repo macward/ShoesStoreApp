@@ -11,10 +11,10 @@ struct Mock {
     static var mainSliderProducts: [Product] = [
         .init(image: "nike_3"),
         .init(image: "nike_1"),
-        .init(image: "adidas_6"),
-        .init(image: "puma_3"),
-        .init(image: "adidas_1"),
-        .init(image: "puma_4"),
-        .init(image: "puma_1")
+        .init(image: "nike_6"),
+        .init(image: "nike_30"),
+        .init(image: "nike_22"),
+        .init(image: "nike_28"),
+        .init(image: "nike_19")
     ]
 }

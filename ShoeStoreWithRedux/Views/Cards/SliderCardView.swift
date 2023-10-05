@@ -35,7 +35,8 @@ struct SliderCardView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .overlay(alignment: .topTrailing, content: {
             FeaturedProductImage(product: product)
-                .scaleEffect(1.4)
+                .frame(height: 290)
+                .offset(x: 35,y: -45)
                 .matchedGeometryEffect(id: "product_image\(product.id)", in: namespace)
         })
         .padding(.vertical, 30)
@@ -57,7 +58,7 @@ struct SliderCardTransition: View  {
             SliderCardView(product: .init(image: "nike_10"), namespace: namespace)
             .padding(.horizontal)
         } else {
-            ShoeDetailView(product: .init(image: "nike_10"), namespace: namespace, show: $show)
+            ShoeDetailView(product: .init(image: "nike_10"), namespace: namespace, magnify: $show)
         }
     }
 }

@@ -11,26 +11,27 @@ struct ShoeDetailView: View {
     
     var product: Product
     var namespace: Namespace.ID
-    @Binding var show: Bool
+    @Binding var magnify: Bool
     @State var appear = [false, false, false, false]
+    
+    @State private var selectedColor: ColorControlItem?
+    @State private var selectedSize: SizeControlItem?
     
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
-                .opacity(appear[0] ? 1 : 0)
             VStack {
                 ScrollView {
                     VStack {
                         HStack {
-                            VerticalSizeControlView()
+                            VerticalSizeControlView(selected: $selectedSize)
                                 .offset(x: appear[0] ? 0 : -80)
                             Spacer()
                         }
-                        .overlay {
+                        .background(
                             FeaturedProductImage(product: product)
-                                .scaleEffect(1.4)
                                 .matchedGeometryEffect(id: "product_image\(product.id)", in: namespace)
-                        }
+                        )
                         
                         HStack (alignment: .bottom) {
                             PriceView(value: 128.99)
@@ -53,11 +54,13 @@ struct ShoeDetailView: View {
                 }
                 VStack {
                     // color control
-                    ColorControlView()
-                        .padding(.bottom)
-                        .offset(y: appear[2] ? 0 : 80)
-                        .opacity(appear[2] ? 1 : 0)
-                    
+                    HStack {
+                        ColorControlView(selected: $selectedColor)
+                            .padding(.bottom)
+                            .offset(y: appear[2] ? 0 : 80)
+                            .opacity(appear[2] ? 1 : 0)
+                        Spacer()
+                    }
                     
                     Button("Add to Cart") {
                         print("sample")
@@ -79,7 +82,7 @@ struct ShoeDetailView: View {
                     .padding(.trailing, 20)
                     .onTapGesture {
                         withAnimation(.closeCard) {
-                            show.toggle()
+                            magnify.toggle()
                             //model.showDetail.toggle()
                         }
                     }
@@ -88,9 +91,9 @@ struct ShoeDetailView: View {
             .onAppear {
                 fadeIn()
             }
-            .onChange(of: show) { _, _ in
+            .onChange(of: magnify) { _, _ in
                 fadeOut()
-        }
+            }
         }
     }
     
@@ -120,7 +123,7 @@ struct ShoeDetailView: View {
 }
 
 extension Animation {
-    static let openCard = Animation.spring(response: 0.5, dampingFraction: 0.7)
+    static let openCard = Animation.spring(response: 0.4, dampingFraction: 0.9)
     static let closeCard = Animation.spring(response: 0.6, dampingFraction: 0.9)
 }
 
@@ -128,7 +131,7 @@ extension Animation {
 struct ShoeDetailView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
-        ShoeDetailView(product: .init(image: "nike_10"), namespace: namespace, show: .constant(true))
+        ShoeDetailView(product: .init(image: "nike_10"), namespace: namespace, magnify: .constant(true))
     }
     
 }

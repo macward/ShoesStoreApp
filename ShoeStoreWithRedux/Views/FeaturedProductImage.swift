@@ -13,8 +13,7 @@ struct FeaturedProductImage: View {
         Image(product.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .rotationEffect(.degrees(45))
-            .flipHorizontal()
+            .rotationEffect(.degrees(-45))
             .shadow(color: .black.opacity(0.7), radius: 4, x: 2, y: 2)
     }
 }

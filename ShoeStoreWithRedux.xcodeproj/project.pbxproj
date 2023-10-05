@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		501780DE2ACE11D100D22CF5 /* SimpleProductDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501780DD2ACE11D100D22CF5 /* SimpleProductDetailScreen.swift */; };
+		501FD6812ACE644600657B0A /* TransitionTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FD6802ACE644600657B0A /* TransitionTestView.swift */; };
+		501FD6832ACE6EB700657B0A /* BoxTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FD6822ACE6EB700657B0A /* BoxTransitionView.swift */; };
+		501FD6852ACE856C00657B0A /* SliderCardV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FD6842ACE856C00657B0A /* SliderCardV2.swift */; };
 		502048F12ACC7BF700487F57 /* ProductsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F02ACC7BF700487F57 /* ProductsGridView.swift */; };
 		502048F72ACC80F000487F57 /* ProductSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F62ACC80F000487F57 /* ProductSliderView.swift */; };
 		502048F92ACC81CB00487F57 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F82ACC81CB00487F57 /* TabView.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		501780DD2ACE11D100D22CF5 /* SimpleProductDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProductDetailScreen.swift; sourceTree = "<group>"; };
+		501FD6802ACE644600657B0A /* TransitionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionTestView.swift; sourceTree = "<group>"; };
+		501FD6822ACE6EB700657B0A /* BoxTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTransitionView.swift; sourceTree = "<group>"; };
+		501FD6842ACE856C00657B0A /* SliderCardV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCardV2.swift; sourceTree = "<group>"; };
 		502048F02ACC7BF700487F57 /* ProductsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGridView.swift; sourceTree = "<group>"; };
 		502048F62ACC80F000487F57 /* ProductSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSliderView.swift; sourceTree = "<group>"; };
 		502048F82ACC81CB00487F57 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 			children = (
 				50AA62DD2ACB764C008DC0DD /* ProductCardView.swift */,
 				50AA62E22ACB79CA008DC0DD /* SliderCardView.swift */,
+				501FD6842ACE856C00657B0A /* SliderCardV2.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -155,10 +162,12 @@
 		50AA62D82ACB75FC008DC0DD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				502048F82ACC81CB00487F57 /* TabView.swift */,
 				50AA62DB2ACB7621008DC0DD /* HomeScreen.swift */,
 				50AA62E62ACBB4B6008DC0DD /* ListOfShoesScreen.swift */,
 				50AA62E82ACBB56F008DC0DD /* ShoeDetailView.swift */,
-				502048F82ACC81CB00487F57 /* TabView.swift */,
+				501FD6802ACE644600657B0A /* TransitionTestView.swift */,
+				501FD6822ACE6EB700657B0A /* BoxTransitionView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -170,8 +179,6 @@
 				502048F52ACC803700487F57 /* Lists */,
 				502048F32ACC802C00487F57 /* Headers */,
 				502048F22ACC7F7A00487F57 /* Cards */,
-				502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */,
-				502049052ACD376E00487F57 /* ColorControlView.swift */,
 				501780DD2ACE11D100D22CF5 /* SimpleProductDetailScreen.swift */,
 				50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */,
 			);
@@ -204,6 +211,8 @@
 		50BA627C2ACE1B990044D820 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */,
+				502049052ACD376E00487F57 /* ColorControlView.swift */,
 				50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */,
 				502048F62ACC80F000487F57 /* ProductSliderView.swift */,
 			);
@@ -289,6 +298,7 @@
 				502048F72ACC80F000487F57 /* ProductSliderView.swift in Sources */,
 				50AA62E32ACB79CA008DC0DD /* SliderCardView.swift in Sources */,
 				502048FB2ACCEE8F00487F57 /* CONST.swift in Sources */,
+				501FD6812ACE644600657B0A /* TransitionTestView.swift in Sources */,
 				50AA62E52ACBB18B008DC0DD /* SectionHeaderAction.swift in Sources */,
 				502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
@@ -305,6 +315,8 @@
 				50AA62DC2ACB7621008DC0DD /* HomeScreen.swift in Sources */,
 				50BA627E2ACE1D570044D820 /* FeaturedProductImage.swift in Sources */,
 				50BA62802ACE1E5B0044D820 /* Mocks.swift in Sources */,
+				501FD6852ACE856C00657B0A /* SliderCardV2.swift in Sources */,
+				501FD6832ACE6EB700657B0A /* BoxTransitionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

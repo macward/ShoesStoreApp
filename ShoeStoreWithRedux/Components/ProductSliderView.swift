@@ -43,9 +43,8 @@ struct ProductSliderView: View {
                                 Image(item.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .rotationEffect(.degrees(40))
-                                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                                    .scaleEffect(1.4)
+                                    .rotationEffect(.degrees(-45))
+                                    .scaleEffect(1.3)
                                     .offset(x: 50, y: 5)
                                     .visualEffect { content, geometryProxy in
                                         content.offset(x: scrollOffset(geometryProxy))
@@ -71,5 +70,6 @@ struct ProductSliderView: View {
 }
 
 #Preview {
-    ProductSliderView(sectionTitle: "Sample", products: [], callback: {})
+    ProductSliderView(sectionTitle: "Sample",
+                      products: Mock.mainSliderProducts, callback: {})
 }

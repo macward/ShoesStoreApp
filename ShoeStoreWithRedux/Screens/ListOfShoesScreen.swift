@@ -12,6 +12,8 @@ struct ListOfShoesScreen: View {
     var text: String
     @Binding var path: NavigationPath
     @State var presentProductPage: Bool = false
+    @Namespace var namespace
+    @State var magnify: Bool = true
     
     var body: some View {
         let gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
@@ -25,7 +27,7 @@ struct ListOfShoesScreen: View {
                 }
             }
             .fullScreenCover(isPresented: $presentProductPage, content: {
-                // ShoeDetailView()
+                ShoeDetailView(product: .init(image: "nike_11"), namespace: namespace, magnify: .constant(true))
                 EmptyView()
             })
         }

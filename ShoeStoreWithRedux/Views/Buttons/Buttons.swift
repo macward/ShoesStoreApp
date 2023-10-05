@@ -45,6 +45,32 @@ struct PriceView: View {
     }
 }
 
+struct ColorControlButton: View {
+    
+    var color: ColorControlItem
+    @Binding var selected: ColorControlItem?
+    
+    init(color: ColorControlItem, selected: Binding<ColorControlItem?>) {
+        self.color = color
+        self._selected = selected
+    }
+    
+    var body: some View {
+        Circle()
+            .fill(color.color.gradient)
+            .stroke(color.color, lineWidth: 1)
+            .frame(width: 40)
+            .background (
+                Circle()
+                    .stroke(.grayMid, style: .init(lineWidth: 1, dash: [4]))
+                    .scaleEffect(selected?.id == color.id ? 1.4 : 1.0)
+            )
+            .onTapGesture {
+                self.selected = color
+            }
+    }
+}
+
 struct Buttons: View {
     var body: some View {
         VStack {
@@ -59,6 +85,9 @@ struct Buttons: View {
                 InStockView(isInStock: true)
             }
             .padding()
+            
+            ColorControlButton(color: .init(color: .blue),
+                               selected: .constant(.init(color: .red)))
         }
     }
 }
