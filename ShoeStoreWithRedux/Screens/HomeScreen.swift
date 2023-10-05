@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct Product: Identifiable, Equatable {
-    var id: String = UUID().uuidString
-    var image: String
-}
-
 struct HomeScreen: View {
     
     // TabView visisbility
