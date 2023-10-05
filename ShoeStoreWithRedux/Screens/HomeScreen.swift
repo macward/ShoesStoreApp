@@ -41,15 +41,17 @@ struct HomeScreen: View {
                         }
                     
                         // Popular Slider
-                        ProductSliderView(sectionTitle: "Popular", products: popularProducts) {
+                        ProductSliderView(sectionTitle: "Popular", products: popularProducts, selectedProduct: $selectedProduct) {
                             path.append("Popular")
                         }
                         
                         // all prods
-                        ProductsGridView(title: "Newest shoes", products: allProducts) {
+                        ProductsGridView(title: "Newest shoes", products: allProducts, selectedProduct: $selectedProduct) {
                             path.append("Newest shoes")
                         }
                         .padding(.horizontal)
+                        .safeAreaPadding(.bottom, 90)
+                        
                     }
                     .navigationDestination(for: String.self) { textValue in
                         ProductListScreen(text: textValue, path: $path)

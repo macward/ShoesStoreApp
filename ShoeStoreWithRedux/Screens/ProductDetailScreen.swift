@@ -24,12 +24,24 @@ struct ProductDetailScreen: View {
                     VStack {
                         HStack {
                             VerticalSizeControlView(selected: $selectedSize)
-                                .offset(x: appear[0] ? 0 : -80)
+                                .offset(x: appear[2] ? 0 : -80)
                             Spacer()
                         }
                         .background(
                             FeaturedProductImage(product: product)
+                                .offset(x: appear[2] ? 0 : 100)
+                                .opacity(appear[2] ? 1 : 0)
                         )
+                        
+                        HStack {
+                            Text("Nike model Name II")
+                                .font(.title)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        .padding(.top, 32)
+                        .offset(y: appear[1] ? 0 : 80)
+                        .opacity(appear[1] ? 1 : 0)
                         
                         HStack (alignment: .bottom) {
                             PriceView(value: 128.99)
@@ -42,11 +54,14 @@ struct ProductDetailScreen: View {
                         .opacity(appear[2] ? 1 : 0)
                     }
                     .background(
-                        Image("adidas_bg")
+                        Image("nike")
                             .resizable()
+                            .rotationEffect(.degrees(-60))
                             .scaledToFit()
-                            .opacity(0.6)
-                            .opacity(appear[0] ? 1 : 0)
+                            .offset(x: 40, y: -40)
+                            .scaleEffect(1.3)
+                            .opacity(0.2)
+                            .opacity(appear[0] ? 0.2 : 0)
                     )
                     .safeAreaPadding(.horizontal)
                 }
@@ -59,14 +74,13 @@ struct ProductDetailScreen: View {
                             .opacity(appear[2] ? 1 : 0)
                         Spacer()
                     }
-                    
                     Button("Add to Cart") {
                         print("sample")
                     }
                     .buttonStyle(GrayButton())
                     .offset(y: appear[0] ? 0 : 80)
                 }
-                .padding(.vertical)
+                .padding(.bottom, 32)
                 .safeAreaPadding(.horizontal)
                 
             }

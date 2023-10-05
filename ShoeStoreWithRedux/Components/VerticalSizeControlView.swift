@@ -16,15 +16,13 @@ struct SizeControlItem: Identifiable {
 struct VerticalSizeControlView: View {
     
     private var items: [SizeControlItem] = [
-        .init(size: 36, available: true),
         .init(size: 37, available: true),
         .init(size: 38, available: true),
         .init(size: 39, available: true),
         .init(size: 40, available: false),
         .init(size: 41, available: true),
         .init(size: 42, available: true),
-        .init(size: 43, available: true),
-        .init(size: 44, available: true)
+        .init(size: 43, available: true)
     ]
     
     @Binding var selected: SizeControlItem?

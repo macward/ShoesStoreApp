@@ -11,23 +11,19 @@ struct ProductListScreen: View {
     
     var text: String
     @Binding var path: NavigationPath
-    @State var presentProductPage: Bool = false
+    @State var openDetailScreen: Bool = false
+    @State var selectedProduct: Product?
     
     var body: some View {
-        let gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
         ScrollView {
-            LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                ForEach((0..<10), id: \.self) { _ in
-                    ProductCardView(product: .init(image: "nike_\(Int.random(in: 1...10))"))
-                        .onTapGesture {
-                            presentProductPage.toggle()
-                        }
+            ProductsGridView(title: "", products: Mock.products, selectedProduct: $selectedProduct) {}
+                .onChange(of: selectedProduct) { oldValue, newValue in
+                    if newValue == nil { return }
+                    openDetailScreen.toggle()
                 }
-            }
-            .fullScreenCover(isPresented: $presentProductPage, content: {
-                ProductDetailScreen(product: .constant(.init(image: "nike_11")))
-                EmptyView()
-            })
+                .fullScreenCover(isPresented: $openDetailScreen, content: {
+                    ProductDetailScreen(product: $selectedProduct)
+                })
         }
         .contentMargins(16, for: .scrollContent)
         .navigationTitle(text)

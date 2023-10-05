@@ -9,24 +9,33 @@ import SwiftUI
 
 struct ProductsGridView: View {
     
-    private var gridItemLayout: [GridItem]
     var title: String
     var products: [Product]
-    var callback: () -> Void
+    @Binding var selectedProduct: Product?
     
-    init(title: String, products: [Product], callback: @escaping () -> Void) {
+    var callback: () -> Void
+    private var gridItemLayout: [GridItem]
+    
+    init(title: String, products: [Product], 
+         selectedProduct: Binding<Product?>, callback: @escaping (() -> Void)) {
         self.gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
         self.title = title
         self.products = products
+        self._selectedProduct = selectedProduct
         self.callback = callback
     }
     
     var body: some View {
         VStack {
-            SectionHeaderAction(title: "Newest shoes", callback: callback)
+            if title != "" {
+                SectionHeaderAction(title: "Newest shoes", callback: callback)
+            }
             LazyVGrid(columns: gridItemLayout, spacing: 20) {
                 ForEach(products) { product in
                     ProductCardView(product: product)
+                        .onTapGesture {
+                            selectedProduct = product
+                        }
                 }
             }
         }
@@ -35,7 +44,7 @@ struct ProductsGridView: View {
 
 struct ProductsGridViewTest: View {
     var body: some View {
-        ProductsGridView(title: "Sample", products: []) {
+        ProductsGridView(title: "Sample", products: [], selectedProduct: .constant(.init(image: "nike_11"))) {
             print("")
         }
     }

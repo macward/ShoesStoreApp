@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductSliderView: View {
     var sectionTitle: String
     var products: [Product]
+    @Binding var selectedProduct: Product?
     var callback: () ->Void
     
     var body: some View {
@@ -53,6 +54,9 @@ struct ProductSliderView: View {
                             }
                         })
                         .frame(width: 300, height: 160)
+                        .onTapGesture {
+                            selectedProduct = item
+                        }
                     }
                 }
                 .scrollTargetLayout()
@@ -71,5 +75,5 @@ struct ProductSliderView: View {
 
 #Preview {
     ProductSliderView(sectionTitle: "Sample",
-                      products: Mock.mainSliderProducts, callback: {})
+                      products: Mock.mainSliderProducts, selectedProduct: .constant(.init(image: "nike_11")), callback: {})
 }
