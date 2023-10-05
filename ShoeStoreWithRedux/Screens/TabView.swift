@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct TabViewScreen: View {
+    
+    @State private var tabState: Visibility = .visible
+    
     var body: some View {
         TabView {
-            
-            HomeScreen()
+            HomeScreen(tabState: $tabState)
+                .toolbar(tabState, for: .tabBar)
+                .animation(.easeInOut(duration: 0.3), value: tabState)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }

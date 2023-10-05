@@ -25,7 +25,8 @@ struct ListOfShoesScreen: View {
                 }
             }
             .fullScreenCover(isPresented: $presentProductPage, content: {
-                ShoeDetailView()
+                // ShoeDetailView()
+                EmptyView()
             })
         }
         .contentMargins(16, for: .scrollContent)

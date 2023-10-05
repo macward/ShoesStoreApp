@@ -7,15 +7,25 @@
 
 import SwiftUI
 
-struct SliderCardView<Content: View, BackContent: View>: View {
+struct SliderCardView: View {
     
-    @ViewBuilder var backContent: BackContent
-    @ViewBuilder var overlay: Content
+    var product: Product
+    var namespace: Namespace.ID
     
     var body: some View {
         HStack {
             VStack (alignment: .leading, spacing: 30) {
-                backContent
+                Image("justdoitnike")
+                HStack {
+                    Text("Explore Now")
+                        .font(.title3.bold())
+                        .foregroundStyle(Color.white)
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 14))
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color.white)
+                        .offset(y: 1)
+                }
             }
             .padding(.leading, 32)
             Spacer()
@@ -24,34 +34,62 @@ struct SliderCardView<Content: View, BackContent: View>: View {
         .background(Color.grayMid)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .overlay(alignment: .topTrailing, content: {
-            overlay
+            FeaturedProductImage(product: product)
+                .scaleEffect(1.4)
+                .matchedGeometryEffect(id: "product_image\(product.id)", in: namespace)
         })
         .padding(.vertical, 30)
+    }
+    
+    func scrollOffset(_ phase: GeometryProxy) -> CGFloat {
+        let titleScrollSpeed: CGFloat = 0.3
+        let minX = phase.bounds(of: .scrollView)?.minX ?? 0
+        return -minX * min(titleScrollSpeed, 1.0)
+    }
+}
+
+struct SliderCardTransition: View  {
+    @State var show: Bool = false
+    @Namespace var namespace
+    
+    var body: some View {
+        if !show {
+            SliderCardView(product: .init(image: "nike_10"), namespace: namespace)
+            .padding(.horizontal)
+        } else {
+            ShoeDetailView(product: .init(image: "nike_10"), namespace: namespace, show: $show)
+        }
     }
 }
 
 
 #Preview(body: {
-    SliderCardView {
-        Image("justdoitnike")
-        HStack {
-            Text("Explore Now")
-                .font(.title3.bold())
-                .foregroundStyle(Color.white)
-            Image(systemName: "chevron.right")
-                .font(.system(size: 14))
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
-                .offset(y: 1)
-        }
-    } overlay: {
-        Image("shoe_yellow")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .rotationEffect(.degrees(-45))
-            .scaleEffect(1.2)
-            .offset(x: 0, y: -10)
-    }
-    .padding(.horizontal)
+    SliderCardTransition()
 })
+
+//#Preview(body: {
+//    SliderCardView {
+//        Image("justdoitnike")
+//        HStack {
+//            Text("Explore Now")
+//                .font(.title3.bold())
+//                .foregroundStyle(Color.white)
+//            Image(systemName: "chevron.right")
+//                .font(.system(size: 14))
+//                .fontWeight(.bold)
+//                .foregroundStyle(Color.white)
+//                .offset(y: 1)
+//        }
+//    } overlay: {
+//        Image("nike_1")
+//            .resizable()
+//            .aspectRatio(contentMode: .fit)
+//            .rotationEffect(.degrees(45))
+//            .scaleEffect(1.2)
+//            .flipHorizontal()
+//            .offset(x: 0, y: -10)
+//            .shadow(radius: 2)
+//    }
+//    .padding(.horizontal)
+//})
 
