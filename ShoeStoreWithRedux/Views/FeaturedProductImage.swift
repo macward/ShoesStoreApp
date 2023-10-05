@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FeaturedProductImage: View {
-    var product: Product
+    var product: Product?
     var body: some View {
-        Image(product.image)
+        Image(product?.image ?? "nike_1")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .rotationEffect(.degrees(-45))

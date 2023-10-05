@@ -45,9 +45,8 @@ struct SimpleProductDetailScreen: View {
                     .foregroundStyle(Color.white)
                     .padding(.trailing, 20)
                     .onTapGesture {
-                        withAnimation(.closeCard) {
+                        withAnimation {
                             show.toggle()
-                            //model.showDetail.toggle()
                         }
                     }
                     

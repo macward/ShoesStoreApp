@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-struct ShoeDetailView: View {
+struct ProductDetailScreen: View {
     
-    var product: Product
-    var namespace: Namespace.ID
-    @Binding var magnify: Bool
-    @State var appear = [false, false, false, false]
-    
+    @Binding var product: Product?
+    @Environment(\.dismiss) var dismiss
+    @State private var appear = [false, false, false, false]
     @State private var selectedColor: ColorControlItem?
     @State private var selectedSize: SizeControlItem?
+    @State private var dismissView: Bool = false
     
     var body: some View {
         ZStack {
@@ -30,7 +29,6 @@ struct ShoeDetailView: View {
                         }
                         .background(
                             FeaturedProductImage(product: product)
-                                .matchedGeometryEffect(id: "product_image\(product.id)", in: namespace)
                         )
                         
                         HStack (alignment: .bottom) {
@@ -81,24 +79,22 @@ struct ShoeDetailView: View {
                     .foregroundStyle(Color.grayMid)
                     .padding(.trailing, 20)
                     .onTapGesture {
-                        withAnimation(.closeCard) {
-                            magnify.toggle()
-                            //model.showDetail.toggle()
-                        }
+                        dismissView.toggle()
                     }
-                    
             }
             .onAppear {
                 fadeIn()
             }
-            .onChange(of: magnify) { _, _ in
+            .onChange(of: dismissView) { _, _ in
                 fadeOut()
+            }
+            .onDisappear() {
+                product = nil
             }
         }
     }
     
     func fadeIn() {
-        
         withAnimation(.easeOut.delay(0.2)) {
             appear[0] = true
         }
@@ -119,19 +115,15 @@ struct ShoeDetailView: View {
         appear[1] = false
         appear[2] = false
         appear[3] = false
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.2) {
+            dismiss()
+        }
     }
 }
 
-extension Animation {
-    static let openCard = Animation.spring(response: 0.4, dampingFraction: 0.9)
-    static let closeCard = Animation.spring(response: 0.6, dampingFraction: 0.9)
-}
-
-
 struct ShoeDetailView_Previews: PreviewProvider {
-    @Namespace static var namespace
     static var previews: some View {
-        ShoeDetailView(product: .init(image: "nike_10"), namespace: namespace, magnify: .constant(true))
+        ProductDetailScreen(product: .constant(.init(image: "nike_10")))
     }
     
 }

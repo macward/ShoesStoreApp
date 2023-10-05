@@ -9,18 +9,14 @@ import SwiftUI
 
 struct MainSliderView<Content: View>: View {
     
-    @Binding var magnify: Bool
-    var namespace: Namespace.ID
-    var prducts: [Product]
-    @Binding var selectedIndex: String
+    var products: [Product]
+    @Binding var selectedProduct: Product?
     @ViewBuilder var content: (Product) -> Content
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(prducts) { product in
-                    //SliderCardV2(product: product, namespace: namespace)
-                    //SliderCardView(product: product, namespace: namespace)
+                ForEach(products) { product in
                     content(product)
                         .containerRelativeFrame(.horizontal, count: 1, spacing: 0)
                         .scrollTransition { content, phase in
@@ -30,10 +26,7 @@ struct MainSliderView<Content: View>: View {
                                 .offset(x: phase.isIdentity ? 0 : -30)
                         }
                         .onTapGesture {
-                            selectedIndex = product.id
-                            withAnimation (.openCard) {
-                                magnify.toggle()
-                            }
+                            selectedProduct = product
                         }
                 }
             }
@@ -45,12 +38,3 @@ struct MainSliderView<Content: View>: View {
         .contentMargins(16, for: .scrollContent)
     }
 }
-
-
-//struct MainSliderView_Previews: PreviewProvider {
-//    @Namespace static var namespace
-//    static var previews: some View {
-//        MainSliderView(magnify: .constant(false), namespace: namespace, prducts: Mock.mainSliderProducts, selectedIndex: .constant("123"))
-//    }
-//    
-//}

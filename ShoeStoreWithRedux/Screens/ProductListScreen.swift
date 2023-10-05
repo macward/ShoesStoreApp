@@ -1,5 +1,5 @@
 //
-//  ListOfShoesScreen.swift
+//  ProductListScreen.swift
 //  ShoeStoreWithRedux
 //
 //  Created by Max Ward on 02/10/2023.
@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct ListOfShoesScreen: View {
+struct ProductListScreen: View {
     
     var text: String
     @Binding var path: NavigationPath
     @State var presentProductPage: Bool = false
-    @Namespace var namespace
-    @State var magnify: Bool = true
     
     var body: some View {
         let gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
@@ -27,7 +25,7 @@ struct ListOfShoesScreen: View {
                 }
             }
             .fullScreenCover(isPresented: $presentProductPage, content: {
-                ShoeDetailView(product: .init(image: "nike_11"), namespace: namespace, magnify: .constant(true))
+                ProductDetailScreen(product: .constant(.init(image: "nike_11")))
                 EmptyView()
             })
         }
@@ -46,9 +44,3 @@ struct ListOfShoesScreen: View {
         }
     }
 }
-//
-//#Preview {
-//    NavigationStack {
-//        ListOfShoesScreen()
-//    }
-//}

@@ -7,48 +7,24 @@
 
 import SwiftUI
 
-struct Product: Identifiable {
+struct Product: Identifiable, Equatable {
     var id: String = UUID().uuidString
     var image: String
 }
 
 struct HomeScreen: View {
     
+    // TabView visisbility
     @Binding var tabState: Visibility
-    @Namespace private var namespace
+    
+    // Mock Data
+    @State private var featuredProducts: [Product] = Mock.mainSliderProducts
+    @State private var popularProducts: [Product] = Mock.products
+    @State private var allProducts: [Product] = Mock.products
     
     @State private var path = NavigationPath()
-    
-    @State private var mainSliderProducts: [Product] = [
-        .init(image: "nike_3"),
-        .init(image: "nike_1"),
-        .init(image: "nike_6"),
-        .init(image: "nike_3"),
-        .init(image: "nike_1"),
-        .init(image: "nike_4"),
-        .init(image: "nike_1")
-    ]
-    
-    @State private var topSellsSliderProducts: [Product] = [
-        .init(image: "nike_12"),
-        .init(image: "nike_14"),
-        .init(image: "nike_16"),
-        .init(image: "nike_18"),
-        .init(image: "nike_20"),
-        .init(image: "nike_22"),
-        .init(image: "nike_24")
-    ]
-    
-    @State private var allProducts: [Product] = [
-        .init(image: "nike_1"),
-        .init(image: "nike_2"),
-        .init(image: "nike_3"),
-        .init(image: "nike_4")
-    ]
-    
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
-    @State var selectedIndex: String = ""
-    @State private var magnifyFeatured: Bool = false
+    @State private var selectedProduct: Product?
+    @State private var openDetailScreen: Bool = false
     
     init(tabState: Binding<Visibility>) {
         self._tabState = tabState
@@ -60,14 +36,12 @@ struct HomeScreen: View {
                 ScrollView {
                     VStack {
                         // Main Slider
-                        MainSliderView(magnify: $magnifyFeatured, namespace: namespace, prducts: mainSliderProducts, selectedIndex: $selectedIndex) { product in
-                            SliderCardView(product: product, namespace: namespace)
-                            //SliderCardV2(product: product, namespace: namespace)
+                        MainSliderView(products: featuredProducts, selectedProduct: $selectedProduct) { product in
+                            SliderCardView(product: product)
                         }
                     
-                        
                         // Popular Slider
-                        ProductSliderView(sectionTitle: "Popular", products: topSellsSliderProducts) {
+                        ProductSliderView(sectionTitle: "Popular", products: popularProducts) {
                             path.append("Popular")
                         }
                         
@@ -78,50 +52,25 @@ struct HomeScreen: View {
                         .padding(.horizontal)
                     }
                     .navigationDestination(for: String.self) { textValue in
-                        ListOfShoesScreen(text: textValue, path: $path)
+                        ProductListScreen(text: textValue, path: $path)
                     }
                 }
                 .ignoresSafeArea()
                 .coordinateSpace(name: "scroll")
-                .onChange(of: magnifyFeatured) { oldValue, newValue in
-                    if newValue == true {
-                        tabState = .hidden
-                    } else {
-                        tabState = .visible
-                    }
+                .onChange(of: selectedProduct) { oldValue, newValue in
+                    if newValue == nil { return }
+                    openDetailScreen.toggle()
                 }
-                
-                if magnifyFeatured {
-                    ForEach (mainSliderProducts) { product in
-                        if product.id == selectedIndex {
-                            ShoeDetailView(product: product, namespace: namespace, magnify: $magnifyFeatured)
-                                .zIndex(1)
-                                .containerRelativeFrame([.horizontal, .vertical])
-                                .transition(.asymmetric(
-                                    insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                                    removal: .opacity.animation(.easeInOut(duration: 0.7))
-                                    )
-                                )
-                        }
-                    }
-                }
-                
-                
-                
+                .fullScreenCover(isPresented: $openDetailScreen, content: {
+                    ProductDetailScreen(product: $selectedProduct)
+                })
             }
         }
     }
     
     @ViewBuilder
-    func buildDetailView(for productId: String) -> some View {
+    func handleProductDetailScree(_ product: inout Product) -> some View {
         
-        
-    }
-    
-    func scrollOffset(_ phase: GeometryProxy) -> CGFloat {
-        let titleScrollSpeed: CGFloat = 0.3
-        let minX = phase.bounds(of: .scrollView)?.minX ?? 0
-        return -minX * min(titleScrollSpeed, 1.0)
     }
 }
 

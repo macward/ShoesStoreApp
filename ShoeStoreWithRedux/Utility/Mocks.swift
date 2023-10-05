@@ -17,4 +17,11 @@ struct Mock {
         .init(image: "nike_28"),
         .init(image: "nike_19")
     ]
+    
+    static var products: [Product] = [
+        .init(image: "nike_22"),
+        .init(image: "nike_28"),
+        .init(image: "nike_33"),
+        .init(image: "nike_28")
+    ]
 }
