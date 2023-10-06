@@ -136,6 +136,7 @@
 			children = (
 				50AA63012ACBBDEA008DC0DD /* Info.plist */,
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
+				50B47AD62ACF6AB70001489C /* GlobalAppManager.swift */,
 				50AA62D82ACB75FC008DC0DD /* Screens */,
 				50BA627C2ACE1B990044D820 /* Components */,
 				50AA62D92ACB7602008DC0DD /* Views */,
@@ -144,7 +145,6 @@
 				50AA62EC2ACBBDB8008DC0DD /* Fonts */,
 				50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */,
 				50AA62D02ACB74A3008DC0DD /* Preview Content */,
-				50B47AD62ACF6AB70001489C /* GlobalAppManager.swift */,
 			);
 			path = ShoeStoreWithRedux;
 			sourceTree = "<group>";

@@ -15,15 +15,14 @@ struct ProductListScreen: View {
     @Binding var path: NavigationPath
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
-    @State private var products: [Product] = Mock.products
     
     var body: some View {
         ScrollView {
-            ProductsGridComponent(title: "", products: $products, selectedProduct: $selectedProduct) {
+            ProductsGridComponent(title: "", products: $appManager.allProducts, selectedProduct: $selectedProduct) {
                 openDetailScreen.toggle()
             } likeAction: { $product in
-                appManager.handleFavourite(product)
                 product.isFav.toggle()
+                appManager.handleFavourite(product)
             }
             .fullScreenCover(isPresented: $openDetailScreen, content: {
                 ProductDetailScreen(product: $selectedProduct)

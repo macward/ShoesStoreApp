@@ -9,28 +9,16 @@ import SwiftUI
 
 class GlobalAppManager: ObservableObject {
     
-    @Published var favourites: [Product] = []
+    @Published var featuredProducts: [Product] = Mock.mainSliderProducts
+    @Published var popularProducts: [Product] = Mock.products
+    @Published var allProducts: [Product] = Mock.products
+    
     @Published var shoppingBasket: [Product] = []
     
-    func handleFavourite(_ product: Product) {
-        
-        if favourites.contains(where: { $0.id == product.id}) {
-            self.removeFromFavourites(product)
-        } else {
-            self.addToFavourites(product)
+    func favourites() -> [Product] {
+        return allProducts.filter { product in
+            product.isFav == true
         }
-    }
-    
-    func addToFavourites(_ product: Product) {
-        if let _ = favourites.firstIndex(where:{$0.id == product.id }) {
-            return
-        }
-        self.favourites.append(product)
-    }
-    
-    func removeFromFavourites(_ product: Product) {
-        guard let index = favourites.firstIndex(where:{$0.id == product.id }) else { return }
-        self.favourites.remove(at: index)
     }
     
     func isInFavourites(_ product: Product) -> Bool {

@@ -15,10 +15,6 @@ struct HomeScreen: View {
     @Binding var tabState: Visibility
     
     // Mock Data
-    @State private var featuredProducts: [Product] = Mock.mainSliderProducts
-    @State private var popularProducts: [Product] = Mock.products
-    @State private var allProducts: [Product] = Mock.products
-    
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
@@ -34,21 +30,21 @@ struct HomeScreen: View {
                     VStack {
                         
                         // Main Slider
-                        MainSliderView(products: featuredProducts, selectedProduct: $selectedProduct) { product in
+                        MainSliderView(products: appManager.featuredProducts, selectedProduct: $selectedProduct) { product in
                             SliderCardView(product: product)
                         }
                         
                         // Popular Slider
-                        ProductSliderView(sectionTitle: "Popular", products: popularProducts, selectedProduct: $selectedProduct) {
+                        ProductSliderView(sectionTitle: "Popular", products: appManager.popularProducts, selectedProduct: $selectedProduct) {
                             path.append("Popular")
                         }
                         
                         // all prods
-                        ProductsGridComponent(title: "Newest shoes", products: $allProducts, selectedProduct: $selectedProduct) {
+                        ProductsGridComponent(title: "Newest shoes", products: $appManager.allProducts, selectedProduct: $selectedProduct) {
                             path.append("Newest shoes")
                         } likeAction: { $product in
-                            appManager.handleFavourite(product)
                             product.isFav.toggle()
+                            appManager.handleFavourite(product)
                         }
                         .padding(.horizontal)
                         .safeAreaPadding(.bottom, 90)
