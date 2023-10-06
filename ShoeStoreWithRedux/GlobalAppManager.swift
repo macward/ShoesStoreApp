@@ -6,14 +6,24 @@
 //
 
 import SwiftUI
+import Combine
 
 class GlobalAppManager: ObservableObject {
     
     @Published var featuredProducts: [Product] = Mock.mainSliderProducts
     @Published var popularProducts: [Product] = Mock.products
     @Published var allProducts: [Product] = Mock.products
-    
+    @Published var favouritesProducts: [Product] = []
     @Published var shoppingBasket: [Product] = []
+    private var subscriptions = Set<AnyCancellable>()
+    
+    init() {
+        $allProducts
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] products in
+                self?.favouritesProducts = products.filter({ $0.isFav == true })
+            }.store(in: &subscriptions)
+    }
     
     func favourites() -> [Product] {
         return allProducts.filter { product in

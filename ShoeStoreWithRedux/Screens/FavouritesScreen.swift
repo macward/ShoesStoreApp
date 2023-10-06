@@ -19,9 +19,9 @@ struct FavouritesScreen: View {
         NavigationStack {
             ScrollView {
                 if appManager.allProducts.count > 0{
-                    ProductGridContainer(data: appManager.allProducts.map({ $0.isFav == true }), content: { $product in
+                    ProductGridContainer(data: $appManager.favouritesProducts, content: { $product in
                         ProductCardView(product: $product, action: { $product in
-                            appManager.handleFavourite(product)
+                            product.isFav.toggle()
                         })
                         .onTapGesture {
                             selectedProduct = product

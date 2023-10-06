@@ -22,7 +22,6 @@ struct ProductListScreen: View {
                 openDetailScreen.toggle()
             } likeAction: { $product in
                 product.isFav.toggle()
-                appManager.handleFavourite(product)
             }
             .fullScreenCover(isPresented: $openDetailScreen, content: {
                 ProductDetailScreen(product: $selectedProduct)

@@ -44,7 +44,6 @@ struct HomeScreen: View {
                             path.append("Newest shoes")
                         } likeAction: { $product in
                             product.isFav.toggle()
-                            appManager.handleFavourite(product)
                         }
                         .padding(.horizontal)
                         .safeAreaPadding(.bottom, 90)
