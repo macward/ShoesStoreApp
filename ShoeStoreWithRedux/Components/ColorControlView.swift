@@ -7,19 +7,13 @@
 
 import SwiftUI
 
-struct ColorControlItem: Identifiable {
-    var id: String = UUID().uuidString
-    var color: Color
-}
-
 struct ColorControlView: View {
     
     private var items: [ColorControlItem] = [
-        .init(color: .black),
-        .init(color: .grayMid),
-        .init(color: .red),
-        .init(color: .blue),
-        .init(color: .black)
+        .init(name: "Negro", color: .black),
+        .init(name: "Gris", color: .grayMid),
+        .init(name: "Rojo",color: .red),
+        .init(name: "Azul",color: .blue),
     ]
     
     @Binding private var selectedColor: ColorControlItem?
@@ -39,5 +33,5 @@ struct ColorControlView: View {
 }
 
 #Preview  {
-    ColorControlView(selected: .constant(.init(color: .red)))
+    ColorControlView(selected: .constant(.init(name: "Rojo", color: .red)))
 }

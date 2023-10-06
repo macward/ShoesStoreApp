@@ -20,7 +20,7 @@ struct TabViewScreen: View {
                     Label("Home", systemImage: "house")
                 }
             
-            Text("Favourites")
+            FavouritesScreen(text: "Favourites")
                 .tabItem {
                     Label("Favourites", systemImage: "heart.fill")
                 }

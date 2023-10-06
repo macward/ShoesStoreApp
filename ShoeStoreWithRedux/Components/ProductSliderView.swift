@@ -63,6 +63,7 @@ struct ProductSliderView: View {
             }
             .scrollTargetBehavior(.viewAligned)
             .contentMargins(16, for: .scrollContent)
+            .offset(y: -16)
         }
     }
     

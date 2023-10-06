@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		502048F12ACC7BF700487F57 /* ProductsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F02ACC7BF700487F57 /* ProductsGridView.swift */; };
+		502048F12ACC7BF700487F57 /* ProductsGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F02ACC7BF700487F57 /* ProductsGridComponent.swift */; };
 		502048F72ACC80F000487F57 /* ProductSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F62ACC80F000487F57 /* ProductSliderView.swift */; };
 		502048F92ACC81CB00487F57 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F82ACC81CB00487F57 /* TabView.swift */; };
 		502048FB2ACCEE8F00487F57 /* CONST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048FA2ACCEE8F00487F57 /* CONST.swift */; };
@@ -32,12 +32,14 @@
 		50AA630D2ACBBFE2008DC0DD /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */; };
 		50AA630F2ACBD80E008DC0DD /* MainSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */; };
 		50B47AD52ACF4B870001489C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B47AD42ACF4B870001489C /* Product.swift */; };
+		50B47AD72ACF6AB70001489C /* GlobalAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B47AD62ACF6AB70001489C /* GlobalAppManager.swift */; };
+		50B47AD92ACF6E190001489C /* FavouritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B47AD82ACF6E190001489C /* FavouritesScreen.swift */; };
 		50BA627E2ACE1D570044D820 /* FeaturedProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */; };
 		50BA62802ACE1E5B0044D820 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA627F2ACE1E5B0044D820 /* Mocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		502048F02ACC7BF700487F57 /* ProductsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGridView.swift; sourceTree = "<group>"; };
+		502048F02ACC7BF700487F57 /* ProductsGridComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGridComponent.swift; sourceTree = "<group>"; };
 		502048F62ACC80F000487F57 /* ProductSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSliderView.swift; sourceTree = "<group>"; };
 		502048F82ACC81CB00487F57 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		502048FA2ACCEE8F00487F57 /* CONST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONST.swift; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.ttf"; sourceTree = "<group>"; };
 		50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSliderView.swift; sourceTree = "<group>"; };
 		50B47AD42ACF4B870001489C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		50B47AD62ACF6AB70001489C /* GlobalAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppManager.swift; sourceTree = "<group>"; };
+		50B47AD82ACF6E190001489C /* FavouritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesScreen.swift; sourceTree = "<group>"; };
 		50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedProductImage.swift; sourceTree = "<group>"; };
 		50BA627F2ACE1E5B0044D820 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +144,7 @@
 				50AA62EC2ACBBDB8008DC0DD /* Fonts */,
 				50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */,
 				50AA62D02ACB74A3008DC0DD /* Preview Content */,
+				50B47AD62ACF6AB70001489C /* GlobalAppManager.swift */,
 			);
 			path = ShoeStoreWithRedux;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				50AA62DB2ACB7621008DC0DD /* HomeScreen.swift */,
 				50AA62E62ACBB4B6008DC0DD /* ProductListScreen.swift */,
 				50AA62E82ACBB56F008DC0DD /* ProductDetailScreen.swift */,
+				50B47AD82ACF6E190001489C /* FavouritesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -229,7 +235,7 @@
 				502049052ACD376E00487F57 /* ColorControlView.swift */,
 				50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */,
 				502048F62ACC80F000487F57 /* ProductSliderView.swift */,
-				502048F02ACC7BF700487F57 /* ProductsGridView.swift */,
+				502048F02ACC7BF700487F57 /* ProductsGridComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -316,10 +322,12 @@
 				50AA62E52ACBB18B008DC0DD /* SectionHeaderAction.swift in Sources */,
 				502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
-				502048F12ACC7BF700487F57 /* ProductsGridView.swift in Sources */,
+				502048F12ACC7BF700487F57 /* ProductsGridComponent.swift in Sources */,
 				502048FE2ACD162D00487F57 /* Buttons.swift in Sources */,
 				502049062ACD376E00487F57 /* ColorControlView.swift in Sources */,
 				502049022ACD2FD700487F57 /* VerticalSizeControlView.swift in Sources */,
+				50B47AD92ACF6E190001489C /* FavouritesScreen.swift in Sources */,
+				50B47AD72ACF6AB70001489C /* GlobalAppManager.swift in Sources */,
 				50AA630F2ACBD80E008DC0DD /* MainSliderView.swift in Sources */,
 				50AA62E92ACBB56F008DC0DD /* ProductDetailScreen.swift in Sources */,
 				50AA62E72ACBB4B6008DC0DD /* ProductListScreen.swift in Sources */,

@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct SizeControlItem: Identifiable {
-    var id: String = UUID().uuidString
-    var size: Int
-    var available: Bool
-}
-
 struct VerticalSizeControlView: View {
     
     private var items: [SizeControlItem] = [

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    // General app sstate manager
+    @EnvironmentObject var appManager: GlobalAppManager
     
     // TabView visisbility
     @Binding var tabState: Visibility
@@ -30,19 +32,23 @@ struct HomeScreen: View {
             ZStack {
                 ScrollView {
                     VStack {
+                        
                         // Main Slider
                         MainSliderView(products: featuredProducts, selectedProduct: $selectedProduct) { product in
                             SliderCardView(product: product)
                         }
-                    
+                        
                         // Popular Slider
                         ProductSliderView(sectionTitle: "Popular", products: popularProducts, selectedProduct: $selectedProduct) {
                             path.append("Popular")
                         }
                         
                         // all prods
-                        ProductsGridView(title: "Newest shoes", products: allProducts, selectedProduct: $selectedProduct) {
+                        ProductsGridComponent(title: "Newest shoes", products: $allProducts, selectedProduct: $selectedProduct) {
                             path.append("Newest shoes")
+                        } likeAction: { $product in
+                            appManager.handleFavourite(product)
+                            product.isFav.toggle()
                         }
                         .padding(.horizontal)
                         .safeAreaPadding(.bottom, 90)
@@ -63,11 +69,6 @@ struct HomeScreen: View {
                 })
             }
         }
-    }
-    
-    @ViewBuilder
-    func handleProductDetailScree(_ product: inout Product) -> some View {
-        
     }
 }
 

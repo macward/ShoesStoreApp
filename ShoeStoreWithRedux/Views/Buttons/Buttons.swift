@@ -86,8 +86,8 @@ struct Buttons: View {
             }
             .padding()
             
-            ColorControlButton(color: .init(color: .blue),
-                               selected: .constant(.init(color: .red)))
+            ColorControlButton(color: .init(name: "Azul", color: .blue),
+                               selected: .constant(.init(name: "Rojo", color: .red)))
         }
     }
 }

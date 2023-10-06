@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct ShoeStoreWithReduxApp: App {
+    
+    @State var appManager: GlobalAppManager = .init()
+    
     var body: some Scene {
         WindowGroup {
             TabViewScreen()
+                .environmentObject(appManager)
                 .preferredColorScheme(.light)
         }
     }

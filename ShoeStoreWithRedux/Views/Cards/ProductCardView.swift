@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProductCardView: View {
     
-    var product: Product
+    @Binding var product: Product
+    var action: (Binding<Product>) -> Void
     
     var body: some View {
         VStack (spacing: 20) {
@@ -23,6 +24,7 @@ struct ProductCardView: View {
                     .scaledToFit()
                     .aspectRatio(contentMode: .fit)
                     .shadow(color: .black.opacity(0.3), radius: 12, x: 4, y: 4)
+                    .padding(.all, 8)
             }
             // description
             VStack {
@@ -36,9 +38,31 @@ struct ProductCardView: View {
             
             }
         }
+        .overlay(alignment: .topTrailing) {
+            Image(systemName: product.isFav ? "heart.fill" : "heart")
+                .font(.system(size: 28))
+                .foregroundStyle(product.isFav ? Color.red.gradient : Color.gray.gradient)
+                .padding(.trailing, 8)
+                .padding(.top, 8)
+                .onTapGesture {
+                    action($product)
+                }
+        }
     }
 }
 
-#Preview {
-    ProductCardView(product: .init(image: "nike_1"))
-}
+//struct ProductCardSampleView: View {
+//    var body: some View {
+//        HStack {
+//            ProductCardView(product: .init(image: "nike_1"), action: { _ in})
+//            ProductCardView(product: .init(image: "nike_1"), action: { _ in})
+//        }
+//        .padding(.horizontal)
+//        
+//    }
+//}
+//
+//
+//#Preview {
+//    ProductCardSampleView()
+//}
