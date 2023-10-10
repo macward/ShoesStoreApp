@@ -11,6 +11,7 @@ struct ProductSliderView: View {
     var sectionTitle: String
     var products: [Product]
     @Binding var selectedProduct: Product?
+    @Binding var openDetails: Bool
     var callback: () ->Void
     
     var body: some View {
@@ -56,6 +57,7 @@ struct ProductSliderView: View {
                         .frame(width: 300, height: 160)
                         .onTapGesture {
                             selectedProduct = item
+                            openDetails.toggle()
                         }
                     }
                 }
@@ -76,5 +78,5 @@ struct ProductSliderView: View {
 
 #Preview {
     ProductSliderView(sectionTitle: "Sample",
-                      products: Mock.mainSliderProducts, selectedProduct: .constant(.init(image: "nike_11")), callback: {})
+                      products: Mock.mainSliderProducts, selectedProduct: .constant(.init(image: "nike_11")), openDetails: .constant(false), callback: {})
 }

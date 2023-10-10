@@ -9,36 +9,43 @@ import SwiftUI
 
 struct ProductsGridComponent: View {
     
-    private var title: String
+    @State private var title: String = ""
     @Binding var products: [Product]
+    @Binding var openDetails: Bool
     private var showAction: () -> Void
     private var likeAction: (Binding<Product>) -> Void
     @Binding var selectedProduct: Product?
     
-    init(title: String, 
-         products: Binding<[Product]>,
+    init(products: Binding<[Product]>,
          selectedProduct: Binding<Product?>,
+         openDetails: Binding<Bool>,
          showAction: @escaping (() -> Void),
          likeAction: @escaping ((Binding<Product>) -> Void)) {
-        self.title = title
         self._products = products
         self._selectedProduct = selectedProduct
         self.showAction = showAction
         self.likeAction = likeAction
+        self._openDetails = openDetails
     }
     
     var body: some View {
         VStack {
             if title != "" {
-                SectionHeaderAction(title: "Newest shoes", callback: showAction)
+                SectionHeaderAction(title: title, callback: showAction)
             }
             ProductGridContainer(data: $products, content: { $product in
                 ProductCardView(product: $product, action: likeAction)
                 .onTapGesture {
                     selectedProduct = product
+                    openDetails.toggle()
                 }
+                .componentTitle(title: "Newest shoes")
             })
         }
+        .onPreferenceChange(ComponentTitlePreferenceKey.self, perform: { value in
+            print(value)
+            self.title = value
+        })
     }
 }
 
@@ -60,7 +67,7 @@ struct ProductGridContainer<Content: View, Item: RandomAccessCollection>: View w
 
 struct ProductsGridViewTest: View {
     var body: some View {
-        ProductsGridComponent(title: "Sample", products: .constant([]), selectedProduct: .constant(.init(image: "nike_11"))) {
+        ProductsGridComponent(products: .constant([]), selectedProduct: .constant(.init(image: "nike_11")), openDetails: .constant(false)) {
             print("like callback")
         } likeAction: { _ in
             

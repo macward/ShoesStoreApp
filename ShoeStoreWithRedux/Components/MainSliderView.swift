@@ -11,6 +11,7 @@ struct MainSliderView<Content: View>: View {
     
     var products: [Product]
     @Binding var selectedProduct: Product?
+    @Binding var openDetails: Bool
     @ViewBuilder var content: (Product) -> Content
     
     var body: some View {
@@ -27,6 +28,7 @@ struct MainSliderView<Content: View>: View {
                         }
                         .onTapGesture {
                             selectedProduct = product
+                            openDetails.toggle()
                         }
                 }
             }

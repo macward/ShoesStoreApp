@@ -15,6 +15,7 @@
 		502049022ACD2FD700487F57 /* VerticalSizeControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */; };
 		502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049032ACD313100487F57 /* FlipHorizontal.swift */; };
 		502049062ACD376E00487F57 /* ColorControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049052ACD376E00487F57 /* ColorControlView.swift */; };
+		5092D4332AD2161800D50E8E /* ComponentTitlePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */; };
 		50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA62CA2ACB74A1008DC0DD /* Main.swift */; };
 		50AA62CF2ACB74A3008DC0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */; };
 		50AA62D22ACB74A3008DC0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62D12ACB74A3008DC0DD /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSizeControlView.swift; sourceTree = "<group>"; };
 		502049032ACD313100487F57 /* FlipHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipHorizontal.swift; sourceTree = "<group>"; };
 		502049052ACD376E00487F57 /* ColorControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorControlView.swift; sourceTree = "<group>"; };
+		5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTitlePreference.swift; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* ShoeStoreWithRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeStoreWithRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		5092D4312AD2160700D50E8E /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
 		50AA62BE2ACB74A1008DC0DD = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 				50BA627C2ACE1B990044D820 /* Components */,
 				50AA62D92ACB7602008DC0DD /* Views */,
 				50B47AD32ACF4B720001489C /* Models */,
+				5092D4312AD2160700D50E8E /* Preferences */,
 				50AA62DF2ACB78AD008DC0DD /* Utility */,
 				50AA62EC2ACBBDB8008DC0DD /* Fonts */,
 				50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */,
@@ -332,6 +343,7 @@
 				50AA62E92ACBB56F008DC0DD /* ProductDetailScreen.swift in Sources */,
 				50AA62E72ACBB4B6008DC0DD /* ProductListScreen.swift in Sources */,
 				50AA62DE2ACB764C008DC0DD /* ProductCardView.swift in Sources */,
+				5092D4332AD2161800D50E8E /* ComponentTitlePreference.swift in Sources */,
 				502048F92ACC81CB00487F57 /* TabView.swift in Sources */,
 				50AA62DC2ACB7621008DC0DD /* HomeScreen.swift in Sources */,
 				50B47AD52ACF4B870001489C /* Product.swift in Sources */,

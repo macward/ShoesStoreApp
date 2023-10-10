@@ -13,7 +13,6 @@ struct HomeScreen: View {
     
     // TabView visisbility
     @Binding var tabState: Visibility
-    
     // Mock Data
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
@@ -28,36 +27,36 @@ struct HomeScreen: View {
             ZStack {
                 ScrollView {
                     VStack {
-                        
                         // Main Slider
-                        MainSliderView(products: appManager.featuredProducts, selectedProduct: $selectedProduct) { product in
+                        MainSliderView(products: appManager.featuredProducts, 
+                                       selectedProduct: $selectedProduct,
+                                       openDetails: $openDetailScreen) { product in
                             SliderCardView(product: product)
                         }
                         
                         // Popular Slider
-                        ProductSliderView(sectionTitle: "Popular", products: appManager.popularProducts, selectedProduct: $selectedProduct) {
+                        ProductSliderView(sectionTitle: "Popular", 
+                                          products: appManager.popularProducts,
+                                          selectedProduct: $selectedProduct, 
+                                          openDetails: $openDetailScreen) {
                             path.append("Popular")
                         }
                         
                         // all prods
-                        ProductsGridComponent(title: "Newest shoes", products: $appManager.allProducts, selectedProduct: $selectedProduct) {
+                        ProductsGridComponent(products: $appManager.allProducts,
+                                              selectedProduct: $selectedProduct,
+                                              openDetails: $openDetailScreen) {
                             path.append("Newest shoes")
                         } likeAction: { $product in
                             product.isFav.toggle()
                         }
                         .padding(.horizontal)
                         .safeAreaPadding(.bottom, 90)
-                        
-                    }
-                    .navigationDestination(for: String.self) { textValue in
-                        ProductListScreen(text: textValue, path: $path)
                     }
                 }
                 .ignoresSafeArea()
-                .coordinateSpace(name: "scroll")
-                .onChange(of: selectedProduct) { oldValue, newValue in
-                    if newValue == nil { return }
-                    openDetailScreen.toggle()
+                .navigationDestination(for: String.self) { textValue in
+                    ProductListScreen(text: textValue, path: $path)
                 }
                 .fullScreenCover(isPresented: $openDetailScreen, content: {
                     ProductDetailScreen(product: $selectedProduct)
