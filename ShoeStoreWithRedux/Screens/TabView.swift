@@ -25,10 +25,9 @@ struct TabViewScreen: View {
                     Label("Favourites", systemImage: "heart.fill")
                 }
             
-            Text("Notifications")
-                .badge("2")
+            ShoppingCartScreen()
                 .tabItem {
-                    Label("Notifications", systemImage: "bell")
+                    Label("Cart", systemImage: "bag")
                 }
             
             Text("View 3")
@@ -37,8 +36,4 @@ struct TabViewScreen: View {
                 }
         }
     }
-}
-
-#Preview {
-    TabViewScreen()
 }

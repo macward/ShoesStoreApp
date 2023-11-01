@@ -14,6 +14,8 @@ struct Product: Identifiable, Equatable {
     var id: String = UUID().uuidString
     var image: String
     var isFav: Bool = false
+    var isFeatured: Bool = false
+    var isTop: Bool = false
 }
 
 struct ColorControlItem: Identifiable {
@@ -33,4 +35,21 @@ struct CartItem: Identifiable {
     var product: Product
     var size: ColorControlItem
     var color: SizeControlItem
+}
+
+struct HomeDto: Codable {
+    var featured: [ProductScheme]
+    var top: [ProductScheme]
+    var products: [ProductScheme]
+}
+
+struct ProductScheme: Codable {
+    var id: Int
+    var title: String
+    var description: String?
+    var price: Double
+    var image: String
+    var available: Bool
+    var featured: Bool
+    var top: Bool
 }

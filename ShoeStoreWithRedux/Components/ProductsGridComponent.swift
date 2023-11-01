@@ -11,7 +11,7 @@ struct ProductsGridComponent: View {
     
     @State private var title: String = ""
     @Binding var products: [Product]
-    @Binding var openDetails: Bool
+    @Binding var actionOnTap: Bool
     private var showAction: () -> Void
     private var likeAction: (Binding<Product>) -> Void
     @Binding var selectedProduct: Product?
@@ -25,7 +25,7 @@ struct ProductsGridComponent: View {
         self._selectedProduct = selectedProduct
         self.showAction = showAction
         self.likeAction = likeAction
-        self._openDetails = openDetails
+        self._actionOnTap = openDetails
     }
     
     var body: some View {
@@ -37,7 +37,7 @@ struct ProductsGridComponent: View {
                 ProductCardView(product: $product, action: likeAction)
                 .onTapGesture {
                     selectedProduct = product
-                    openDetails.toggle()
+                    actionOnTap.toggle()
                 }
                 .componentTitle(title: "Newest shoes")
             })

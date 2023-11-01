@@ -13,7 +13,7 @@ struct HomeScreen: View {
     
     // TabView visisbility
     @Binding var tabState: Visibility
-    // Mock Data
+    
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
@@ -30,7 +30,7 @@ struct HomeScreen: View {
                         // Main Slider
                         MainSliderView(products: appManager.featuredProducts, 
                                        selectedProduct: $selectedProduct,
-                                       openDetails: $openDetailScreen) { product in
+                                       actionOnTap: $openDetailScreen) { product in
                             SliderCardView(product: product)
                         }
                         
@@ -38,7 +38,7 @@ struct HomeScreen: View {
                         ProductSliderView(sectionTitle: "Popular", 
                                           products: appManager.popularProducts,
                                           selectedProduct: $selectedProduct, 
-                                          openDetails: $openDetailScreen) {
+                                          actionOnTap: $openDetailScreen) {
                             path.append("Popular")
                         }
                         
@@ -61,6 +61,9 @@ struct HomeScreen: View {
                 .fullScreenCover(isPresented: $openDetailScreen, content: {
                     ProductDetailScreen(product: $selectedProduct)
                 })
+            }
+            .task {
+                await appManager.loadData()
             }
         }
     }

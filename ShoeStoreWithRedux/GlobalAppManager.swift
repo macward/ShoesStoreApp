@@ -10,25 +10,42 @@ import Combine
 
 class GlobalAppManager: ObservableObject {
     
-    @Published var featuredProducts: [Product] = Mock.mainSliderProducts
-    @Published var popularProducts: [Product] = Mock.products
-    @Published var allProducts: [Product] = Mock.products
+    @Published var featuredProducts: [Product] = []
+    @Published var popularProducts: [Product] = []
+    @Published var allProducts: [Product] = []
     @Published var favouritesProducts: [Product] = []
+    
+    @Published var favArray: [String] = []
     @Published var shoppingBasket: [Product] = []
     private var subscriptions = Set<AnyCancellable>()
     
+    @Published var globalLoadingState = false
+    
     init() {
-        $allProducts
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] products in
-                self?.favouritesProducts = products.filter({ $0.isFav == true })
-            }.store(in: &subscriptions)
+    }
+    
+    @MainActor 
+    func loadData() async {
+        self.globalLoadingState = true
+        let products = await Product.get("http://127.0.0.1:3000/products/home")
+        self.allProducts = products.map({self.buildfavorite($0)})
+        self.featuredProducts = products.filter({$0.isFeatured == true})
+        self.popularProducts = products.filter({$0.isTop == true})
+        self.globalLoadingState = false
     }
     
     func favourites() -> [Product] {
         return allProducts.filter { product in
             product.isFav == true
         }
+    }
+    
+    func buildfavorite(_ product: Product) -> Product {
+        var isFav: Bool = false
+        if favArray.contains(product.id) {
+            isFav = true
+        }
+        return Product(id: product.id, image: product.image, isFav: isFav)
     }
     
     func isInFavourites(_ product: Product) -> Bool {
