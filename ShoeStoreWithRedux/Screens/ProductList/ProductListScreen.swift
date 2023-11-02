@@ -20,11 +20,10 @@ struct ProductListScreen: View {
         ScrollView {
             ProductsGridComponent(products: $appManager.allProducts,
                                   selectedProduct: $selectedProduct, 
-                                  openDetails: $openDetailScreen) {
-                // title action
-            } likeAction: { $product in
-                product.isFav.toggle()
-            }
+                                  openDetails: $openDetailScreen, 
+                                  showAction: {}, likeAction: { $product in
+                product.isFav = true
+            })
             .preference(key: ComponentTitlePreferenceKey.self, value: "")
             .fullScreenCover(isPresented: $openDetailScreen, content: {
                 ProductDetailScreen(product: $selectedProduct)

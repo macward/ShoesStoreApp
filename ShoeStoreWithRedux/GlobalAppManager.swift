@@ -13,31 +13,56 @@ class GlobalAppManager: ObservableObject {
     @Published var featuredProducts: [Product] = []
     @Published var popularProducts: [Product] = []
     @Published var allProducts: [Product] = []
-    @Published var favouritesProducts: [Product] = []
     
     @Published var favArray: [String] = []
     @Published var shoppingBasket: [Product] = []
     private var subscriptions = Set<AnyCancellable>()
     
     @Published var globalLoadingState = false
+    @Published var favourites: [Product] = []
     
     init() {
+        allProducts
+            .publisher
+            .receive(on: DispatchQueue.main)
+            .sink { prods in
+                print(prods)
+            }
+            .store(in: &subscriptions)
     }
     
-    @MainActor 
+    func favSubscriber() {
+        allProducts
+            .publisher
+            .receive(on: DispatchQueue.main)
+            .filter{$0.isFav == true }
+            .append()
+            .sink(receiveValue: { values in
+                print(values)
+                print("---")
+            })
+            .store(in: &subscriptions)
+    }
+    
+    func favouritesCombine() -> AnyPublisher<Product, Never> {
+        return allProducts
+                .publisher
+                .receive(on: DispatchQueue.main)
+                .filter{$0.isFav == true}
+                .append()
+                .eraseToAnyPublisher()
+    }
+    
+    @MainActor
     func loadData() async {
+        if allProducts.count > 0 { return }
         self.globalLoadingState = true
         let products = await Product.get("http://127.0.0.1:3000/products/home")
+        
         self.allProducts = products.map({self.buildfavorite($0)})
         self.featuredProducts = products.filter({$0.isFeatured == true})
         self.popularProducts = products.filter({$0.isTop == true})
         self.globalLoadingState = false
-    }
-    
-    func favourites() -> [Product] {
-        return allProducts.filter { product in
-            product.isFav == true
-        }
     }
     
     func buildfavorite(_ product: Product) -> Product {

@@ -19,8 +19,8 @@ struct ProductsGridComponent: View {
     init(products: Binding<[Product]>,
          selectedProduct: Binding<Product?>,
          openDetails: Binding<Bool>,
-         showAction: @escaping (() -> Void),
-         likeAction: @escaping ((Binding<Product>) -> Void)) {
+         showAction: @escaping () -> Void,
+         likeAction: @escaping (Binding<Product>) -> Void) {
         self._products = products
         self._selectedProduct = selectedProduct
         self.showAction = showAction
@@ -34,7 +34,8 @@ struct ProductsGridComponent: View {
                 SectionHeaderAction(title: title, callback: showAction)
             }
             ProductGridContainer(data: $products, content: { $product in
-                ProductCardView(product: $product, action: likeAction)
+                ProductCardView(product: $product, 
+                                action: likeAction)
                 .onTapGesture {
                     selectedProduct = product
                     actionOnTap.toggle()
@@ -67,10 +68,12 @@ struct ProductGridContainer<Content: View, Item: RandomAccessCollection>: View w
 
 struct ProductsGridViewTest: View {
     var body: some View {
-        ProductsGridComponent(products: .constant([]), selectedProduct: .constant(.init(image: "nike_11")), openDetails: .constant(false)) {
+        ProductsGridComponent(products: .constant([]), 
+                              selectedProduct: .constant(.init(image: "nike_11")),
+                              openDetails: .constant(false)) {
             print("like callback")
-        } likeAction: { _ in
-            
+        } likeAction: { product in
+            // do something
         }
     }
 }

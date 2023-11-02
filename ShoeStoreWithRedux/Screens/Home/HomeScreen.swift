@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct HomeScreen: View {
     // General app sstate manager
@@ -17,6 +18,7 @@ struct HomeScreen: View {
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
+    @State private var subscriptions = Set<AnyCancellable>()
     
     init(tabState: Binding<Visibility>) {
         self._tabState = tabState
@@ -48,7 +50,7 @@ struct HomeScreen: View {
                                               openDetails: $openDetailScreen) {
                             path.append("Newest shoes")
                         } likeAction: { $product in
-                            product.isFav.toggle()
+                            product.isFav = true
                         }
                         .padding(.horizontal)
                         .safeAreaPadding(.bottom, 90)
@@ -66,9 +68,12 @@ struct HomeScreen: View {
                 await appManager.loadData()
             }
         }
+        .onAppear() {
+            appManager.favSubscriber()
+        }
     }
-}
-
-#Preview {
-    HomeScreen(tabState: .constant(.visible))
+    
+    func addToFavorites(_ product: Product) {
+        
+    }
 }

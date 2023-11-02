@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public enum DispatcherError: Error {
     case noData
@@ -43,6 +44,15 @@ class API {
             throw DispatcherError.invalidResponse
         }
         return try JSONDecoder().decode(T.self, from: data)
+    }
+    
+    static func getCombine<T: Codable>(_ url: String, of type: T.Type) -> some Publisher<T, Error> {
+        let endpoint = URL(string: url)!
+        return URLSession
+            .shared
+            .dataTaskPublisher(for: endpoint)
+            .map(\.data)
+            .decode(type: T.self, decoder: JSONDecoder())
     }
 }
 
