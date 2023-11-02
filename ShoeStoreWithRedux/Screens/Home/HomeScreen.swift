@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import SwiftCommonLibrary
 
 struct HomeScreen: View {
     // General app sstate manager
@@ -30,7 +31,7 @@ struct HomeScreen: View {
                 ScrollView {
                     VStack {
                         // Main Slider
-                        MainSliderView(products: appManager.featuredProducts, 
+                        MainSliderView(products: appManager.featured,
                                        selectedProduct: $selectedProduct,
                                        actionOnTap: $openDetailScreen) { product in
                             SliderCardView(product: product)
@@ -38,14 +39,14 @@ struct HomeScreen: View {
                         
                         // Popular Slider
                         ProductSliderView(sectionTitle: "Popular", 
-                                          products: appManager.popularProducts,
-                                          selectedProduct: $selectedProduct, 
+                                          products: appManager.popular,
+                                          selectedProduct: $selectedProduct,
                                           actionOnTap: $openDetailScreen) {
                             path.append("Popular")
                         }
                         
                         // all prods
-                        ProductsGridComponent(products: $appManager.allProducts,
+                        ProductsGridComponent(products: $appManager.products,
                                               selectedProduct: $selectedProduct,
                                               openDetails: $openDetailScreen) {
                             path.append("Newest shoes")
@@ -64,13 +65,12 @@ struct HomeScreen: View {
                     ProductDetailScreen(product: $selectedProduct)
                 })
             }
+            .activityIndicatorDefault(isLoading: appManager.globalLoadingState)
             .task {
                 await appManager.loadData()
             }
         }
     }
     
-    func addToFavorites(_ product: Product) {
-        
-    }
+    
 }

@@ -16,6 +16,9 @@
 		502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049032ACD313100487F57 /* FlipHorizontal.swift */; };
 		502049062ACD376E00487F57 /* ColorControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049052ACD376E00487F57 /* ColorControlView.swift */; };
 		5029FB642AF201E700E9B285 /* ShoppingCartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029FB632AF201E700E9B285 /* ShoppingCartScreen.swift */; };
+		503FCAB22AF418FB007DFADD /* FavouritesLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FCAB12AF418FB007DFADD /* FavouritesLogic.swift */; };
+		503FCAB52AF41DA3007DFADD /* SwiftCommonLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 503FCAB42AF41DA3007DFADD /* SwiftCommonLibrary */; };
+		503FCAB72AF44600007DFADD /* APISchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FCAB62AF44600007DFADD /* APISchemes.swift */; };
 		5092D4332AD2161800D50E8E /* ComponentTitlePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */; };
 		50A904D92AD8ED270066E8AD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A904D82AD8ED270066E8AD /* API.swift */; };
 		50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA62CA2ACB74A1008DC0DD /* Main.swift */; };
@@ -51,6 +54,8 @@
 		502049032ACD313100487F57 /* FlipHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipHorizontal.swift; sourceTree = "<group>"; };
 		502049052ACD376E00487F57 /* ColorControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorControlView.swift; sourceTree = "<group>"; };
 		5029FB632AF201E700E9B285 /* ShoppingCartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartScreen.swift; sourceTree = "<group>"; };
+		503FCAB12AF418FB007DFADD /* FavouritesLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesLogic.swift; sourceTree = "<group>"; };
+		503FCAB62AF44600007DFADD /* APISchemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISchemes.swift; sourceTree = "<group>"; };
 		5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTitlePreference.swift; sourceTree = "<group>"; };
 		50A904D82AD8ED270066E8AD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* ShoeStoreWithRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeStoreWithRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503FCAB52AF41DA3007DFADD /* SwiftCommonLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +183,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		503FCAB02AF418E0007DFADD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				50B47AD62ACF6AB70001489C /* GlobalAppManager.swift */,
+				503FCAB12AF418FB007DFADD /* FavouritesLogic.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		5092D4312AD2160700D50E8E /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,9 +227,9 @@
 		50AA62C92ACB74A1008DC0DD /* ShoeStoreWithRedux */ = {
 			isa = PBXGroup;
 			children = (
-				50AA63012ACBBDEA008DC0DD /* Info.plist */,
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
-				50B47AD62ACF6AB70001489C /* GlobalAppManager.swift */,
+				50AA63012ACBBDEA008DC0DD /* Info.plist */,
+				503FCAB02AF418E0007DFADD /* Application */,
 				50AA62D82ACB75FC008DC0DD /* Screens */,
 				5029FB652AF292BF00E9B285 /* UI */,
 				50B47AD32ACF4B720001489C /* Models */,
@@ -305,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				50B47AD42ACF4B870001489C /* Product.swift */,
+				503FCAB62AF44600007DFADD /* APISchemes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,6 +353,9 @@
 			dependencies = (
 			);
 			name = ShoeStoreWithRedux;
+			packageProductDependencies = (
+				503FCAB42AF41DA3007DFADD /* SwiftCommonLibrary */,
+			);
 			productName = ShoeStoreWithRedux;
 			productReference = 50AA62C72ACB74A1008DC0DD /* ShoeStoreWithRedux.app */;
 			productType = "com.apple.product-type.application";
@@ -365,6 +384,9 @@
 				Base,
 			);
 			mainGroup = 50AA62BE2ACB74A1008DC0DD;
+			packageReferences = (
+				503FCAB32AF41DA3007DFADD /* XCRemoteSwiftPackageReference "SwiftCommonLibrary" */,
+			);
 			productRefGroup = 50AA62C82ACB74A1008DC0DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -406,6 +428,7 @@
 				502048F12ACC7BF700487F57 /* ProductsGridComponent.swift in Sources */,
 				502048FE2ACD162D00487F57 /* Buttons.swift in Sources */,
 				502049062ACD376E00487F57 /* ColorControlView.swift in Sources */,
+				503FCAB72AF44600007DFADD /* APISchemes.swift in Sources */,
 				502049022ACD2FD700487F57 /* VerticalSizeControlView.swift in Sources */,
 				50B47AD92ACF6E190001489C /* FavouritesScreen.swift in Sources */,
 				50B47AD72ACF6AB70001489C /* GlobalAppManager.swift in Sources */,
@@ -420,6 +443,7 @@
 				50BA627E2ACE1D570044D820 /* FeaturedProductImage.swift in Sources */,
 				50A904D92AD8ED270066E8AD /* API.swift in Sources */,
 				5029FB642AF201E700E9B285 /* ShoppingCartScreen.swift in Sources */,
+				503FCAB22AF418FB007DFADD /* FavouritesLogic.swift in Sources */,
 				50BA62802ACE1E5B0044D820 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +652,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		503FCAB32AF41DA3007DFADD /* XCRemoteSwiftPackageReference "SwiftCommonLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/macward/SwiftCommonLibrary.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		503FCAB42AF41DA3007DFADD /* SwiftCommonLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 503FCAB32AF41DA3007DFADD /* XCRemoteSwiftPackageReference "SwiftCommonLibrary" */;
+			productName = SwiftCommonLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50AA62BF2ACB74A1008DC0DD /* Project object */;
 }

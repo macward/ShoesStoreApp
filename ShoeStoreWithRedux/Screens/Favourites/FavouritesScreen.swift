@@ -22,10 +22,7 @@ struct FavouritesScreen: View {
                 if appManager.favourites.count > 0 {
                     ProductGridContainer(data: $appManager.favourites, content: { $product in
                         ProductCardView(product: $product, action: { product in
-                            let index = appManager.allProducts.firstIndex { prod in
-                                prod.id == product.id
-                            }
-                            appManager.allProducts[index!].isFav.toggle()
+                            appManager.handleFavourites(product.wrappedValue)
                         })
                         .onTapGesture {
                             selectedProduct = product

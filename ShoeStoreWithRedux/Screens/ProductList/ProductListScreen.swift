@@ -18,7 +18,7 @@ struct ProductListScreen: View {
     
     var body: some View {
         ScrollView {
-            ProductsGridComponent(products: $appManager.allProducts,
+            ProductsGridComponent(products: $appManager.products,
                                   selectedProduct: $selectedProduct, 
                                   openDetails: $openDetailScreen, 
                                   showAction: {}, likeAction: { $product in

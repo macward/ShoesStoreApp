@@ -58,13 +58,13 @@ class API {
 
 extension Product {
     
-    static func getCombine(_ url: String) -> AnyPublisher<HomeDto, Never> {
-        return API.getCombine(url, of: HomeDto.self) as! AnyPublisher<HomeDto, Never>
+    static func getCombine(_ url: String) -> AnyPublisher<HomeScheme, Never> {
+        return API.getCombine(url, of: HomeScheme.self) as! AnyPublisher<HomeScheme, Never>
     }
     
     static func get(_ url: String) async -> [Product] {
         do {
-            let data = try await API.get(url, of: HomeDto.self)
+            let data = try await API.get(url, of: HomeScheme.self)
             let products = data.products.map({Product(image: $0.image, isFeatured: $0.featured, isTop: $0.top )})
             return products
         } catch (let error) {

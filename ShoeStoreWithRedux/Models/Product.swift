@@ -36,20 +36,3 @@ struct CartItem: Identifiable {
     var size: ColorControlItem
     var color: SizeControlItem
 }
-
-struct HomeDto: Codable {
-    var featured: [ProductScheme]
-    var top: [ProductScheme]
-    var products: [ProductScheme]
-}
-
-struct ProductScheme: Codable {
-    var id: Int
-    var title: String
-    var description: String?
-    var price: Double
-    var image: String
-    var available: Bool
-    var featured: Bool
-    var top: Bool
-}
