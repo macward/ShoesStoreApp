@@ -50,7 +50,7 @@ struct HomeScreen: View {
                                               openDetails: $openDetailScreen) {
                             path.append("Newest shoes")
                         } likeAction: { $product in
-                            product.isFav = true
+                            product.isFav.toggle()
                         }
                         .padding(.horizontal)
                         .safeAreaPadding(.bottom, 90)
@@ -67,9 +67,6 @@ struct HomeScreen: View {
             .task {
                 await appManager.loadData()
             }
-        }
-        .onAppear() {
-            appManager.favSubscriber()
         }
     }
     

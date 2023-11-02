@@ -16,19 +16,16 @@ struct FavouritesScreen: View {
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
     
-    @State var favourites: [Product] = []
-    
     var body: some View {
         NavigationStack {
             ScrollView {
-                if favourites.count > 0 {
-                    ProductGridContainer(data: $favourites, content: { $product in
+                if appManager.favourites.count > 0 {
+                    ProductGridContainer(data: $appManager.favourites, content: { $product in
                         ProductCardView(product: $product, action: { product in
                             let index = appManager.allProducts.firstIndex { prod in
                                 prod.id == product.id
                             }
                             appManager.allProducts[index!].isFav.toggle()
-                            updateUI()
                         })
                         .onTapGesture {
                             selectedProduct = product
@@ -45,19 +42,6 @@ struct FavouritesScreen: View {
             }
             .contentMargins(16, for: .scrollContent)
             .navigationTitle(text)
-            .onAppear() {
-                updateUI()
-            }
         }
-    }
-    
-    func updateUI() {
-        appManager.favouritesCombine()
-            .receive(on: DispatchQueue.main)
-            .collect()
-            .sink { values in
-                self.favourites = values
-            }
-            .store(in: &subscriptions)
     }
 }

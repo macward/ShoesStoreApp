@@ -57,6 +57,11 @@ class API {
 }
 
 extension Product {
+    
+    static func getCombine(_ url: String) -> AnyPublisher<HomeDto, Never> {
+        return API.getCombine(url, of: HomeDto.self) as! AnyPublisher<HomeDto, Never>
+    }
+    
     static func get(_ url: String) async -> [Product] {
         do {
             let data = try await API.get(url, of: HomeDto.self)
