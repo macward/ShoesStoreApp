@@ -75,8 +75,3 @@ struct ProductSliderView: View {
         return -minX * min(titleScrollSpeed, 1.0)
     }
 }
-
-#Preview {
-    ProductSliderView(sectionTitle: "Sample",
-                      products: Mock.mainSliderProducts, selectedProduct: .constant(.init(image: "nike_11")), actionOnTap: .constant(false), callback: {})
-}

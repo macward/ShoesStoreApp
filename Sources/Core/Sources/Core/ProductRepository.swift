@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ProductRepository {
+public protocol ProductRepository {
     associatedtype Output
     static func get() async throws -> Output
 }

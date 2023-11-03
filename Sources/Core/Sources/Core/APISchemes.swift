@@ -8,16 +8,16 @@
 import Foundation
 
 public struct ProductsScheme: Codable {
-    var products: [ProductScheme]
+    public var products: [ProductScheme]
 }
 
 public struct ProductScheme: Codable {
-    var id: Int
-    var title: String
-    var description: String?
-    var price: Double
-    var image: String
-    var available: Bool
-    var featured: Bool
-    var top: Bool
+    public var id: Int
+    public var title: String
+    public var description: String?
+    public var price: Double
+    public var image: String
+    public var available: Bool
+    public var featured: Bool
+    public var top: Bool
 }
