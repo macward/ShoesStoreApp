@@ -8,9 +8,7 @@
 import Foundation
 
 class TemporalDataStore {
-    
     var favStore: [Product] = []
-    
 }
 
 class FavoriteManager: ObservableObject {
