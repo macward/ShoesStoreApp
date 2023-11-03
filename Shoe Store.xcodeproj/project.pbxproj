@@ -60,7 +60,7 @@
 		503FCABD2AF45386007DFADD /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTitlePreference.swift; sourceTree = "<group>"; };
 		50A904D82AD8ED270066E8AD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		50AA62C72ACB74A1008DC0DD /* ShoeStoreWithRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeStoreWithRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50AA62C72ACB74A1008DC0DD /* Shoe Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoe Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50AA62D12ACB74A3008DC0DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		50AA62C82ACB74A1008DC0DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50AA62C72ACB74A1008DC0DD /* ShoeStoreWithRedux.app */,
+				50AA62C72ACB74A1008DC0DD /* Shoe Store.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,9 +367,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50AA62C62ACB74A1008DC0DD /* ShoeStoreWithRedux */ = {
+		50AA62C62ACB74A1008DC0DD /* Shoe Store */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50AA62D52ACB74A3008DC0DD /* Build configuration list for PBXNativeTarget "ShoeStoreWithRedux" */;
+			buildConfigurationList = 50AA62D52ACB74A3008DC0DD /* Build configuration list for PBXNativeTarget "Shoe Store" */;
 			buildPhases = (
 				50AA62C32ACB74A1008DC0DD /* Sources */,
 				50AA62C42ACB74A1008DC0DD /* Frameworks */,
@@ -379,12 +379,12 @@
 			);
 			dependencies = (
 			);
-			name = ShoeStoreWithRedux;
+			name = "Shoe Store";
 			packageProductDependencies = (
 				503FCAB42AF41DA3007DFADD /* SwiftCommonLibrary */,
 			);
 			productName = ShoeStoreWithRedux;
-			productReference = 50AA62C72ACB74A1008DC0DD /* ShoeStoreWithRedux.app */;
+			productReference = 50AA62C72ACB74A1008DC0DD /* Shoe Store.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -402,7 +402,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 50AA62C22ACB74A1008DC0DD /* Build configuration list for PBXProject "ShoeStoreWithRedux" */;
+			buildConfigurationList = 50AA62C22ACB74A1008DC0DD /* Build configuration list for PBXProject "Shoe Store" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -418,7 +418,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50AA62C62ACB74A1008DC0DD /* ShoeStoreWithRedux */,
+				50AA62C62ACB74A1008DC0DD /* Shoe Store */,
 			);
 		};
 /* End PBXProject section */
@@ -622,9 +622,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.maxward.ShoeStoreWithRedux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -652,16 +655,19 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.maxward.ShoeStoreWithRedux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50AA62C22ACB74A1008DC0DD /* Build configuration list for PBXProject "ShoeStoreWithRedux" */ = {
+		50AA62C22ACB74A1008DC0DD /* Build configuration list for PBXProject "Shoe Store" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50AA62D32ACB74A3008DC0DD /* Debug */,
@@ -670,7 +676,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50AA62D52ACB74A3008DC0DD /* Build configuration list for PBXNativeTarget "ShoeStoreWithRedux" */ = {
+		50AA62D52ACB74A3008DC0DD /* Build configuration list for PBXNativeTarget "Shoe Store" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50AA62D62ACB74A3008DC0DD /* Debug */,
