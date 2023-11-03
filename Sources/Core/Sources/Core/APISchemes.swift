@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ProductsScheme: Codable {
+public struct ProductsScheme: Codable {
     var products: [ProductScheme]
 }
 
-struct ProductScheme: Codable {
+public struct ProductScheme: Codable {
     var id: Int
     var title: String
     var description: String?

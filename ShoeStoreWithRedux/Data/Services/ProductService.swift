@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 extension Product {
     static func build(scheme: ProductScheme) -> Product {
@@ -27,9 +28,4 @@ extension Product: ProductRepository {
             return []
         }
     }
-}
-
-protocol ProductRepository {
-    associatedtype Output
-    static func get() async throws -> Output
 }
