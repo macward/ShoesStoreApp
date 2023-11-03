@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class GlobalAppManager: ObservableObject {
+class GlobalDataManager: ObservableObject {
     
     // MARK: Public properties
     @Published var products: [Product] = []
@@ -78,15 +78,18 @@ class GlobalAppManager: ObservableObject {
     @MainActor
     func loadData() async {
         if products.count > 0 { return }
-        
-        self.globalLoadingState = true
-        let productResponse = await Product.get("http://127.0.0.1:3000/products/home")
-        
-        productResponse
-            .publisher
-            .collect()
-            .assign(to: &$products)        
-        self.globalLoadingState = false
+        do {
+            self.globalLoadingState = true
+            let productResponse = try await Product.get()
+            productResponse
+                .publisher
+                .collect()
+                .assign(to: &$products)
+            self.globalLoadingState = false
+        } catch {
+            // handle errors
+            print("errors")
+        }
     }
 }
 

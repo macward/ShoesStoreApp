@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductListScreen: View {
     
-    @EnvironmentObject var appManager: GlobalAppManager
+    @EnvironmentObject var appManager: GlobalDataManager
     
     var text: String
     @Binding var path: NavigationPath

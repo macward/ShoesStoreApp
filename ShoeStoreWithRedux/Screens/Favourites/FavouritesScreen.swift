@@ -10,7 +10,7 @@ import Combine
 
 struct FavouritesScreen: View {
     
-    @EnvironmentObject var appManager: GlobalAppManager
+    @EnvironmentObject var appManager: GlobalDataManager
     @State private var subscriptions = Set<AnyCancellable>()
     var text: String
     @State private var openDetailScreen: Bool = false

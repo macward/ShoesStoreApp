@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct HomeScheme: Codable {
-    var featured: [ProductScheme]
-    var top: [ProductScheme]
+struct ProductsScheme: Codable {
     var products: [ProductScheme]
 }
 

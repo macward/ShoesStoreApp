@@ -11,7 +11,7 @@ import SwiftCommonLibrary
 
 struct HomeScreen: View {
     // General app sstate manager
-    @EnvironmentObject var appManager: GlobalAppManager
+    @EnvironmentObject var appManager: GlobalDataManager
     
     // TabView visisbility
     @Binding var tabState: Visibility

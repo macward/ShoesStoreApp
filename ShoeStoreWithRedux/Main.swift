@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct ShoeStoreWithReduxApp: App {
     
-    @StateObject var appManager: GlobalAppManager = .init()
+    @StateObject var appManager: GlobalDataManager = .init()
     
     var body: some Scene {
         WindowGroup {
