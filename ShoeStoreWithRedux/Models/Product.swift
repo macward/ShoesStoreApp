@@ -12,10 +12,15 @@ import SwiftUI
 
 struct Product: Identifiable, Equatable {
     var id: String = UUID().uuidString
+    var title: String
+    var price: Double
     var image: String
     var isFav: Bool = false
     var isFeatured: Bool = false
     var isTop: Bool = false
+    var imageUrl: URL {
+        return URL(string: "\(BASE_URL)\(image).png")!
+    }
 }
 
 struct ColorControlItem: Identifiable {
@@ -36,3 +41,4 @@ struct CartItem: Identifiable {
     var size: ColorControlItem
     var color: SizeControlItem
 }
+

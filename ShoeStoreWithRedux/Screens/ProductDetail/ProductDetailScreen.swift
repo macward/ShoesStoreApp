@@ -34,7 +34,7 @@ struct ProductDetailScreen: View {
                         )
                         
                         HStack {
-                            Text("Nike model Name II")
+                            Text(product?.title ?? "")
                                 .font(.title)
                                 .fontWeight(.bold)
                             Spacer()
@@ -44,7 +44,7 @@ struct ProductDetailScreen: View {
                         .opacity(appear[1] ? 1 : 0)
                         
                         HStack (alignment: .bottom) {
-                            PriceView(value: 128.99)
+                            PriceView(price: product?.price ?? 199.99)
                                 .offset(x: appear[0] ? 0 : -80)
                             Spacer()
                             InStockView(isInStock: true)
@@ -137,7 +137,7 @@ struct ProductDetailScreen: View {
 
 struct ShoeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailScreen(product: .constant(.init(image: "nike_10")))
+        ProductDetailScreen(product: .constant(Product.mock))
     }
     
 }

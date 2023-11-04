@@ -34,11 +34,11 @@ struct InStockView: View {
 }
 
 struct PriceView: View {
-    var value: CGFloat
+    var price: CGFloat
     
     var body: some View {
         HStack {
-            Text("$128.99")
+            Text(String(describing: price))
                 .font(.system(size: 32))
                 .fontWeight(.black)
         }
@@ -80,7 +80,7 @@ struct Buttons: View {
             .buttonStyle(GrayButton())
             
             HStack {
-                PriceView(value: 128.99)
+                PriceView(price: 128.99)
                 Spacer()
                 InStockView(isInStock: true)
             }

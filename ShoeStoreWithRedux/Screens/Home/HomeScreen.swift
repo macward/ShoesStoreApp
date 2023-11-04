@@ -27,45 +27,41 @@ struct HomeScreen: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            ZStack {
-                ScrollView {
-                    VStack {
-                        // Main Slider
-                        MainSliderView(products: appManager.featured,
-                                       selectedProduct: $selectedProduct,
-                                       actionOnTap: $openDetailScreen) { product in
-                            SliderCardView(product: product)
-                        }
-                        
-                        // Popular Slider
-                        ProductSliderView(sectionTitle: "Popular", 
-                                          products: appManager.popular,
-                                          selectedProduct: $selectedProduct,
-                                          actionOnTap: $openDetailScreen) {
-                            path.append("Popular")
-                        }
-                        
-                        // all prods
-                        ProductsGridComponent(products: $appManager.products,
-                                              selectedProduct: $selectedProduct,
-                                              openDetails: $openDetailScreen) {
-                            path.append("Newest shoes")
-                        } likeAction: { $product in
-                            product.isFav.toggle()
-                        }
-                        .padding(.horizontal)
-                        .safeAreaPadding(.bottom, 90)
+            ScrollView {
+                VStack {
+                    // Main Slider
+                    MainSliderView(products: appManager.featured,
+                                   selectedProduct: $selectedProduct,
+                                   actionOnTap: $openDetailScreen) { product in
+                        SliderCardView(product: product)
                     }
+                    
+                    // Popular Slider
+                    ProductSliderView(sectionTitle: "Popular",
+                                      products: appManager.popular,
+                                      selectedProduct: $selectedProduct,
+                                      actionOnTap: $openDetailScreen) {
+                        path.append("Popular")
+                    }
+                    
+                    // all prods
+                    ProductsGridComponent(products: $appManager.products,
+                                          selectedProduct: $selectedProduct,
+                                          openDetails: $openDetailScreen) {
+                        path.append("Newest shoes")
+                    } likeAction: { $product in
+                        product.isFav.toggle()
+                    }
+                    .padding(.horizontal)
                 }
-                .ignoresSafeArea()
-                .navigationDestination(for: String.self) { textValue in
-                    ProductListScreen(text: textValue, path: $path)
-                }
-                .fullScreenCover(isPresented: $openDetailScreen, content: {
-                    ProductDetailScreen(product: $selectedProduct)
-                })
             }
             .activityIndicatorDefault(isLoading: appManager.globalLoadingState)
+            .navigationDestination(for: String.self) { textValue in
+                ProductListScreen(text: textValue, path: $path)
+            }
+            .fullScreenCover(isPresented: $openDetailScreen, content: {
+                ProductDetailScreen(product: $selectedProduct)
+            })
             .task {
                 await appManager.loadData()
             }

@@ -19,20 +19,23 @@ struct ProductCardView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.grayLite.gradient)
                     .aspectRatio(contentMode: .fit)
-                Image(product.image)
-                    .resizable()
-                    .scaledToFit()
-                    .aspectRatio(contentMode: .fit)
-                    .shadow(color: .black.opacity(0.3), radius: 12, x: 4, y: 4)
-                    .padding(.all, 8)
+                
+                AsyncImageCached(url: product.imageUrl) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .rotationEffect(.degrees(-45))
+                        .shadow(color: .black.opacity(0.7), radius: 4, x: 2, y: 2)
+                }
+                .padding(.all, 8)
             }
             // description
             VStack {
-                Text("Adidas Yung-1")
+                Text(product.title)
                     .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("$139.00")
+                Text(String(describing: product.price))
                     .font(.title.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
             

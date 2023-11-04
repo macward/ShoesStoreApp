@@ -69,7 +69,7 @@ struct ProductGridContainer<Content: View, Item: RandomAccessCollection>: View w
 struct ProductsGridViewTest: View {
     var body: some View {
         ProductsGridComponent(products: .constant([]), 
-                              selectedProduct: .constant(.init(image: "nike_11")),
+                              selectedProduct: .constant(Product.mock),
                               openDetails: .constant(false)) {
             print("like callback")
         } likeAction: { product in
