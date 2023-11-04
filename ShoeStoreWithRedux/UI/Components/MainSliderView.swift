@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DataLayer
 
 struct MainSliderView<Content: View>: View {
     

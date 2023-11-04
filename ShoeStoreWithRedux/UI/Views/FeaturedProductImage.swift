@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DataLayer
 
 struct FeaturedProductImage: View {
     var product: Product?

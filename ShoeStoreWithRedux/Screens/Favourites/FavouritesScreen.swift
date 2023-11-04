@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import DataLayer
 
 struct FavouritesScreen: View {
     

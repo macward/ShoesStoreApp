@@ -1,9 +1,5 @@
-//
-//  API.swift
-//  ShoeStoreWithRedux
-//
-//  Created by Max Ward on 13/10/2023.
-//
+// The Swift Programming Language
+// https://docs.swift.org/swift-book
 
 import Foundation
 import Combine
@@ -30,8 +26,8 @@ extension URLResponse {
 }
 
 public class API {
-    public static func get<T: Codable>(_ url: String, of type: T.Type) async throws -> T {
-        guard let url = URL(string: url) else { fatalError() }
+    
+    public static func get<T: Codable>(_ url: URL, of type: T.Type) async throws -> T {
         let (data, response) = try await  URLSession.shared.data(from: url)
         guard let response = response.httpResponse, response.isOk else {
             throw DispatcherError.invalidResponse

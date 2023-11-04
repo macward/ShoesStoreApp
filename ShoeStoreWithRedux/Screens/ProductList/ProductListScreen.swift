@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DataLayer
 
 struct ProductListScreen: View {
     

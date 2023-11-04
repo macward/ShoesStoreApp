@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5002624F2AF6E9D3009BC50F /* DataLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 5002624E2AF6E9D3009BC50F /* DataLayer */; };
 		502048F12ACC7BF700487F57 /* ProductsGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F02ACC7BF700487F57 /* ProductsGridComponent.swift */; };
 		502048F72ACC80F000487F57 /* ProductSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F62ACC80F000487F57 /* ProductSliderView.swift */; };
 		502048F92ACC81CB00487F57 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F82ACC81CB00487F57 /* TabView.swift */; };
@@ -16,7 +17,6 @@
 		502049062ACD376E00487F57 /* ColorControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049052ACD376E00487F57 /* ColorControlView.swift */; };
 		5029FB642AF201E700E9B285 /* ShoppingCartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029FB632AF201E700E9B285 /* ShoppingCartScreen.swift */; };
 		503FCAB52AF41DA3007DFADD /* SwiftCommonLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 503FCAB42AF41DA3007DFADD /* SwiftCommonLibrary */; };
-		503FCABE2AF45386007DFADD /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503FCABD2AF45386007DFADD /* ProductService.swift */; };
 		5092D4332AD2161800D50E8E /* ComponentTitlePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */; };
 		50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA62CA2ACB74A1008DC0DD /* Main.swift */; };
 		50AA62CF2ACB74A3008DC0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */; };
@@ -33,20 +33,18 @@
 		50AA63092ACBBF7E008DC0DD /* Satoshi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */; };
 		50AA630D2ACBBFE2008DC0DD /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */; };
 		50AA630F2ACBD80E008DC0DD /* MainSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */; };
-		50B47AD52ACF4B870001489C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B47AD42ACF4B870001489C /* Product.swift */; };
 		50B47AD72ACF6AB70001489C /* GlobalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B47AD62ACF6AB70001489C /* GlobalDataManager.swift */; };
 		50B47AD92ACF6E190001489C /* FavouritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B47AD82ACF6E190001489C /* FavouritesScreen.swift */; };
 		50BA627E2ACE1D570044D820 /* FeaturedProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */; };
-		50FADD6B2AF496CE00119D11 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 50FADD6A2AF496CE00119D11 /* Core */; };
 		50FADD6D2AF54FC500119D11 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD6C2AF54FC500119D11 /* config.swift */; };
 		50FADD6F2AF5691F00119D11 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD6E2AF5691F00119D11 /* CachedAsyncImage.swift */; };
 		50FADD722AF5EEFE00119D11 /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD712AF5EEFE00119D11 /* CachedImage.swift */; };
 		50FADD742AF67C2600119D11 /* ImageErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD732AF67C2600119D11 /* ImageErrorView.swift */; };
 		50FADD762AF67CAF00119D11 /* AsyncImageCached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD752AF67CAF00119D11 /* AsyncImageCached.swift */; };
-		50FADD792AF67E2100119D11 /* ProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD782AF67E2100119D11 /* ProductExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5002624D2AF6E8F1009BC50F /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = text; name = DataLayer; path = Sources/DataLayer; sourceTree = SOURCE_ROOT; };
 		502048F02ACC7BF700487F57 /* ProductsGridComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGridComponent.swift; sourceTree = "<group>"; };
 		502048F62ACC80F000487F57 /* ProductSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSliderView.swift; sourceTree = "<group>"; };
 		502048F82ACC81CB00487F57 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 		502049032ACD313100487F57 /* FlipHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipHorizontal.swift; sourceTree = "<group>"; };
 		502049052ACD376E00487F57 /* ColorControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorControlView.swift; sourceTree = "<group>"; };
 		5029FB632AF201E700E9B285 /* ShoppingCartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartScreen.swift; sourceTree = "<group>"; };
-		503FCABD2AF45386007DFADD /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		5092D4322AD2161800D50E8E /* ComponentTitlePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTitlePreference.swift; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* Shoe Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoe Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -74,17 +71,17 @@
 		50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.ttf"; sourceTree = "<group>"; };
 		50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.ttf"; sourceTree = "<group>"; };
 		50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSliderView.swift; sourceTree = "<group>"; };
-		50B47AD42ACF4B870001489C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		50B47AD62ACF6AB70001489C /* GlobalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDataManager.swift; sourceTree = "<group>"; };
 		50B47AD82ACF6E190001489C /* FavouritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesScreen.swift; sourceTree = "<group>"; };
 		50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedProductImage.swift; sourceTree = "<group>"; };
-		50FADD682AF4930600119D11 /* Core */ = {isa = PBXFileReference; lastKnownFileType = text; name = Core; path = Sources/Core; sourceTree = SOURCE_ROOT; };
 		50FADD6C2AF54FC500119D11 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		50FADD6E2AF5691F00119D11 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		50FADD712AF5EEFE00119D11 /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
 		50FADD732AF67C2600119D11 /* ImageErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageErrorView.swift; sourceTree = "<group>"; };
 		50FADD752AF67CAF00119D11 /* AsyncImageCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCached.swift; sourceTree = "<group>"; };
-		50FADD782AF67E2100119D11 /* ProductExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExtension.swift; sourceTree = "<group>"; };
+		50FADD7C2AF6A05900119D11 /* Services */ = {isa = PBXFileReference; lastKnownFileType = text; name = Services; path = Sources/Services; sourceTree = SOURCE_ROOT; };
+		50FADD812AF6BC2C00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = "<group>"; };
+		50FADD822AF6BC3E00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503FCAB52AF41DA3007DFADD /* SwiftCommonLibrary in Frameworks */,
-				50FADD6B2AF496CE00119D11 /* Core in Frameworks */,
+				5002624F2AF6E9D3009BC50F /* DataLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,14 +191,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		503FCAB92AF452AA007DFADD /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				503FCABD2AF45386007DFADD /* ProductService.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		5092D4312AD2160700D50E8E /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,9 +224,9 @@
 				503FCAB02AF418E0007DFADD /* Application */,
 				50AA62D82ACB75FC008DC0DD /* Screens */,
 				5029FB652AF292BF00E9B285 /* UI */,
-				50B47AD32ACF4B720001489C /* Models */,
-				503FCAB92AF452AA007DFADD /* Data */,
-				50FADD682AF4930600119D11 /* Core */,
+				5002624D2AF6E8F1009BC50F /* DataLayer */,
+				50FADD7C2AF6A05900119D11 /* Services */,
+				50FADD822AF6BC3E00119D11 /* StoreNetwork */,
 				50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */,
 				50AA62D02ACB74A3008DC0DD /* Preview Content */,
 			);
@@ -298,15 +287,6 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
-		50B47AD32ACF4B720001489C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				50FADD772AF67E1200119D11 /* Mocks */,
-				50B47AD42ACF4B870001489C /* Product.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		50BA627C2ACE1B990044D820 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +302,7 @@
 		50FADD692AF496CE00119D11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50FADD812AF6BC2C00119D11 /* StoreNetwork */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -334,14 +315,6 @@
 				50FADD752AF67CAF00119D11 /* AsyncImageCached.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		50FADD772AF67E1200119D11 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				50FADD782AF67E2100119D11 /* ProductExtension.swift */,
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +335,7 @@
 			name = "Shoe Store";
 			packageProductDependencies = (
 				503FCAB42AF41DA3007DFADD /* SwiftCommonLibrary */,
-				50FADD6A2AF496CE00119D11 /* Core */,
+				5002624E2AF6E9D3009BC50F /* DataLayer */,
 			);
 			productName = ShoeStoreWithRedux;
 			productReference = 50AA62C72ACB74A1008DC0DD /* Shoe Store.app */;
@@ -429,11 +402,9 @@
 				502048F72ACC80F000487F57 /* ProductSliderView.swift in Sources */,
 				50AA62E32ACB79CA008DC0DD /* SliderCardView.swift in Sources */,
 				50AA62E52ACBB18B008DC0DD /* SectionHeaderAction.swift in Sources */,
-				503FCABE2AF45386007DFADD /* ProductService.swift in Sources */,
 				502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
 				502048F12ACC7BF700487F57 /* ProductsGridComponent.swift in Sources */,
-				50FADD792AF67E2100119D11 /* ProductExtension.swift in Sources */,
 				502048FE2ACD162D00487F57 /* Buttons.swift in Sources */,
 				502049062ACD376E00487F57 /* ColorControlView.swift in Sources */,
 				502049022ACD2FD700487F57 /* VerticalSizeControlView.swift in Sources */,
@@ -450,7 +421,6 @@
 				502048F92ACC81CB00487F57 /* TabView.swift in Sources */,
 				50AA62DC2ACB7621008DC0DD /* HomeScreen.swift in Sources */,
 				50FADD762AF67CAF00119D11 /* AsyncImageCached.swift in Sources */,
-				50B47AD52ACF4B870001489C /* Product.swift in Sources */,
 				50FADD742AF67C2600119D11 /* ImageErrorView.swift in Sources */,
 				50BA627E2ACE1D570044D820 /* FeaturedProductImage.swift in Sources */,
 				5029FB642AF201E700E9B285 /* ShoppingCartScreen.swift in Sources */,
@@ -594,8 +564,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -627,8 +597,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -680,14 +650,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5002624E2AF6E9D3009BC50F /* DataLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataLayer;
+		};
 		503FCAB42AF41DA3007DFADD /* SwiftCommonLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 503FCAB32AF41DA3007DFADD /* XCRemoteSwiftPackageReference "SwiftCommonLibrary" */;
 			productName = SwiftCommonLibrary;
-		};
-		50FADD6A2AF496CE00119D11 /* Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

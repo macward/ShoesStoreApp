@@ -8,7 +8,7 @@
 import Foundation
 
 extension Product {
-    static var mock: Product {
+    public static var mock: Product {
         .init(title: "Nike Shoe 111", price: 199.90, image: "nike_1")
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DataLayer
 
 struct ProductDetailScreen: View {
     
@@ -136,7 +137,7 @@ struct ProductDetailScreen: View {
 }
 
 struct ShoeDetailView_Previews: PreviewProvider {
-    static var previews: some View {
+    public static var previews: some View {
         ProductDetailScreen(product: .constant(Product.mock))
     }
     

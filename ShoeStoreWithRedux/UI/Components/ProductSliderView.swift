@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DataLayer
 
 struct ProductSliderView: View {
     var sectionTitle: String
