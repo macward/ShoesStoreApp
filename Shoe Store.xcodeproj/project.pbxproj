@@ -37,7 +37,6 @@
 		50B47AD92ACF6E190001489C /* FavouritesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B47AD82ACF6E190001489C /* FavouritesScreen.swift */; };
 		50BA627E2ACE1D570044D820 /* FeaturedProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */; };
 		50FADD6D2AF54FC500119D11 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD6C2AF54FC500119D11 /* config.swift */; };
-		50FADD6F2AF5691F00119D11 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD6E2AF5691F00119D11 /* CachedAsyncImage.swift */; };
 		50FADD722AF5EEFE00119D11 /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD712AF5EEFE00119D11 /* CachedImage.swift */; };
 		50FADD742AF67C2600119D11 /* ImageErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD732AF67C2600119D11 /* ImageErrorView.swift */; };
 		50FADD762AF67CAF00119D11 /* AsyncImageCached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD752AF67CAF00119D11 /* AsyncImageCached.swift */; };
@@ -75,7 +74,6 @@
 		50B47AD82ACF6E190001489C /* FavouritesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesScreen.swift; sourceTree = "<group>"; };
 		50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedProductImage.swift; sourceTree = "<group>"; };
 		50FADD6C2AF54FC500119D11 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
-		50FADD6E2AF5691F00119D11 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		50FADD712AF5EEFE00119D11 /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
 		50FADD732AF67C2600119D11 /* ImageErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageErrorView.swift; sourceTree = "<group>"; };
 		50FADD752AF67CAF00119D11 /* AsyncImageCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCached.swift; sourceTree = "<group>"; };
@@ -100,6 +98,7 @@
 		500262502AF70E8E009BC50F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */,
 				50AA62EC2ACBBDB8008DC0DD /* Fonts */,
 			);
 			path = Assets;
@@ -226,16 +225,14 @@
 		50AA62C92ACB74A1008DC0DD /* ShoeStoreWithRedux */ = {
 			isa = PBXGroup;
 			children = (
-				500262502AF70E8E009BC50F /* Assets */,
-				50FADD702AF5EEE500119D11 /* Utils */,
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
 				503FCAB02AF418E0007DFADD /* Application */,
 				50AA62D82ACB75FC008DC0DD /* Screens */,
 				5029FB652AF292BF00E9B285 /* UI */,
+				500262502AF70E8E009BC50F /* Assets */,
 				5002624D2AF6E8F1009BC50F /* DataLayer */,
 				50FADD7C2AF6A05900119D11 /* Services */,
 				50FADD822AF6BC3E00119D11 /* StoreNetwork */,
-				50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */,
 				50AA62D02ACB74A3008DC0DD /* Preview Content */,
 			);
 			path = ShoeStoreWithRedux;
@@ -298,6 +295,7 @@
 		50BA627C2ACE1B990044D820 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				50FADD702AF5EEE500119D11 /* Utils */,
 				502049012ACD2FD700487F57 /* VerticalSizeControlView.swift */,
 				502049052ACD376E00487F57 /* ColorControlView.swift */,
 				50AA630E2ACBD80E008DC0DD /* MainSliderView.swift */,
@@ -318,7 +316,6 @@
 		50FADD702AF5EEE500119D11 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				50FADD6E2AF5691F00119D11 /* CachedAsyncImage.swift */,
 				50FADD712AF5EEFE00119D11 /* CachedImage.swift */,
 				50FADD752AF67CAF00119D11 /* AsyncImageCached.swift */,
 			);
@@ -416,7 +413,6 @@
 				502048FE2ACD162D00487F57 /* Buttons.swift in Sources */,
 				502049062ACD376E00487F57 /* ColorControlView.swift in Sources */,
 				502049022ACD2FD700487F57 /* VerticalSizeControlView.swift in Sources */,
-				50FADD6F2AF5691F00119D11 /* CachedAsyncImage.swift in Sources */,
 				50FADD722AF5EEFE00119D11 /* CachedImage.swift in Sources */,
 				50B47AD92ACF6E190001489C /* FavouritesScreen.swift in Sources */,
 				50B47AD72ACF6AB70001489C /* GlobalDataManager.swift in Sources */,
