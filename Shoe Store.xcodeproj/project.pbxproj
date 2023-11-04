@@ -97,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		500262502AF70E8E009BC50F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				50AA62EC2ACBBDB8008DC0DD /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		502048F22ACC7F7A00487F57 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +140,6 @@
 		5029FB652AF292BF00E9B285 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				50AA62EC2ACBBDB8008DC0DD /* Fonts */,
 				50AA62D92ACB7602008DC0DD /* Views */,
 				50B47AD12ACF42AD0001489C /* ViewModifiers */,
 				5092D4312AD2160700D50E8E /* Preferences */,
@@ -219,6 +226,7 @@
 		50AA62C92ACB74A1008DC0DD /* ShoeStoreWithRedux */ = {
 			isa = PBXGroup;
 			children = (
+				500262502AF70E8E009BC50F /* Assets */,
 				50FADD702AF5EEE500119D11 /* Utils */,
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
 				503FCAB02AF418E0007DFADD /* Application */,
