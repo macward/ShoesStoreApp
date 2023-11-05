@@ -121,13 +121,6 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		502048F52ACC803700487F57 /* Lists */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lists;
-			sourceTree = "<group>";
-		};
 		502048FC2ACD160B00487F57 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				502048FC2ACD160B00487F57 /* Buttons */,
-				502048F52ACC803700487F57 /* Lists */,
 				502048F32ACC802C00487F57 /* Headers */,
 				502048F22ACC7F7A00487F57 /* Cards */,
 				50BA627D2ACE1D570044D820 /* FeaturedProductImage.swift */,
