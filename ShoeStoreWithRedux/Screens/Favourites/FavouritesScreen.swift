@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
-import Combine
 import DataLayer
+import ProductDetails
 
 struct FavouritesScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
-    @State private var subscriptions = Set<AnyCancellable>()
     var text: String
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?

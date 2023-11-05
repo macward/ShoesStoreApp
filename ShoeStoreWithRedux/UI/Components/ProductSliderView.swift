@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DataLayer
+import UISharedElements
 
 struct ProductSliderView: View {
     var sectionTitle: String
@@ -21,7 +22,7 @@ struct ProductSliderView: View {
             .padding(.horizontal)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(products) { item in
+                    ForEach(products) { product in
                         GeometryReader(content: { geometry in
                             HStack (spacing: 32) {
                                 VStack (alignment: .leading, spacing: 30) {
@@ -43,21 +44,24 @@ struct ProductSliderView: View {
                                                  y: phase.isIdentity ? 1 : 0.8)
                             }
                             .overlay {
-                                Image(item.image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .rotationEffect(.degrees(-45))
-                                    .scaleEffect(1.3)
-                                    .offset(x: 50, y: 5)
-                                    .visualEffect { content, geometryProxy in
-                                        content.offset(x: scrollOffset(geometryProxy))
-                                    }
-                                    .shadow(color: .black.opacity(0.6), radius: 4, x: 2, y: 0)
+                                AsyncImageCached(url: product.imageUrl, content: { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .rotationEffect(.degrees(-45))
+                                        .scaleEffect(1.3)
+                                        .offset(x: 50, y: 5)
+                                        .visualEffect { content, geometryProxy in
+                                            content.offset(x: scrollOffset(geometryProxy))
+                                        }
+                                        .shadow(color: .black.opacity(0.6), radius: 4, x: 2, y: 0)
+                                })
+                                    
                             }
                         })
                         .frame(width: 300, height: 160)
                         .onTapGesture {
-                            selectedProduct = item
+                            selectedProduct = product
                             actionOnTap.toggle()
                         }
                     }

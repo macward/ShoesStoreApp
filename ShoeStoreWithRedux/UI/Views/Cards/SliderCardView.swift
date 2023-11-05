@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DataLayer
+import UISharedElements
 
 struct SliderCardView: View {
     
@@ -34,7 +35,7 @@ struct SliderCardView: View {
         .background(Color.grayMid)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .overlay(alignment: .topTrailing, content: {
-            FeaturedProductImage(product: product)
+            FeaturedProductImage(url: product.imageUrl)
                 .frame(height: 290)
                 .offset(x: 35,y: -45)
         })

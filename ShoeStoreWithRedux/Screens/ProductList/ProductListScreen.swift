@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DataLayer
+import ProductDetails
 
 struct ProductListScreen: View {
     

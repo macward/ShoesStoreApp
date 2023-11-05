@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DataLayer
+import UISharedElements
 
 struct ProductCardView: View {
     

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ImageErrorView: View {
-    var body: some View {
+public struct ImageErrorView: View {
+    public var body: some View {
         VStack {
             Image(systemName: "xmark.app")
                 .font(.title)

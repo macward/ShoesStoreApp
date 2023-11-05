@@ -9,6 +9,8 @@ import SwiftUI
 import Combine
 import SwiftCommonLibrary
 import DataLayer
+import UISharedElements
+import ProductDetails
 
 struct HomeScreen: View {
     // General app sstate manager

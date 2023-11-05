@@ -4,27 +4,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "DataLayer",
+    name: "UISharedElements",
     platforms: [.iOS(.v17)],
     products: [
         .library(
-            name: "DataLayer",
-            targets: ["DataLayer"]),
+            name: "UISharedElements",
+            targets: ["UISharedElements"]),
     ],
     dependencies: [
-        .package(path: "../Services"),
+        .package(url: "https://github.com/macward/SwiftCommonLibrary.git", branch: "main")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "DataLayer",
+            name: "UISharedElements",
             dependencies: [
-                .product(name: "Services", package: "Services")
+                .product(name: "SwiftCommonLibrary", package: "SwiftCommonLibrary")
             ]
         ),
         .testTarget(
-            name: "DataLayerTests",
-            dependencies: ["DataLayer"]),
+            name: "UISharedElementsTests",
+            dependencies: ["UISharedElements"]),
     ]
 )

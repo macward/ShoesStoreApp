@@ -1,5 +1,5 @@
 //
-//  CachedImage.swift
+//  AsyncImageCached.swift
 //  Shoe Store
 //
 //  Created by Max Ward on 04/11/2023.
@@ -7,32 +7,27 @@
 
 import SwiftUI
 import SwiftCommonLibrary
-struct CachedImage<Content: View, ActivityView: View, ErrorView: View>: View {
+
+public struct AsyncImageCached<Content: View>: View {
     
     private let url: URL
     @ViewBuilder private var content: (Image) -> Content
-    @ViewBuilder private let activityView: () -> ActivityView
-    @ViewBuilder private let errorView: () -> ErrorView
     
-    init(url: URL, 
-         content: @escaping (Image) -> Content,
-         activityView: @escaping () -> ActivityView,
-         errorView: @escaping () -> ErrorView
+    public init(url: URL,
+         content: @escaping (Image) -> Content
     ) {
         self.url = url
         self.content = content
-        self.activityView = activityView
-        self.errorView = errorView
     }
     
-    var body: some View {
+    public var body: some View {
         
         CachedAsyncImage(url: url) { phase in
             switch phase {
             case .empty:
-                activityView()
+                ProgressView()
             case .failure:
-                errorView()
+                ImageErrorView()
             case .success(let image):
                 content(image)
             @unknown default:
@@ -41,7 +36,3 @@ struct CachedImage<Content: View, ActivityView: View, ErrorView: View>: View {
         }
     }
 }
-
-//#Preview {
-//    CachedImage()
-//}

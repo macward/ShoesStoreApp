@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
-import DataLayer
 
-struct FeaturedProductImage: View {
-    var product: Product?
-    var body: some View {
-        AsyncImageCached(url: product?.imageUrl ?? URL(string:"")!) { image in
+public struct FeaturedProductImage: View {
+    var url: URL?
+    
+    public init(url: URL?) {
+        self.url = url
+    }
+    
+    public var body: some View {
+        AsyncImageCached(url: url ?? URL(string:"")!) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -21,6 +25,6 @@ struct FeaturedProductImage: View {
     }
 }
 
-#Preview {
-    FeaturedProductImage(product: Product.mock)
-}
+//#Preview {
+//    FeaturedProductImage(url: Product.mock.imageUrl)
+//}

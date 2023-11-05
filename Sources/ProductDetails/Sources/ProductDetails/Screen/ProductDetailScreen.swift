@@ -7,8 +7,9 @@
 
 import SwiftUI
 import DataLayer
+import UISharedElements
 
-struct ProductDetailScreen: View {
+public struct ProductDetailScreen: View {
     
     @Binding var product: Product?
     @Environment(\.dismiss) var dismiss
@@ -17,19 +18,23 @@ struct ProductDetailScreen: View {
     @State private var selectedSize: SizeControlItem?
     @State private var dismissView: Bool = false
     
-    var body: some View {
+    public init(product: Binding<Product?>) {
+        self._product = product
+    }
+    
+    public var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
             VStack {
                 ScrollView {
                     VStack {
                         HStack {
-                            VerticalSizeControlView(selected: $selectedSize)
-                                .offset(x: appear[2] ? 0 : -80)
-                            Spacer()
+//                            VerticalSizeControlView(selected: $selectedSize)
+//                                .offset(x: appear[2] ? 0 : -80)
+//                            Spacer()
                         }
                         .background(
-                            FeaturedProductImage(product: product)
+                            FeaturedProductImage(url: product?.imageUrl)
                                 .offset(x: appear[2] ? 0 : 100)
                                 .opacity(appear[2] ? 1 : 0)
                         )
@@ -91,7 +96,7 @@ struct ProductDetailScreen: View {
             .overlay (alignment: .topTrailing) {
                 Image(systemName: "xmark.circle.fill")
                     .font(.system(size: 32))
-                    .foregroundStyle(Color.grayMid)
+                    .foregroundStyle(Color.gray) // .grayMid
                     .padding(.trailing, 20)
                     .onTapGesture {
                         dismissView.toggle()
@@ -140,5 +145,4 @@ struct ShoeDetailView_Previews: PreviewProvider {
     public static var previews: some View {
         ProductDetailScreen(product: .constant(Product.mock))
     }
-    
 }

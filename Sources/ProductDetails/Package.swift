@@ -4,27 +4,30 @@
 import PackageDescription
 
 let package = Package(
-    name: "DataLayer",
+    name: "ProductDetails",
     platforms: [.iOS(.v17)],
     products: [
+        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "DataLayer",
-            targets: ["DataLayer"]),
+            name: "ProductDetails",
+            targets: ["ProductDetails"]),
     ],
     dependencies: [
-        .package(path: "../Services"),
+        .package(path: "../UISharedElements"),
+        .package(path: "../Datalayer")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "DataLayer",
+            name: "ProductDetails",
             dependencies: [
-                .product(name: "Services", package: "Services")
+                .product(name: "UISharedElements", package: "UISharedElements"),
+                .product(name: "DataLayer", package: "DataLayer")
             ]
         ),
         .testTarget(
-            name: "DataLayerTests",
-            dependencies: ["DataLayer"]),
+            name: "ProductDetailsTests",
+            dependencies: ["ProductDetails"]),
     ]
 )
