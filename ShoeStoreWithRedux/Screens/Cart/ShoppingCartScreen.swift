@@ -15,7 +15,7 @@ struct ShoppingCartScreen: View {
                     VStack {
                         VStack {
                             HStack {
-                                Image("nike_1")
+                                Image("shoe_placeholder_1")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 70, height: 70)
@@ -49,7 +49,7 @@ struct ShoppingCartScreen: View {
                     VStack {
                         VStack {
                             HStack {
-                                Image("nike_2")
+                                Image("shoe_placeholder_2")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 70, height: 70)
@@ -83,7 +83,7 @@ struct ShoppingCartScreen: View {
                     VStack {
                         VStack {
                             HStack {
-                                Image("nike_3")
+                                Image("shoe_placeholder_1")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 70, height: 70)
