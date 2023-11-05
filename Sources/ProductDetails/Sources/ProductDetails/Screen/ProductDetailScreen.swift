@@ -8,9 +8,11 @@
 import SwiftUI
 import DataLayer
 import UISharedElements
+import SwiftCommonLibrary
 
 public struct ProductDetailScreen: View {
     
+    // MARK: Properties
     @Binding var product: Product?
     @Environment(\.dismiss) var dismiss
     @State private var appear = [false, false, false, false]
@@ -26,29 +28,25 @@ public struct ProductDetailScreen: View {
         ZStack {
             Color.white.ignoresSafeArea()
             VStack {
+                // MARK: ScrollView
                 ScrollView {
-                    VStack {
-                        HStack {
-//                            VerticalSizeControlView(selected: $selectedSize)
-//                                .offset(x: appear[2] ? 0 : -80)
-//                            Spacer()
-                        }
-                        .background(
-                            FeaturedProductImage(url: product?.imageUrl)
-                                .offset(x: appear[2] ? 0 : 100)
-                                .opacity(appear[2] ? 1 : 0)
-                        )
-                        
-                        HStack {
-                            Text(product?.title ?? "")
-                                .font(.title)
-                                .fontWeight(.bold)
-                            Spacer()
-                        }
-                        .padding(.top, 32)
-                        .offset(y: appear[1] ? 0 : 80)
-                        .opacity(appear[1] ? 1 : 0)
-                        
+                    
+                    HStack {
+                        VerticalSizeControlView(selected: $selectedSize)
+                            
+                        FeaturedProductImage(url: product?.imageUrl)
+                            .offset(x: appear[2] ? 0 : 100)
+                            .opacity(appear[2] ? 1 : 0)
+                            .scaleEffect(1.2)
+                            .frame(height: 450)
+                    }
+                    
+                    .safeAreaPadding(.horizontal)
+                    VStack(alignment: .leading) {
+                        Text(product?.title ?? "")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .offset(x: appear[0] ? 0 : -80)
                         HStack (alignment: .bottom) {
                             PriceView(price: product?.price ?? 199.99)
                                 .offset(x: appear[0] ? 0 : -80)
@@ -56,21 +54,23 @@ public struct ProductDetailScreen: View {
                             InStockView(isInStock: true)
                                 .offset(x: appear[0] ? 0 : 80)
                         }
-                        .padding(.top, 36)
                         .opacity(appear[2] ? 1 : 0)
                     }
-                    .background(
-                        Image("nike")
-                            .resizable()
-                            .rotationEffect(.degrees(-60))
-                            .scaledToFit()
-                            .offset(x: 40, y: -40)
-                            .scaleEffect(1.3)
-                            .opacity(0.2)
-                            .opacity(appear[0] ? 0.2 : 0)
-                    )
                     .safeAreaPadding(.horizontal)
+                    
                 }
+                .background(
+                    Image("nike")
+                        .resizable()
+                        .rotationEffect(.degrees(-60))
+                        .scaledToFit()
+                        .offset(x: 40, y: -40)
+                        .scaleEffect(1.3)
+                        .opacity(0.2)
+                        .opacity(appear[0] ? 0.2 : 0)
+                )
+                // MARK: ScrollView end
+                
                 VStack {
                     // color control
                     HStack {
@@ -88,7 +88,6 @@ public struct ProductDetailScreen: View {
                 }
                 .padding(.bottom, 32)
                 .safeAreaPadding(.horizontal)
-                
             }
             .padding(.top, 64)
             .coordinateSpace(name: "scroll")
@@ -96,7 +95,7 @@ public struct ProductDetailScreen: View {
             .overlay (alignment: .topTrailing) {
                 Image(systemName: "xmark.circle.fill")
                     .font(.system(size: 32))
-                    .foregroundStyle(Color.gray) // .grayMid
+                    .foregroundStyle(Color.grayMid)
                     .padding(.trailing, 20)
                     .onTapGesture {
                         dismissView.toggle()

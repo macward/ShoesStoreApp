@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DataLayer
+import UISharedElements
 
 struct InStockView: View {
     var isInStock: Bool
@@ -15,7 +16,7 @@ struct InStockView: View {
             .fontWeight(.bold)
             .padding(.horizontal, 16)
             .padding(.vertical, 10)
-            .background(isInStock ? Color.green : Color.gray) // replace gray with .graylite
+            .background(isInStock ? Color.green : Color.grayLite)
             .clipShape(RoundedRectangle(cornerRadius: 4))
     }
 }
@@ -49,7 +50,7 @@ public struct ColorControlButton: View {
             .frame(width: 40)
             .background (
                 Circle()
-                    .stroke(.gray, style: .init(lineWidth: 1, dash: [4])) // replace grat with graymid
+                    .stroke(Color.grayMid, style: .init(lineWidth: 1, dash: [4]))
                     .scaleEffect(selected?.id == color.id ? 1.4 : 1.0)
             )
             .onTapGesture {
@@ -65,7 +66,7 @@ public struct GrayButton: ButtonStyle {
             .fontWeight(.bold)
             .padding(.vertical, 24)
             .frame(maxWidth: .infinity)
-            .background(Color.gray) // replace gray with grayMid
+            .background(Color.grayMid) // replace gray with grayMid
             .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }

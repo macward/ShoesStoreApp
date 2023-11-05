@@ -12,7 +12,7 @@ struct ColorControlView: View {
     
     private var items: [ColorControlItem] = [
         .init(name: "Negro", color: .black),
-        .init(name: "Gris", color: .gray), // grayMid
+        .init(name: "Gris", color: .grayMid),
         .init(name: "Rojo",color: .red),
         .init(name: "Azul",color: .blue),
     ]

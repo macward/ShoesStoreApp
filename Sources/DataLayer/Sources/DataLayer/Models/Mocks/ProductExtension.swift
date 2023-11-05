@@ -9,6 +9,6 @@ import Foundation
 
 extension Product {
     public static var mock: Product {
-        .init(title: "Nike Shoe 111", price: 199.90, image: "shoe_placeholder_1")
+        .init(title: "Nike Shoe 111", price: 199.90, image: "nike_1")
     }
 }
