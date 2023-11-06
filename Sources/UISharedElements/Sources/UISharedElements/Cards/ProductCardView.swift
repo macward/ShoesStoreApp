@@ -7,14 +7,18 @@
 
 import SwiftUI
 import DataLayer
-import UISharedElements
 
-struct ProductCardView: View {
+public struct ProductCardView: View {
     
     @Binding var product: Product
     var action: (Binding<Product>) -> Void
     
-    var body: some View {
+    public init(product: Binding<Product>, action: @escaping (Binding<Product>) -> Void) {
+        self._product = product
+        self.action = action
+    }
+    
+    public var body: some View {
         VStack (spacing: 20) {
             // Shoe image
             ZStack {

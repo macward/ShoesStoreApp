@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DataLayer
 
 @main
 struct ShoeStoreWithReduxApp: App {

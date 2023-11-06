@@ -7,9 +7,9 @@
 
 import SwiftUI
 import DataLayer
-import ProductDetails
+import UISharedElements
 
-struct ProductListScreen: View {
+public struct ProductListScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
     
@@ -18,7 +18,14 @@ struct ProductListScreen: View {
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
     
-    var body: some View {
+    public init(text: String,
+         path: Binding<NavigationPath>
+    ) {
+        self.text = text
+        self._path = path
+    }
+    
+    public var body: some View {
         ScrollView {
             ProductsGridComponent(products: $appManager.products,
                                   selectedProduct: $selectedProduct, 

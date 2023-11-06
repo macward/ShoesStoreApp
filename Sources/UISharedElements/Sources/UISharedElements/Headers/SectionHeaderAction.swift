@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-struct SectionHeaderAction: View {
+public struct SectionHeaderAction: View {
     
     var title: String
     var callback: () -> Void
     
-    var body: some View {
+    public init(title: String, callback: @escaping () -> Void) {
+        self.title = title
+        self.callback = callback
+    }
+    
+    public var body: some View {
         HStack {
             Text(title)
                 .font(.title2.bold())

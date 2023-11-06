@@ -12,7 +12,7 @@ import DataLayer
 import UISharedElements
 import ProductDetails
 
-struct HomeScreen: View {
+public struct HomeScreen: View {
     // General app sstate manager
     @EnvironmentObject var appManager: GlobalDataManager
     
@@ -24,11 +24,11 @@ struct HomeScreen: View {
     @State private var openDetailScreen: Bool = false
     @State private var subscriptions = Set<AnyCancellable>()
     
-    init(tabState: Binding<Visibility>) {
+    public init(tabState: Binding<Visibility>) {
         self._tabState = tabState
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack {

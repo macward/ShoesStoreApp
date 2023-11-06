@@ -8,14 +8,25 @@
 import SwiftUI
 import DataLayer
 
-struct MainSliderView<Content: View>: View {
+public struct MainSliderView<Content: View>: View {
     
     var products: [Product]
     @Binding var selectedProduct: Product?
     @Binding var actionOnTap: Bool
     @ViewBuilder var content: (Product) -> Content
     
-    var body: some View {
+    public init(products: [Product], 
+         selectedProduct: Binding<Product?>,
+         actionOnTap: Binding<Bool>,
+         content: @escaping (Product) -> Content
+    ) {
+        self.products = products
+        self._selectedProduct = selectedProduct
+        self._actionOnTap = actionOnTap
+        self.content = content
+    }
+    
+    public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(products) { product in

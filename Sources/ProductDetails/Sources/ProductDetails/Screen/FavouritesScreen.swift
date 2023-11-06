@@ -7,20 +7,24 @@
 
 import SwiftUI
 import DataLayer
-import ProductDetails
+import UISharedElements
 
-struct FavouritesScreen: View {
+public struct FavouritesScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
-    var text: String
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
+    private var text: String
     
-    var body: some View {
+    public init(text: String) {
+        self.text = text
+    }
+    
+    public var body: some View {
         NavigationStack {
             ScrollView {
                 if appManager.favourites.count > 0 {
-                    ProductGridContainer(data: $appManager.favourites, content: { $product in
+                    GridContainer(data: $appManager.favourites, content: { $product in
                         ProductCardView(product: $product, action: { product in
                             appManager.handleFavourites(product.wrappedValue)
                         })

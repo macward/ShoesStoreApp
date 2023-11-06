@@ -9,14 +9,27 @@ import SwiftUI
 import DataLayer
 import UISharedElements
 
-struct ProductSliderView: View {
+public struct ProductSliderView: View {
     var sectionTitle: String
     var products: [Product]
     @Binding var selectedProduct: Product?
     @Binding var actionOnTap: Bool
     var callback: () ->Void
     
-    var body: some View {
+    public init(sectionTitle: String,
+         products: [Product],
+         selectedProduct: Binding<Product?>,
+         actionOnTap: Binding<Bool>,
+         callback: @escaping () -> Void
+    ) {
+        self.sectionTitle = sectionTitle
+        self.products = products
+        self._selectedProduct = selectedProduct
+        self._actionOnTap = actionOnTap
+        self.callback = callback
+    }
+    
+    public var body: some View {
         VStack {
             SectionHeaderAction(title: sectionTitle, callback: callback)
             .padding(.horizontal)

@@ -7,19 +7,18 @@
 
 import SwiftUI
 import Combine
-import DataLayer
 
-class GlobalDataManager: ObservableObject {
+public class GlobalDataManager: ObservableObject {
     
     // MARK: Public properties
-    @Published var products: [Product] = []
-    @Published var featured: [Product] = []
-    @Published var popular: [Product] = []
+    @Published public var products: [Product] = []
+    @Published public var featured: [Product] = []
+    @Published public var popular: [Product] = []
     
-    @Published var shoppingBasket: [Product] = []
-    @Published var favourites: [Product] = []
+    @Published public var shoppingBasket: [Product] = []
+    @Published public var favourites: [Product] = []
     
-    @Published var globalLoadingState = false
+    @Published public var globalLoadingState = false
     
     // MARK: Private properties
     private var subscriptions = Set<AnyCancellable>()
@@ -56,7 +55,7 @@ class GlobalDataManager: ObservableObject {
     }
     
     // MARK: Init
-    init() {
+    public init() {
         favouritesPublisher
             .receive(on: DispatchQueue.main)
             .assign(to: &$favourites)
@@ -77,7 +76,7 @@ class GlobalDataManager: ObservableObject {
     }
     
     @MainActor
-    func loadData() async {
+    public func loadData() async {
         if products.count > 0 { return }
         do {
             self.globalLoadingState = true
