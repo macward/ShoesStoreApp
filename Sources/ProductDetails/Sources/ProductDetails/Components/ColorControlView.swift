@@ -7,23 +7,24 @@
 
 import SwiftUI
 import DataLayer
+import UISharedElements
 
-struct ColorControlView: View {
+public struct ColorControlView: View {
     
     private var items: [ColorControlItem] = [
         .init(name: "Negro", color: .black),
-        .init(name: "Gris", color: .grayMid),
+        .init(name: "Gris", color: Color.grayMid),
         .init(name: "Rojo",color: .red),
         .init(name: "Azul",color: .blue),
     ]
     
     @Binding private var selectedColor: ColorControlItem?
     
-    init(selected: Binding<ColorControlItem?>) {
+    public init(selected: Binding<ColorControlItem?>) {
         self._selectedColor = selected
     }
     
-    var body: some View {
+    public var body: some View {
         HStack (spacing: 20) {
             
             ForEach(items) { item in

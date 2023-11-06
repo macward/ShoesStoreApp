@@ -12,7 +12,8 @@ let package = Package(
             targets: ["UISharedElements"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/macward/SwiftCommonLibrary.git", branch: "main")
+        .package(url: "https://github.com/macward/SwiftCommonLibrary.git", branch: "main"),
+        .package(path: "../DataLayer"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -20,7 +21,8 @@ let package = Package(
         .target(
             name: "UISharedElements",
             dependencies: [
-                .product(name: "SwiftCommonLibrary", package: "SwiftCommonLibrary")
+                .product(name: "SwiftCommonLibrary", package: "SwiftCommonLibrary"),
+                .product(name: "DataLayer", package: "DataLayer")
             ]
         ),
         .testTarget(

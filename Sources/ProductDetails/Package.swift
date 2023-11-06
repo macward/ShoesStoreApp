@@ -13,8 +13,7 @@ let package = Package(
             targets: ["ProductDetails"]),
     ],
     dependencies: [
-        .package(path: "../UISharedElements"),
-        .package(path: "../Datalayer")
+        .package(path: "../UISharedElements")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -22,8 +21,7 @@ let package = Package(
         .target(
             name: "ProductDetails",
             dependencies: [
-                .product(name: "UISharedElements", package: "UISharedElements"),
-                .product(name: "DataLayer", package: "DataLayer")
+                .product(name: "UISharedElements", package: "UISharedElements")
             ]
         ),
         .testTarget(

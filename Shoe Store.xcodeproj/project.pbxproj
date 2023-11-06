@@ -115,13 +115,6 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		502048FC2ACD160B00487F57 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
 		5029FB652AF292BF00E9B285 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +234,6 @@
 		50AA62D92ACB7602008DC0DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				502048FC2ACD160B00487F57 /* Buttons */,
 				502048F32ACC802C00487F57 /* Headers */,
 				502048F22ACC7F7A00487F57 /* Cards */,
 			);
