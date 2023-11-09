@@ -26,21 +26,15 @@ extension URLResponse {
 }
 
 public class API {
-    
-    public static func get<T: Codable>(_ url: URL, of type: T.Type) async throws -> T {
-        let (data, response) = try await  URLSession.shared.data(from: url)
+    public static func get<T: Codable>(_ request: URLRequest, of type: T.Type) async throws -> T {
+        let (data, response) = try await  URLSession.shared.data(for: request)
         guard let response = response.httpResponse, response.isOk else {
             throw DispatcherError.invalidResponse
         }
-        return try JSONDecoder().decode(T.self, from: data)
-    }
-    
-    public static func getCombine<T: Codable>(_ url: String, of type: T.Type) -> some Publisher<T, Error> {
-        let endpoint = URL(string: url)!
-        return URLSession
-            .shared
-            .dataTaskPublisher(for: endpoint)
-            .map(\.data)
-            .decode(type: T.self, decoder: JSONDecoder())
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch (let error) {
+            throw DispatcherError.parseError(error.localizedDescription)
+        }
     }
 }

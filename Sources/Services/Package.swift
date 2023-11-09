@@ -11,13 +11,15 @@ let package = Package(
             targets: ["Services"]),
     ],
     dependencies: [
-        .package(path: "../StoreNetwork")
+        .package(path: "../StoreNetwork"),
+        .package(url: "https://github.com/macward/network-wrapper.git", branch: "main")
     ],
     targets: [
         .target(
             name: "Services",
             dependencies: [
-                .product(name: "StoreNetwork", package: "StoreNetwork")
+                .product(name: "StoreNetwork", package: "StoreNetwork"),
+                .product(name: "NetworkWrapper", package: "network-wrapper")
             ]
         ),
         .testTarget(

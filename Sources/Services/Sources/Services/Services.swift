@@ -8,16 +8,26 @@
 import Foundation
 import StoreNetwork
 
-public class ProductService {
-    public static func get(url: URL) async throws -> [ProductScheme] {
+public protocol ProductService {
+    func getAll() async throws -> [ProductScheme]
+}
+
+public class ProductServiceDefault: ProductService {
+    
+    public init() {}
+    
+    private var productsUrl: URL {
+        URL(string: "\(ServicesConfig.shared.baseUrl)products")!
+    }
+    
+    public func getAll() async throws -> [ProductScheme] {
         do {
-            let data = try await API.get(url, of: ProductsScheme.self)
-            return data.products
+            let data = try await API.get(.init(url: productsUrl), of: [ProductScheme].self)
+            return data
         } catch (let error) {
             // handle error
             print(error.localizedDescription)
             return []
         }
     }
-
 }

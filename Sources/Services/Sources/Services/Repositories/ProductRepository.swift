@@ -9,5 +9,5 @@ import Foundation
 
 public protocol ProductRepository {
     associatedtype Output
-    static func get() async throws -> Output
+    func getAll() async throws -> Output
 }
