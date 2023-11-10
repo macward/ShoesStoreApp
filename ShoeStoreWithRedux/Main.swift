@@ -7,11 +7,16 @@
 
 import SwiftUI
 import DataLayer
+import Services
 
 @main
 struct ShoeStoreWithReduxApp: App {
     
     @StateObject var appManager: GlobalDataManager = .init()
+    
+    init() {
+        ServicesConfig.shared.setUrl("http://192.168.0.129:3000/")
+    }
     
     var body: some Scene {
         WindowGroup {

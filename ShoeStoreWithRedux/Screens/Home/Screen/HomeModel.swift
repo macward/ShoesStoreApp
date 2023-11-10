@@ -1,25 +1,31 @@
 //
-//  GlobalAppManager.swift
-//  ShoeStoreWithRedux
+//  HomeModel.swift
+//  Shoe Store
 //
-//  Created by Max Ward on 05/10/2023.
+//  Created by Max Ward on 07/11/2023.
 //
 
-import SwiftUI
+import Foundation
+import DataLayer
+import Services
 import Combine
 
-public class GlobalDataManager: ObservableObject {
+public class HomeModel: ObservableObject {
     
-    // MARK: Public properties
     @Published public var products: [Product] = []
     @Published public var featured: [Product] = []
     @Published public var popular: [Product] = []
-    @Published public var favourites: [Product] = []
-    @Published public var shopingCart: [Order] = []
-    @Published public var globalLoadingState = false
+    @Published public var isLoading: Bool = false
+    
+    // this should not be here
+    private var buildUrl: String {
+        return "\(BASE_URL)products"
+    }
     
     // MARK: Private properties
+    private var repository: any ProductRepository
     private var subscriptions = Set<AnyCancellable>()
+    private var appManager: GlobalDataManager?
     
     // MARK: Publishers
     private var favouritesPublisher: AnyPublisher<[Product], Never> {
@@ -52,11 +58,17 @@ public class GlobalDataManager: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    // MARK: Init
-    public init() {
+    public init(repository: any ProductRepository) {
+        self.repository = repository
+    }
+    
+    func subscribers() {
         favouritesPublisher
             .receive(on: DispatchQueue.main)
-            .assign(to: &$favourites)
+            .sink { [weak self] products in
+                self?.appManager?.favourites = products
+            }
+            .store(in: &subscriptions)
         
         featuredProductsPublisher
             .receive(on: DispatchQueue.main)
@@ -67,27 +79,26 @@ public class GlobalDataManager: ObservableObject {
             .assign(to: &$popular)
     }
     
+    func configure(_ appManager: GlobalDataManager) {
+        self.appManager = appManager
+        self.subscribers()
+    }
+    
+    @MainActor
+    func loadData() async {
+        do {
+            isLoading.turnOn()
+            let result = try await repository.getAll() as! [Product]
+            products = result
+            isLoading.turnOff()
+        } catch (let error){
+            print(error.localizedDescription)
+        }
+    }
+    
     // MARK: Methods
     public func handleFavourites(_ product: Product) {
         guard let index = products.firstIndex (where: { $0.id == product.id }) else { return }
         products[index].isFav.toggle()
     }
-    
-    @MainActor
-    public func loadData() async {
-        do {
-            self.globalLoadingState = true
-            let repository = ProductRepositoryDefault()
-            let productResponse = try await repository.getAll()
-            productResponse
-                .publisher
-                .collect()
-                .assign(to: &$products)
-            self.globalLoadingState = false
-        } catch {
-            // handle errors
-            print("errors")
-        }
-    }
 }
-

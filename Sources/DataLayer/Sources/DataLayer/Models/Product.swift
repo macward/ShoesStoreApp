@@ -10,6 +10,17 @@ import SwiftUI
 // a model must conform Equatable for optional binding
 // a model must confotm Identifiable to work woith ForEach (Factory)
 
+public struct Order: Identifiable, Equatable {
+    public var id: String = UUID().uuidString
+    public var product: Product
+    public var number: Int
+    
+    public init(product: Product, number: Int) {
+        self.product = product
+        self.number = number
+    }
+}
+
 public struct Product: Identifiable, Equatable {
     public var id: String = UUID().uuidString
     public var title: String

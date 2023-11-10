@@ -8,12 +8,16 @@
 import SwiftUI
 import Home
 import ProductDetails
+import ShoppingCart
+import DataLayer
 
 struct TabViewScreen: View {
     
     @State private var tabState: Visibility = .visible
+    @EnvironmentObject var appManager: GlobalDataManager
     
     var body: some View {
+        Text("home")
         TabView {
             HomeScreen(tabState: $tabState)
                 .toolbar(tabState, for: .tabBar)

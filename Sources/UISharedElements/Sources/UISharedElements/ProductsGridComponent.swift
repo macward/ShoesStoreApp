@@ -45,7 +45,6 @@ public struct ProductsGridComponent: View {
             })
         }
         .onPreferenceChange(ComponentTitlePreferenceKey.self, perform: { value in
-            print(value)
             self.title = value
         })
     }

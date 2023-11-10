@@ -30,7 +30,6 @@ enum ProductEndpoint: Request {
     var parameters: NetworkWrapper.RequestParameters? {
         nil
     }
-    
 }
 
 public class NWProductService: ProductService {

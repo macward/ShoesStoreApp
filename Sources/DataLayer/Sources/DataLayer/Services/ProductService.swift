@@ -17,14 +17,3 @@ public extension Product {
                 isTop: scheme.top)
     }
 }
-
-extension Product: ProductRepository {
-    public static func get() async throws -> [Product] {
-        do {
-            let data = try await ProductService.get(url: URL(string: "\(BASE_URL)products/home")!)
-            return data.map { Product.build(scheme: $0) }
-        } catch (let error) {
-            throw error
-        }
-    }
-}

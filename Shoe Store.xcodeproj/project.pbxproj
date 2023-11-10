@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5006EA3C2AFC776200340AC8 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 5006EA3B2AFC776200340AC8 /* Home */; };
+		5006EA3E2AFC776700340AC8 /* ProductDetails in Frameworks */ = {isa = PBXBuildFile; productRef = 5006EA3D2AFC776700340AC8 /* ProductDetails */; };
 		502048F92ACC81CB00487F57 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F82ACC81CB00487F57 /* TabView.swift */; };
-		502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502049032ACD313100487F57 /* FlipHorizontal.swift */; };
-		5029FB642AF201E700E9B285 /* ShoppingCartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029FB632AF201E700E9B285 /* ShoppingCartScreen.swift */; };
 		5087FE6A2AF73F1D0087F52F /* UISharedElements in Frameworks */ = {isa = PBXBuildFile; productRef = 5087FE692AF73F1D0087F52F /* UISharedElements */; };
-		5087FE6C2AF73F7A0087F52F /* ProductDetails in Frameworks */ = {isa = PBXBuildFile; productRef = 5087FE6B2AF73F7A0087F52F /* ProductDetails */; };
-		5087FE712AF877F20087F52F /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 5087FE702AF877F20087F52F /* Home */; };
+		50910C362AFD6C6F00A7B432 /* App in Frameworks */ = {isa = PBXBuildFile; productRef = 50910C352AFD6C6F00A7B432 /* App */; };
+		50910C3C2AFD916800A7B432 /* ShoppingCart in Frameworks */ = {isa = PBXBuildFile; productRef = 50910C3B2AFD916800A7B432 /* ShoppingCart */; };
 		50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA62CA2ACB74A1008DC0DD /* Main.swift */; };
 		50AA62CF2ACB74A3008DC0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */; };
 		50AA62D22ACB74A3008DC0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62D12ACB74A3008DC0DD /* Preview Assets.xcassets */; };
@@ -21,17 +21,17 @@
 		50AA63082ACBBF7E008DC0DD /* Satoshi-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63042ACBBF7D008DC0DD /* Satoshi-Black.ttf */; };
 		50AA63092ACBBF7E008DC0DD /* Satoshi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */; };
 		50AA630D2ACBBFE2008DC0DD /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */; };
-		50FADD6D2AF54FC500119D11 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FADD6C2AF54FC500119D11 /* config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5002624D2AF6E8F1009BC50F /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = text; name = DataLayer; path = Sources/DataLayer; sourceTree = SOURCE_ROOT; };
-		500262522AF7136B009BC50F /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = text; name = ProductDetails; path = Sources/ProductDetails; sourceTree = SOURCE_ROOT; };
+		500262522AF7136B009BC50F /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProductDetails; path = ShoeStoreWithRedux/ProductDetails; sourceTree = SOURCE_ROOT; };
 		502048F82ACC81CB00487F57 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		502049032ACD313100487F57 /* FlipHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipHorizontal.swift; sourceTree = "<group>"; };
-		5029FB632AF201E700E9B285 /* ShoppingCartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartScreen.swift; sourceTree = "<group>"; };
 		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = text; name = UISharedElements; path = Sources/UISharedElements; sourceTree = SOURCE_ROOT; };
-		5087FE6F2AF8724C0087F52F /* Home */ = {isa = PBXFileReference; lastKnownFileType = text; name = Home; path = Sources/Home; sourceTree = SOURCE_ROOT; };
+		5087FE6F2AF8724C0087F52F /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Home; path = ShoeStoreWithRedux/Home; sourceTree = SOURCE_ROOT; };
+		50910C332AFD698400A7B432 /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = text; name = Coordinator; path = Sources/Coordinator; sourceTree = SOURCE_ROOT; };
+		50910C342AFD6B7B00A7B432 /* App */ = {isa = PBXFileReference; lastKnownFileType = text; name = App; path = Sources/App; sourceTree = SOURCE_ROOT; };
+		50910C3A2AFD8A8700A7B432 /* ShoppingCart */ = {isa = PBXFileReference; lastKnownFileType = text; name = ShoppingCart; path = Sources/ShoppingCart; sourceTree = SOURCE_ROOT; };
 		50AA62C72ACB74A1008DC0DD /* Shoe Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoe Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,7 +42,6 @@
 		50AA63042ACBBF7D008DC0DD /* Satoshi-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.ttf"; sourceTree = "<group>"; };
 		50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.ttf"; sourceTree = "<group>"; };
 		50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.ttf"; sourceTree = "<group>"; };
-		50FADD6C2AF54FC500119D11 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		50FADD7C2AF6A05900119D11 /* Services */ = {isa = PBXFileReference; lastKnownFileType = text; name = Services; path = Sources/Services; sourceTree = SOURCE_ROOT; };
 		50FADD812AF6BC2C00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = "<group>"; };
 		50FADD822AF6BC3E00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = SOURCE_ROOT; };
@@ -53,9 +52,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50910C3C2AFD916800A7B432 /* ShoppingCart in Frameworks */,
+				50910C362AFD6C6F00A7B432 /* App in Frameworks */,
+				5006EA3E2AFC776700340AC8 /* ProductDetails in Frameworks */,
 				5087FE6A2AF73F1D0087F52F /* UISharedElements in Frameworks */,
-				5087FE6C2AF73F7A0087F52F /* ProductDetails in Frameworks */,
-				5087FE712AF877F20087F52F /* Home in Frameworks */,
+				5006EA3C2AFC776200340AC8 /* Home in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,53 +72,12 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		500262512AF712E7009BC50F /* AppModules */ = {
-			isa = PBXGroup;
-			children = (
-				5087FE6F2AF8724C0087F52F /* Home */,
-				500262522AF7136B009BC50F /* ProductDetails */,
-			);
-			path = AppModules;
-			sourceTree = "<group>";
-		};
-		5029FB652AF292BF00E9B285 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				50AA62D92ACB7602008DC0DD /* Views */,
-				50B47AD12ACF42AD0001489C /* ViewModifiers */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		5029FB662AF2931300E9B285 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		5029FB672AF2931A00E9B285 /* Cart */ = {
-			isa = PBXGroup;
-			children = (
-				5029FB632AF201E700E9B285 /* ShoppingCartScreen.swift */,
-			);
-			path = Cart;
-			sourceTree = "<group>";
-		};
-		5029FB692AF2933B00E9B285 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Products;
-			sourceTree = "<group>";
-		};
-		503FCAB02AF418E0007DFADD /* Application */ = {
+		50910C372AFD895D00A7B432 /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				50AA63012ACBBDEA008DC0DD /* Info.plist */,
-				50FADD6C2AF54FC500119D11 /* config.swift */,
 			);
-			path = Application;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		50AA62BE2ACB74A1008DC0DD = {
@@ -141,11 +101,14 @@
 			isa = PBXGroup;
 			children = (
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
-				503FCAB02AF418E0007DFADD /* Application */,
+				50910C372AFD895D00A7B432 /* Config */,
 				50AA62D82ACB75FC008DC0DD /* Screens */,
-				5029FB652AF292BF00E9B285 /* UI */,
 				500262502AF70E8E009BC50F /* Assets */,
-				500262512AF712E7009BC50F /* AppModules */,
+				50910C342AFD6B7B00A7B432 /* App */,
+				50910C332AFD698400A7B432 /* Coordinator */,
+				5087FE6F2AF8724C0087F52F /* Home */,
+				500262522AF7136B009BC50F /* ProductDetails */,
+				50910C3A2AFD8A8700A7B432 /* ShoppingCart */,
 				5087FE682AF73C550087F52F /* UISharedElements */,
 				5002624D2AF6E8F1009BC50F /* DataLayer */,
 				50FADD7C2AF6A05900119D11 /* Services */,
@@ -167,18 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				502048F82ACC81CB00487F57 /* TabView.swift */,
-				5029FB662AF2931300E9B285 /* Home */,
-				5029FB672AF2931A00E9B285 /* Cart */,
-				5029FB692AF2933B00E9B285 /* Products */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		50AA62D92ACB7602008DC0DD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		50AA62EC2ACBBDB8008DC0DD /* Fonts */ = {
@@ -191,14 +144,6 @@
 				50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		50B47AD12ACF42AD0001489C /* ViewModifiers */ = {
-			isa = PBXGroup;
-			children = (
-				502049032ACD313100487F57 /* FlipHorizontal.swift */,
-			);
-			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 		50FADD692AF496CE00119D11 /* Frameworks */ = {
@@ -227,8 +172,10 @@
 			name = "Shoe Store";
 			packageProductDependencies = (
 				5087FE692AF73F1D0087F52F /* UISharedElements */,
-				5087FE6B2AF73F7A0087F52F /* ProductDetails */,
-				5087FE702AF877F20087F52F /* Home */,
+				5006EA3B2AFC776200340AC8 /* Home */,
+				5006EA3D2AFC776700340AC8 /* ProductDetails */,
+				50910C352AFD6C6F00A7B432 /* App */,
+				50910C3B2AFD916800A7B432 /* ShoppingCart */,
 			);
 			productName = ShoeStoreWithRedux;
 			productReference = 50AA62C72ACB74A1008DC0DD /* Shoe Store.app */;
@@ -291,11 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				502049042ACD313100487F57 /* FlipHorizontal.swift in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
-				50FADD6D2AF54FC500119D11 /* config.swift in Sources */,
 				502048F92ACC81CB00487F57 /* TabView.swift in Sources */,
-				5029FB642AF201E700E9B285 /* ShoppingCartScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +376,7 @@
 				DEVELOPMENT_TEAM = AAL663Y363;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShoeStoreWithRedux/Application/Info.plist;
+				INFOPLIST_FILE = ShoeStoreWithRedux/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -465,7 +409,7 @@
 				DEVELOPMENT_TEAM = AAL663Y363;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShoeStoreWithRedux/Application/Info.plist;
+				INFOPLIST_FILE = ShoeStoreWithRedux/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,17 +455,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5006EA3B2AFC776200340AC8 /* Home */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Home;
+		};
+		5006EA3D2AFC776700340AC8 /* ProductDetails */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProductDetails;
+		};
 		5087FE692AF73F1D0087F52F /* UISharedElements */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UISharedElements;
 		};
-		5087FE6B2AF73F7A0087F52F /* ProductDetails */ = {
+		50910C352AFD6C6F00A7B432 /* App */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = ProductDetails;
+			productName = App;
 		};
-		5087FE702AF877F20087F52F /* Home */ = {
+		50910C3B2AFD916800A7B432 /* ShoppingCart */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Home;
+			productName = ShoppingCart;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
