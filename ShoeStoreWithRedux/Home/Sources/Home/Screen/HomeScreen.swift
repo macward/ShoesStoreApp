@@ -12,19 +12,13 @@ import UISharedElements
 import ProductDetails
 
 public struct HomeScreen: View {
-    // General app sstate manager
     @EnvironmentObject var appManager: GlobalDataManager
-    
-    // TabView visisbility
-    @Binding var tabState: Visibility
     
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
-    
-    public init(tabState: Binding<Visibility>) {
-        self._tabState = tabState
-    }
+        
+    public init() {}
     
     public var body: some View {
         NavigationStack(path: $path) {
@@ -49,21 +43,17 @@ public struct HomeScreen: View {
                     ProductsGridComponent(products: $appManager.products,
                                           selectedProduct: $selectedProduct,
                                           openDetails: $openDetailScreen) {
-                        path.append("Newest shoes")
+                        print("open details")
                     } likeAction: { $product in
                         product.isFav.toggle()
                     }
                     .padding(.horizontal)
                 }
             }
+            
             .activityIndicatorDefault(isLoading: appManager.globalLoadingState)
-            .navigationDestination(for: String.self) { textValue in
-                ProductListScreen(text: textValue, path: $path)
-            }
-            .fullScreenCover(isPresented: $openDetailScreen, content: {
-                ProductDetailScreen(product: $selectedProduct)
-            })
             .task {
+                if !appManager.products.isEmpty { return }
                 await appManager.loadData()
             }
         }

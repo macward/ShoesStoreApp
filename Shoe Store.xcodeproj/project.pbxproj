@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		5006EA3C2AFC776200340AC8 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 5006EA3B2AFC776200340AC8 /* Home */; };
 		5006EA3E2AFC776700340AC8 /* ProductDetails in Frameworks */ = {isa = PBXBuildFile; productRef = 5006EA3D2AFC776700340AC8 /* ProductDetails */; };
-		502048F92ACC81CB00487F57 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502048F82ACC81CB00487F57 /* TabView.swift */; };
 		5087FE6A2AF73F1D0087F52F /* UISharedElements in Frameworks */ = {isa = PBXBuildFile; productRef = 5087FE692AF73F1D0087F52F /* UISharedElements */; };
-		50910C362AFD6C6F00A7B432 /* App in Frameworks */ = {isa = PBXBuildFile; productRef = 50910C352AFD6C6F00A7B432 /* App */; };
 		50910C3C2AFD916800A7B432 /* ShoppingCart in Frameworks */ = {isa = PBXBuildFile; productRef = 50910C3B2AFD916800A7B432 /* ShoppingCart */; };
+		50910C802B00251300A7B432 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50910C7F2B00251300A7B432 /* TabView.swift */; };
 		50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA62CA2ACB74A1008DC0DD /* Main.swift */; };
 		50AA62CF2ACB74A3008DC0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */; };
 		50AA62D22ACB74A3008DC0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62D12ACB74A3008DC0DD /* Preview Assets.xcassets */; };
@@ -26,12 +25,10 @@
 /* Begin PBXFileReference section */
 		5002624D2AF6E8F1009BC50F /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = text; name = DataLayer; path = Sources/DataLayer; sourceTree = SOURCE_ROOT; };
 		500262522AF7136B009BC50F /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProductDetails; path = ShoeStoreWithRedux/ProductDetails; sourceTree = SOURCE_ROOT; };
-		502048F82ACC81CB00487F57 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = text; name = UISharedElements; path = Sources/UISharedElements; sourceTree = SOURCE_ROOT; };
 		5087FE6F2AF8724C0087F52F /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Home; path = ShoeStoreWithRedux/Home; sourceTree = SOURCE_ROOT; };
-		50910C332AFD698400A7B432 /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = text; name = Coordinator; path = Sources/Coordinator; sourceTree = SOURCE_ROOT; };
-		50910C342AFD6B7B00A7B432 /* App */ = {isa = PBXFileReference; lastKnownFileType = text; name = App; path = Sources/App; sourceTree = SOURCE_ROOT; };
 		50910C3A2AFD8A8700A7B432 /* ShoppingCart */ = {isa = PBXFileReference; lastKnownFileType = text; name = ShoppingCart; path = Sources/ShoppingCart; sourceTree = SOURCE_ROOT; };
+		50910C7F2B00251300A7B432 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* Shoe Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoe Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +50,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50910C3C2AFD916800A7B432 /* ShoppingCart in Frameworks */,
-				50910C362AFD6C6F00A7B432 /* App in Frameworks */,
 				5006EA3E2AFC776700340AC8 /* ProductDetails in Frameworks */,
 				5087FE6A2AF73F1D0087F52F /* UISharedElements in Frameworks */,
 				5006EA3C2AFC776200340AC8 /* Home in Frameworks */,
@@ -104,8 +100,6 @@
 				50910C372AFD895D00A7B432 /* Config */,
 				50AA62D82ACB75FC008DC0DD /* Screens */,
 				500262502AF70E8E009BC50F /* Assets */,
-				50910C342AFD6B7B00A7B432 /* App */,
-				50910C332AFD698400A7B432 /* Coordinator */,
 				5087FE6F2AF8724C0087F52F /* Home */,
 				500262522AF7136B009BC50F /* ProductDetails */,
 				50910C3A2AFD8A8700A7B432 /* ShoppingCart */,
@@ -129,7 +123,7 @@
 		50AA62D82ACB75FC008DC0DD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				502048F82ACC81CB00487F57 /* TabView.swift */,
+				50910C7F2B00251300A7B432 /* TabView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -174,7 +168,6 @@
 				5087FE692AF73F1D0087F52F /* UISharedElements */,
 				5006EA3B2AFC776200340AC8 /* Home */,
 				5006EA3D2AFC776700340AC8 /* ProductDetails */,
-				50910C352AFD6C6F00A7B432 /* App */,
 				50910C3B2AFD916800A7B432 /* ShoppingCart */,
 			);
 			productName = ShoeStoreWithRedux;
@@ -238,8 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50910C802B00251300A7B432 /* TabView.swift in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
-				502048F92ACC81CB00487F57 /* TabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,10 +459,6 @@
 		5087FE692AF73F1D0087F52F /* UISharedElements */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UISharedElements;
-		};
-		50910C352AFD6C6F00A7B432 /* App */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = App;
 		};
 		50910C3B2AFD916800A7B432 /* ShoppingCart */ = {
 			isa = XCSwiftPackageProductDependency;

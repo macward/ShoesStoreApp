@@ -14,11 +14,8 @@ public struct FavouritesScreen: View {
     @EnvironmentObject var appManager: GlobalDataManager
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
-    private var text: String
     
-    public init(text: String) {
-        self.text = text
-    }
+    public init() {}
     
     public var body: some View {
         NavigationStack {
@@ -34,7 +31,7 @@ public struct FavouritesScreen: View {
                         }
                     })
                     .fullScreenCover(isPresented: $openDetailScreen, content: {
-                        ProductDetailScreen(product: $selectedProduct)
+                        ProductDetailScreen(product: selectedProduct)
                     })
                 } else {
                     Text("No hay favoritos")
@@ -42,7 +39,7 @@ public struct FavouritesScreen: View {
                 }
             }
             .contentMargins(16, for: .scrollContent)
-            .navigationTitle(text)
+            .navigationTitle("Favourites")
         }
     }
 }

@@ -10,11 +10,12 @@ import DataLayer
 import UISharedElements
 
 public struct ProductSliderView: View {
+    
     var sectionTitle: String
     var products: [Product]
+    var callback: () -> Void
     @Binding var selectedProduct: Product?
     @Binding var actionOnTap: Bool
-    var callback: () ->Void
     
     public init(sectionTitle: String,
          products: [Product],

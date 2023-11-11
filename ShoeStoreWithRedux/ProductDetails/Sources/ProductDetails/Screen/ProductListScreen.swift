@@ -12,18 +12,10 @@ import UISharedElements
 public struct ProductListScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
-    
-    var text: String
-    @Binding var path: NavigationPath
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
     
-    public init(text: String,
-         path: Binding<NavigationPath>
-    ) {
-        self.text = text
-        self._path = path
-    }
+    public init() {}
     
     public var body: some View {
         ScrollView {
@@ -34,17 +26,17 @@ public struct ProductListScreen: View {
                 product.isFav = true
             })
             .preference(key: ComponentTitlePreferenceKey.self, value: "")
-            .fullScreenCover(isPresented: $openDetailScreen, content: {
-                ProductDetailScreen(product: $selectedProduct)
-            })
+//            .fullScreenCover(isPresented: $openDetailScreen, content: {
+//                ProductDetailScreen(product: selectedProduct)
+//            })
         }
         .contentMargins(16, for: .scrollContent)
-        .navigationTitle(text)
+        .navigationTitle("Products")
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    path.removeLast()
+                    // coordinator delete
                 } label: {
                     Image(systemName: "chevron.left")
                         .foregroundStyle(Color.black)

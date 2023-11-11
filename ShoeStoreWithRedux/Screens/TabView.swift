@@ -11,22 +11,23 @@ import ProductDetails
 import ShoppingCart
 import DataLayer
 
-struct TabViewScreen: View {
+public struct TabViewScreen: View {
     
     @State private var tabState: Visibility = .visible
     @EnvironmentObject var appManager: GlobalDataManager
     
-    var body: some View {
-        Text("home")
+    public init() {}
+    
+    public var body: some View {
         TabView {
-            HomeScreen(tabState: $tabState)
+            HomeScreen()
                 .toolbar(tabState, for: .tabBar)
                 .animation(.easeInOut(duration: 0.3), value: tabState)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
             
-            FavouritesScreen(text: "Favourites")
+            FavouritesScreen()
                 .tabItem {
                     Label("Favourites", systemImage: "heart.fill")
                 }

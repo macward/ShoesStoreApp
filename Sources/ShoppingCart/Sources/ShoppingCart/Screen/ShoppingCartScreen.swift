@@ -21,9 +21,12 @@ public struct ShoppingCartScreen: View {
     
     public var body: some View {
         NavigationStack {
-            VStack {
-                viewSelector(isEmpty: appManager.shopingCart.isEmpty)
+            ScrollView {
+                VStack {
+                    viewSelector(isEmpty: appManager.shopingCart.isEmpty)
+                }
             }
+            .contentMargins(16, for: .scrollContent)
             .navigationTitle("Shopping cart")
             .onAppear() {
                 model.config(cart: appManager.shopingCart)
@@ -34,7 +37,8 @@ public struct ShoppingCartScreen: View {
     @ViewBuilder
     func viewSelector(isEmpty: Bool) -> some View {
         if isEmpty {
-            Text("No hay items en la cesta")
+            Text("No hay favoritos")
+                .font(.title2.bold())
         } else {
             ScrollView {
                 ForEach(model.cart) { order in
