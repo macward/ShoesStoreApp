@@ -7,23 +7,18 @@ let package = Package(
     name: "Home",
     platforms: [.iOS(.v17)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Home",
             targets: ["Home"]),
     ],
     dependencies: [
-        .package(path: "../UISharedElements"),
-        .package(path: "../ProductDetails")
+        .package(path: "../UISharedElements")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Home",
             dependencies: [
-                .product(name: "UISharedElements", package: "UISharedElements"),
-                .product(name: "ProductDetails", package: "ProductDetails")
+                .product(name: "UISharedElements", package: "UISharedElements")
             ]
         ),
         .testTarget(

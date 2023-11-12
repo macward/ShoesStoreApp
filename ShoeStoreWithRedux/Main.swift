@@ -8,14 +8,17 @@
 import SwiftUI
 import DataLayer
 import Services
+import Application
 
 @main
 struct ShoeStoreWithReduxApp: App {
     
+    @ObservedObject var router: AppRouter
     @StateObject var appManager: GlobalDataManager = .init()
     
     init() {
         ServicesConfig.shared.setUrl("http://192.168.0.129:3000/")
+        self.router = AppRouter(with: NavigationPath())
     }
     
     var body: some Scene {
@@ -23,6 +26,8 @@ struct ShoeStoreWithReduxApp: App {
             TabViewScreen()
                 .environmentObject(appManager)
                 .preferredColorScheme(.light)
+            
+                
         }
     }
 }

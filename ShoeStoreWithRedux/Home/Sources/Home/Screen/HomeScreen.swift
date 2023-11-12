@@ -14,11 +14,15 @@ import ProductDetails
 public struct HomeScreen: View {
     @EnvironmentObject var appManager: GlobalDataManager
     
+    var router: HomeRouting
+    
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
-        
-    public init() {}
+    
+    public init(router: HomeRouting) {
+        self.router = router
+    }
     
     public var body: some View {
         NavigationStack(path: $path) {
@@ -36,7 +40,8 @@ public struct HomeScreen: View {
                                       products: appManager.popular,
                                       selectedProduct: $selectedProduct,
                                       actionOnTap: $openDetailScreen) {
-                        path.append("Popular")
+                        //router.presentProductList()
+                        router.navigate(to: .details)
                     }
                     
                     // all prods
@@ -50,7 +55,6 @@ public struct HomeScreen: View {
                     .padding(.horizontal)
                 }
             }
-            
             .activityIndicatorDefault(isLoading: appManager.globalLoadingState)
             .task {
                 if !appManager.products.isEmpty { return }
