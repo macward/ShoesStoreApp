@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftCommonLibrary
+
 public struct CachedImage<Content: View, ActivityView: View, ErrorView: View>: View {
     
     private let url: URL
@@ -41,7 +42,3 @@ public struct CachedImage<Content: View, ActivityView: View, ErrorView: View>: V
         }
     }
 }
-
-//#Preview {
-//    CachedImage()
-//}

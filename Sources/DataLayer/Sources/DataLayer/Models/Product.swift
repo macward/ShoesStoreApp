@@ -21,7 +21,7 @@ public struct Order: Identifiable, Equatable {
     }
 }
 
-public struct Product: Identifiable, Equatable {
+public struct Product: Identifiable, Equatable, Hashable {
     public var id: String = UUID().uuidString
     public var title: String
     public var price: Double

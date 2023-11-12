@@ -36,7 +36,6 @@ public struct ProductDetailScreen: View {
                 ScrollView {
                     HStack {
                         VerticalSizeControlView(selected: $selectedSize)
-                            
                         FeaturedProductImage(url: product?.imageUrl)
                             .offset(x: appear[2] ? 0 : 100)
                             .opacity(appear[2] ? 1 : 0)

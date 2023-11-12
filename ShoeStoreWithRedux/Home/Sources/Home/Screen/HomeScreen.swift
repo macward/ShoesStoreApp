@@ -14,48 +14,58 @@ import ProductDetails
 public struct HomeScreen: View {
     @EnvironmentObject var appManager: GlobalDataManager
     
-    var router: HomeRouting
-    
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
     
-    public init(router: HomeRouting) {
-        self.router = router
-    }
+    public init() {}
     
     public var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack {
                     // Main Slider
-                    MainSliderView(products: appManager.featured,
-                                   selectedProduct: $selectedProduct,
-                                   actionOnTap: $openDetailScreen) { product in
+                    MainSliderView(
+                        products: appManager.featured,
+                        selectedProduct: $selectedProduct,
+                        actionOnTap: $openDetailScreen
+                    ) { product in
                         SliderCardView(product: product)
                     }
                     
                     // Popular Slider
-                    ProductSliderView(sectionTitle: "Popular",
-                                      products: appManager.popular,
-                                      selectedProduct: $selectedProduct,
-                                      actionOnTap: $openDetailScreen) {
-                        //router.presentProductList()
-                        router.navigate(to: .details)
+                    ProductSliderView(
+                        sectionTitle: "Popular",
+                        products: appManager.popular,
+                        selectedProduct: $selectedProduct,
+                        actionOnTap: $openDetailScreen
+                    ) {
+                        // navigation action
+                        path.append("Popular shoes")
                     }
                     
                     // all prods
-                    ProductsGridComponent(products: $appManager.products,
-                                          selectedProduct: $selectedProduct,
-                                          openDetails: $openDetailScreen) {
-                        print("open details")
+                    ProductsGridComponent(
+                        products: $appManager.products,
+                        selectedProduct: $selectedProduct,
+                        openDetails: $openDetailScreen
+                    ) {
+                        // navigation action
+                        path.append("New Shoes")
                     } likeAction: { $product in
+                        // like callback
                         product.isFav.toggle()
                     }
                     .padding(.horizontal)
                 }
             }
             .activityIndicatorDefault(isLoading: appManager.globalLoadingState)
+            .navigationDestination(for: String.self) { title in
+                ProductListScreen(title: title, path: $path)
+            }
+            .fullScreenCover(isPresented: $openDetailScreen, content: {
+                ProductDetailScreen(product: selectedProduct)
+            })
             .task {
                 if !appManager.products.isEmpty { return }
                 await appManager.loadData()

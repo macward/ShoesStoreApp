@@ -15,7 +15,7 @@ public struct FeaturedProductImage: View {
     }
     
     public var body: some View {
-        AsyncImageCached(url: url ?? URL(string:"")!) { image in
+        AsyncImageCached(url: url ?? URL(string:"http://localhost:3000/nike_1.png")!) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -25,6 +25,3 @@ public struct FeaturedProductImage: View {
     }
 }
 
-//#Preview {
-//    FeaturedProductImage(url: Product.mock.imageUrl)
-//}

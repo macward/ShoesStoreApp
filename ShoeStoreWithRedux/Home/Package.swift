@@ -12,13 +12,17 @@ let package = Package(
             targets: ["Home"]),
     ],
     dependencies: [
-        .package(path: "../UISharedElements")
+        .package(path: "../UISharedElements"),
+        .package(path: "../ProductDetails"),
+        .package(path: "../Router")
     ],
     targets: [
         .target(
             name: "Home",
             dependencies: [
-                .product(name: "UISharedElements", package: "UISharedElements")
+                .product(name: "UISharedElements", package: "UISharedElements"),
+                .product(name: "Router", package: "Router"),
+                .product(name: "ProductDetails", package: "ProductDetails")
             ]
         ),
         .testTarget(
