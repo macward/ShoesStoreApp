@@ -31,7 +31,7 @@ public struct FavouritesScreen: View {
                         }
                     })
                     .fullScreenCover(isPresented: $openDetailScreen, content: {
-                        ProductDetailScreen(product: selectedProduct!)
+                        ProductDetailScreen(product: $selectedProduct)
                     })
                 } else {
                     Text("No hay favoritos")

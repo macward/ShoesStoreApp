@@ -64,7 +64,7 @@ public struct HomeScreen: View {
                 ProductListScreen(title: title, path: $path)
             }
             .fullScreenCover(isPresented: $openDetailScreen, content: {
-                ProductDetailScreen(product: selectedProduct)
+                ProductDetailScreen(product: $selectedProduct)
             })
             .task {
                 if !appManager.products.isEmpty { return }

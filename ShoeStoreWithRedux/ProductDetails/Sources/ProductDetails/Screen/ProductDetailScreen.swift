@@ -15,7 +15,7 @@ public struct ProductDetailScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
     // MARK: Properties
-    @State private var product: Product?
+    @Binding var product: Product?
     @Environment(\.dismiss) var dismiss
     @State private var appear = [false, false, false, false]
     @State private var selectedColor: ColorControlItem?
@@ -24,8 +24,8 @@ public struct ProductDetailScreen: View {
     @State private var buttonDisabled: Bool = false
     @State private var isLoading: Bool = false
     
-    public init(product: Product?) {
-        self.product = product
+    public init(product: Binding<Product?>) {
+        self._product = product
     }
     
     public var body: some View {
@@ -163,6 +163,6 @@ public struct ProductDetailScreen: View {
 
 struct ShoeDetailView_Previews: PreviewProvider {
     public static var previews: some View {
-        ProductDetailScreen(product: Product.mock)
+        ProductDetailScreen(product: .constant(Product.mock))
     }
 }

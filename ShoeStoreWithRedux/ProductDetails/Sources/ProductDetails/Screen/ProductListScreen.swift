@@ -32,7 +32,7 @@ public struct ProductListScreen: View {
             })
             .preference(key: ComponentTitlePreferenceKey.self, value: "")
             .fullScreenCover(isPresented: $openDetailScreen, content: {
-                ProductDetailScreen(product: selectedProduct!)
+                ProductDetailScreen(product: $selectedProduct)
             })
         }
         .contentMargins(16, for: .scrollContent)
