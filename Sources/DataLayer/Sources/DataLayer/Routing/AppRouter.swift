@@ -27,4 +27,3 @@ public class AppRouter: ObservableObject {
 public protocol ModuleRouter {
     var appRouter: AppRouter { get }
 }
-
