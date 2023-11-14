@@ -22,18 +22,18 @@ public struct TabViewScreen: View {
     public var body: some View {
         TabView {
             
-            HomeScreen()
+            CoordinatorView(route: .home)
             .toolbar(tabState, for: .tabBar)
             .animation(.easeInOut(duration: 0.3), value: tabState)
             .tabItem {
                 Label("Home", systemImage: "house")
             }
-            FavouritesScreen()
+            CoordinatorView(route: .favourites)
                 .tabItem {
                     Label("Favourites", systemImage: "heart.fill")
                 }
             
-            ShoppingCartScreen()
+            CoordinatorView(route: .shoppingCart)
                 .tabItem {
                     Label("Cart", systemImage: "bag")
                 }

@@ -13,7 +13,6 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../UISharedElements"),
-        .package(path: "../ProductDetails"),
         .package(path: "../Router")
     ],
     targets: [
@@ -22,7 +21,6 @@ let package = Package(
             dependencies: [
                 .product(name: "UISharedElements", package: "UISharedElements"),
                 .product(name: "Router", package: "Router"),
-                .product(name: "ProductDetails", package: "ProductDetails")
             ]
         ),
         .testTarget(

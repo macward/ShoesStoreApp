@@ -14,12 +14,10 @@ public struct ProductListScreen: View {
     @EnvironmentObject var appManager: GlobalDataManager
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
-    @Binding private var path: NavigationPath
     var title: String
     
-    public init(title: String, path: Binding<NavigationPath>) {
+    public init(title: String) {
         self.title = title
-        self._path = path
     }
     
     public var body: some View {
@@ -41,7 +39,7 @@ public struct ProductListScreen: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    path.removeLast()
+                    //path.removeLast()
                 } label: {
                     Image(systemName: "chevron.left")
                         .foregroundStyle(Color.black)

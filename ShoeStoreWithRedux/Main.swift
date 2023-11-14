@@ -9,13 +9,13 @@ import SwiftUI
 import DataLayer
 import Services
 import Application
-import Home
-
+import Router
 
 @main
 struct ShoeStoreWithReduxApp: App {
     
     @StateObject var appManager: GlobalDataManager = .init()
+    @StateObject private var coordinator = Coordinator()
     
     init() {
         ServicesConfig.shared.setUrl("http://192.168.0.129:3000/")
@@ -25,6 +25,7 @@ struct ShoeStoreWithReduxApp: App {
         WindowGroup {
             TabViewScreen()
                 .environmentObject(appManager)
+                .environmentObject(coordinator)
                 .preferredColorScheme(.light)
             
                 
