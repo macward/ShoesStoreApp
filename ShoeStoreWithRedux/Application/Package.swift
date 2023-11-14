@@ -14,8 +14,7 @@ let package = Package(
     dependencies: [
         .package(path: "../Home"),
         .package(path: "../ProductDetails"),
-        .package(path: "../ShoppingCart"),
-        .package(path: "../Router")
+        .package(path: "../ShoppingCart")
     ],
     targets: [
         .target(
@@ -23,8 +22,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Home", package: "Home"),
                 .product(name: "ProductDetails", package: "ProductDetails"),
-                .product(name: "ShoppingCart", package: "ShoppingCart"),
-                .product(name: "Router", package: "Router")
+                .product(name: "ShoppingCart", package: "ShoppingCart")
             ]
         ),
         .testTarget(

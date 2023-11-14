@@ -19,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50022BF12B012BAF00A0ECD7 /* Router */ = {isa = PBXFileReference; lastKnownFileType = text; name = Router; path = Sources/Router; sourceTree = SOURCE_ROOT; };
 		5002624D2AF6E8F1009BC50F /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = text; name = DataLayer; path = Sources/DataLayer; sourceTree = SOURCE_ROOT; };
 		500262522AF7136B009BC50F /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProductDetails; path = ShoeStoreWithRedux/ProductDetails; sourceTree = SOURCE_ROOT; };
 		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = text; name = UISharedElements; path = Sources/UISharedElements; sourceTree = SOURCE_ROOT; };
@@ -94,7 +93,6 @@
 				50910C372AFD895D00A7B432 /* Config */,
 				500262502AF70E8E009BC50F /* Assets */,
 				50910C812B0026AB00A7B432 /* Application */,
-				50022BF12B012BAF00A0ECD7 /* Router */,
 				5087FE6F2AF8724C0087F52F /* Home */,
 				500262522AF7136B009BC50F /* ProductDetails */,
 				50910C3A2AFD8A8700A7B432 /* ShoppingCart */,
