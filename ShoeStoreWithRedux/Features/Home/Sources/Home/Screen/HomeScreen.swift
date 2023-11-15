@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
-import SwiftCommonLibrary
 import DataLayer
+import SwiftCommonLibrary
 import UISharedElements
-import ProductDetails
+import ProductAdapters
 
 public struct HomeScreen: View {
     @EnvironmentObject var appManager: GlobalDataManager
@@ -17,6 +17,11 @@ public struct HomeScreen: View {
     @State private var path = NavigationPath()
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
+    private var adapter: (any ProductAdapters)?
+    
+    public init(adapter: (any ProductAdapters)?) {
+        self.adapter = adapter
+    }
     
     public init() {}
     
@@ -61,10 +66,10 @@ public struct HomeScreen: View {
             }
             .activityIndicatorDefault(isLoading: appManager.globalLoadingState)
             .navigationDestination(for: String.self) { title in
-                ProductListScreen(title: title, path: $path)
+                adapter?.openProduct(title: title, path: $path)
             }
             .fullScreenCover(isPresented: $openDetailScreen, content: {
-                ProductDetailScreen(product: $selectedProduct)
+                adapter?.openProductDetail(product: $selectedProduct)
             })
             .task {
                 if !appManager.products.isEmpty { return }

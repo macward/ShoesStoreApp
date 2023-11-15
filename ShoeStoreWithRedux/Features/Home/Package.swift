@@ -13,14 +13,14 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../UISharedElements"),
-        .package(path: "../ProductDetails")
+        .package(path: "../ProductAdapters")
     ],
     targets: [
         .target(
             name: "Home",
             dependencies: [
                 .product(name: "UISharedElements", package: "UISharedElements"),
-                .product(name: "ProductDetails", package: "ProductDetails")
+                .product(name: "ProductAdapters", package: "ProductAdapters")
             ]
         ),
         .testTarget(

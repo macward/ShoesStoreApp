@@ -21,7 +21,7 @@ public struct TabViewScreen: View {
     public var body: some View {
         TabView {
             
-            HomeScreen()
+            HomeScreen(adapter: ProductAdapterDefault())
             .toolbar(tabState, for: .tabBar)
             .animation(.easeInOut(duration: 0.3), value: tabState)
             .tabItem {
