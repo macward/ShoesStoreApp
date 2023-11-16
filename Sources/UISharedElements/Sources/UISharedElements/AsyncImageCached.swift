@@ -9,13 +9,13 @@ import SwiftUI
 import SwiftCommonLibrary
 
 public struct AsyncImageCached<Content: View>: View {
-    
-    private let url: URL
     @ViewBuilder private var content: (Image) -> Content
+    private let url: URL
     
-    public init(url: URL,
-         content: @escaping (Image) -> Content
-    ) {
+    public init(
+        url: URL,
+        content: @escaping (Image) -> Content)
+    {
         self.url = url
         self.content = content
     }

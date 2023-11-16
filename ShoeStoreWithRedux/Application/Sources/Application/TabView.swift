@@ -10,6 +10,7 @@ import Home
 import ProductDetails
 import ShoppingCart
 import DataLayer
+import ProductAdapters
 
 public struct TabViewScreen: View {
     
@@ -22,11 +23,12 @@ public struct TabViewScreen: View {
         TabView {
             
             HomeScreen(adapter: ProductAdapterDefault())
-            .toolbar(tabState, for: .tabBar)
-            .animation(.easeInOut(duration: 0.3), value: tabState)
-            .tabItem {
-                Label("Home", systemImage: "house")
-            }
+                .toolbar(tabState, for: .tabBar)
+                .animation(.easeInOut(duration: 0.3), value: tabState)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
             FavouritesScreen()
                 .tabItem {
                     Label("Favourites", systemImage: "heart.fill")
@@ -36,6 +38,7 @@ public struct TabViewScreen: View {
                 .tabItem {
                     Label("Cart", systemImage: "bag")
                 }
+            
             Text("View 3")
                 .tabItem {
                     Label("Account", systemImage: "person")
