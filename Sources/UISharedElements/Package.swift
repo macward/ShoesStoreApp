@@ -13,14 +13,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/macward/SwiftCommonLibrary.git", branch: "main"),
-        .package(path: "../DataLayer"),
+        .package(path: "../Domain"),
     ],
     targets: [
         .target(
             name: "UISharedElements",
             dependencies: [
                 .product(name: "SwiftCommonLibrary", package: "SwiftCommonLibrary"),
-                .product(name: "DataLayer", package: "DataLayer")
+                .product(name: "Domain", package: "Domain")
             ]
         ),
         .testTarget(

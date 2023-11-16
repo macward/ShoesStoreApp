@@ -19,11 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5002624D2AF6E8F1009BC50F /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = text; name = DataLayer; path = Sources/DataLayer; sourceTree = SOURCE_ROOT; };
-		500262522AF7136B009BC50F /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProductDetails; path = ShoeStoreWithRedux/Features/ProductDetails; sourceTree = SOURCE_ROOT; };
+		505556F92B05CEF5002242C1 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = ShoeStoreWithRedux/Data; sourceTree = SOURCE_ROOT; };
 		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = text; name = UISharedElements; path = Sources/UISharedElements; sourceTree = SOURCE_ROOT; };
-		5087FE6F2AF8724C0087F52F /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Home; path = ShoeStoreWithRedux/Features/Home; sourceTree = SOURCE_ROOT; };
-		50910C3A2AFD8A8700A7B432 /* ShoppingCart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ShoppingCart; path = ShoeStoreWithRedux/Features/ShoppingCart; sourceTree = SOURCE_ROOT; };
 		50910C812B0026AB00A7B432 /* Application */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Application; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* Shoe Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoe Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -35,10 +32,12 @@
 		50AA63042ACBBF7D008DC0DD /* Satoshi-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.ttf"; sourceTree = "<group>"; };
 		50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.ttf"; sourceTree = "<group>"; };
 		50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.ttf"; sourceTree = "<group>"; };
-		50E063DE2B04702100F6E694 /* ProductAdapters */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ProductAdapters; sourceTree = "<group>"; };
-		50FADD7C2AF6A05900119D11 /* Services */ = {isa = PBXFileReference; lastKnownFileType = text; name = Services; path = Sources/Services; sourceTree = SOURCE_ROOT; };
+		50BBB7942B05C98C00065334 /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ProductDetails; sourceTree = "<group>"; };
+		50BBB7952B05C98C00065334 /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Home; sourceTree = "<group>"; };
+		50BBB7962B05C98C00065334 /* ShoppingCart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ShoppingCart; sourceTree = "<group>"; };
+		50BBB7972B05C99400065334 /* ProductAdapters */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProductAdapters; path = Presentations/Adapters/ProductAdapters; sourceTree = "<group>"; };
+		50C8196A2B05BEFE0090FB93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ShoeStoreWithRedux/Domain; sourceTree = SOURCE_ROOT; };
 		50FADD812AF6BC2C00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = "<group>"; };
-		50FADD822AF6BC3E00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +59,15 @@
 				50AA62EC2ACBBDB8008DC0DD /* Fonts */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		505556FA2B05CEFF002242C1 /* Clean */ = {
+			isa = PBXGroup;
+			children = (
+				50C8196A2B05BEFE0090FB93 /* Domain */,
+				505556F92B05CEF5002242C1 /* Data */,
+			);
+			name = Clean;
 			sourceTree = "<group>";
 		};
 		50910C372AFD895D00A7B432 /* Config */ = {
@@ -93,13 +101,9 @@
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
 				50910C372AFD895D00A7B432 /* Config */,
 				500262502AF70E8E009BC50F /* Assets */,
-				50E063E02B04703700F6E694 /* Features */,
-				50E063DF2B04703000F6E694 /* Adapters */,
-				50910C812B0026AB00A7B432 /* Application */,
+				50C8196B2B05C8E50090FB93 /* Presentations */,
 				5087FE682AF73C550087F52F /* UISharedElements */,
-				5002624D2AF6E8F1009BC50F /* DataLayer */,
-				50FADD7C2AF6A05900119D11 /* Services */,
-				50FADD822AF6BC3E00119D11 /* StoreNetwork */,
+				505556FA2B05CEFF002242C1 /* Clean */,
 				50AA62D02ACB74A3008DC0DD /* Preview Content */,
 			);
 			path = ShoeStoreWithRedux;
@@ -125,20 +129,31 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		50C8196B2B05C8E50090FB93 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				50910C812B0026AB00A7B432 /* Application */,
+				50E063E02B04703700F6E694 /* Features */,
+				50E063DF2B04703000F6E694 /* Adapters */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
 		50E063DF2B04703000F6E694 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				50E063DE2B04702100F6E694 /* ProductAdapters */,
+				50BBB7972B05C99400065334 /* ProductAdapters */,
 			);
 			name = Adapters;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		50E063E02B04703700F6E694 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				50910C3A2AFD8A8700A7B432 /* ShoppingCart */,
-				500262522AF7136B009BC50F /* ProductDetails */,
-				5087FE6F2AF8724C0087F52F /* Home */,
+				50BBB7952B05C98C00065334 /* Home */,
+				50BBB7942B05C98C00065334 /* ProductDetails */,
+				50BBB7962B05C98C00065334 /* ShoppingCart */,
 			);
 			path = Features;
 			sourceTree = "<group>";

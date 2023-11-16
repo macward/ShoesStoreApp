@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import DataLayer
+import Domain
 
 public struct ProductCardView: View {
     
