@@ -11,9 +11,16 @@ let package = Package(
             name: "Domain",
             targets: ["Domain"]),
     ],
+    dependencies: [
+        .package(path: "../Injector")
+    ],
     targets: [
         .target(
-            name: "Domain"),
+            name: "Domain",
+            dependencies: [
+                .product(name: "Injector", package: "Injector")
+            ]
+        ),
         .testTarget(
             name: "DomainTests",
             dependencies: ["Domain"]),

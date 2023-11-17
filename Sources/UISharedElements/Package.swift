@@ -12,15 +12,13 @@ let package = Package(
             targets: ["UISharedElements"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/macward/SwiftCommonLibrary.git", branch: "main"),
-        .package(path: "../Domain"),
+        .package(url: "https://github.com/macward/SwiftCommonLibrary.git", branch: "main")
     ],
     targets: [
         .target(
             name: "UISharedElements",
             dependencies: [
-                .product(name: "SwiftCommonLibrary", package: "SwiftCommonLibrary"),
-                .product(name: "Domain", package: "Domain")
+                .product(name: "SwiftCommonLibrary", package: "SwiftCommonLibrary")
             ]
         ),
         .testTarget(

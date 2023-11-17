@@ -10,6 +10,7 @@ import Domain
 import SwiftCommonLibrary
 import UISharedElements
 import ProductAdapters
+import ProductDetails
 
 public struct HomeScreen: View {
     @EnvironmentObject var appManager: GlobalDataManager

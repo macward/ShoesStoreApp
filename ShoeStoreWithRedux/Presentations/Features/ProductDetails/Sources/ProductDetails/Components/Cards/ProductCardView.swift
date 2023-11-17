@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Domain
+import UISharedElements
 
 public struct ProductCardView: View {
     

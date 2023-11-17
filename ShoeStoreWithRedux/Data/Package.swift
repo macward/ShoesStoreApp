@@ -13,14 +13,16 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../Domain"),
-        .package(url: "https://github.com/macward/network-wrapper.git", branch: "main")
+        .package(url: "https://github.com/macward/network-wrapper.git", branch: "main"),
+        .package(path: "../Injector")
     ],
     targets: [
         .target(
             name: "Data",
             dependencies: [
                 .product(name: "Domain", package: "Domain"),
-                .product(name: "NetworkWrapper", package: "network-wrapper")
+                .product(name: "NetworkWrapper", package: "network-wrapper"),
+                .product(name: "Injector", package: "Injector")
             ]
         ),
         .testTarget(

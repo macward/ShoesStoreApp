@@ -29,7 +29,7 @@ public struct ComponentTitleViewModifier: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     func componentTitle(title: String) -> some View {
         modifier(ComponentTitleViewModifier(title: title))
     }
