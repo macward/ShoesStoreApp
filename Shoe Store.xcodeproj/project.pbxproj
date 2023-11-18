@@ -37,6 +37,7 @@
 		50BBB7962B05C98C00065334 /* ShoppingCart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ShoppingCart; sourceTree = "<group>"; };
 		50BBB7972B05C99400065334 /* ProductAdapters */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProductAdapters; path = Presentations/Adapters/ProductAdapters; sourceTree = "<group>"; };
 		50BD7AF52B07E96E007B36CB /* Injector */ = {isa = PBXFileReference; lastKnownFileType = text; name = Injector; path = Sources/Injector; sourceTree = SOURCE_ROOT; };
+		50BD7AF72B0859DB007B36CB /* Checkout */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Checkout; sourceTree = "<group>"; };
 		50C8196A2B05BEFE0090FB93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ShoeStoreWithRedux/Domain; sourceTree = SOURCE_ROOT; };
 		50FADD812AF6BC2C00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +165,7 @@
 				50BBB7952B05C98C00065334 /* Home */,
 				50BBB7942B05C98C00065334 /* ProductDetails */,
 				50BBB7962B05C98C00065334 /* ShoppingCart */,
+				50BD7AF72B0859DB007B36CB /* Checkout */,
 			);
 			path = Features;
 			sourceTree = "<group>";
