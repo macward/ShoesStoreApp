@@ -9,10 +9,6 @@ import Foundation
 import Domain
 
 struct ContentMapper {
-//    static func toEntity(from content: Product) -> ProductScheme {
-//        return ContentEntity(theme: content.theme, url: content.url, level: content.level)
-//    }
-//    
     static func toModel(from content: ProductScheme) -> Product {
         return Product(title: content.title,
                        price: content.price,

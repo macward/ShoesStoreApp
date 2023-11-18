@@ -7,7 +7,6 @@ let package = Package(
     name: "ProductAdapters",
     platforms: [.iOS(.v17)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "ProductAdapters",
             targets: ["ProductAdapters"]),
@@ -16,8 +15,6 @@ let package = Package(
         .package(path: "../Domain"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "ProductAdapters",
             dependencies: [

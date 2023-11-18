@@ -29,7 +29,7 @@ public struct TabViewScreen: View {
                     Label("Home", systemImage: "house")
                 }
             
-            FavouritesScreen()
+            ProductAdapterDefault().favoriteScreen()
                 .tabItem {
                     Label("Favourites", systemImage: "heart.fill")
                 }

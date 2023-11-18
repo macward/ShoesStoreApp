@@ -9,15 +9,15 @@ import SwiftUI
 import Domain
 import UISharedElements
 
-public struct FavouritesScreen: View {
+internal struct FavoritesScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
     
-    public init() {}
+    internal init() {}
     
-    public var body: some View {
+    internal var body: some View {
         NavigationStack {
             ScrollView {
                 if appManager.favourites.count > 0 {

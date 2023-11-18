@@ -22,4 +22,9 @@ public struct ProductAdapterDefault: ProductAdapters {
     public func openProductDetail(product: Binding<Product?>) -> AnyView {
         AnyView(ProductDetailScreen(product: product))
     }
+    
+    public func favoriteScreen() -> AnyView {
+        AnyView(FavoritesScreen())
+    }
+    
 }

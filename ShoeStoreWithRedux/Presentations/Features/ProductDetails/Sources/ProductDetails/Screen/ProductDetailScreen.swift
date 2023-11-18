@@ -11,7 +11,7 @@ import UISharedElements
 import SwiftCommonLibrary
 import Combine
 
-public struct ProductDetailScreen: View {
+internal struct ProductDetailScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
     // MARK: Properties
@@ -24,11 +24,11 @@ public struct ProductDetailScreen: View {
     @State private var buttonDisabled: Bool = false
     @State private var isLoading: Bool = false
     
-    public init(product: Binding<Product?>) {
+    internal init(product: Binding<Product?>) {
         self._product = product
     }
     
-    public var body: some View {
+    internal var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
             VStack {

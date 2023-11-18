@@ -46,7 +46,6 @@ public struct HomeScreen: View {
                         selectedProduct: $selectedProduct,
                         actionOnTap: $openDetailScreen
                     ) {
-                        // navigation action
                         path.append("Popular shoes")
                     }
                     

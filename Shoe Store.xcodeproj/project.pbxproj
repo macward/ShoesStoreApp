@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		505556F92B05CEF5002242C1 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = ShoeStoreWithRedux/Data; sourceTree = SOURCE_ROOT; };
-		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = text; name = UISharedElements; path = Sources/UISharedElements; sourceTree = SOURCE_ROOT; };
+		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UISharedElements; path = ShoeStoreWithRedux/Presentations/Components/UISharedElements; sourceTree = SOURCE_ROOT; };
 		50910C812B0026AB00A7B432 /* Application */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Application; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* Shoe Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoe Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -104,7 +104,6 @@
 				50910C372AFD895D00A7B432 /* Config */,
 				500262502AF70E8E009BC50F /* Assets */,
 				50C8196B2B05C8E50090FB93 /* Presentations */,
-				5087FE682AF73C550087F52F /* UISharedElements */,
 				505556FA2B05CEFF002242C1 /* Clean */,
 				50AA62D02ACB74A3008DC0DD /* Preview Content */,
 			);
@@ -131,12 +130,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		50BD7AF62B081750007B36CB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5087FE682AF73C550087F52F /* UISharedElements */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		50C8196B2B05C8E50090FB93 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
 				50910C812B0026AB00A7B432 /* Application */,
 				50E063E02B04703700F6E694 /* Features */,
 				50E063DF2B04703000F6E694 /* Adapters */,
+				50BD7AF62B081750007B36CB /* Components */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";

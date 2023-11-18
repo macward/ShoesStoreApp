@@ -15,9 +15,7 @@ public struct ShoppingCartScreen: View {
     @EnvironmentObject var appManager: GlobalDataManager
     @ObservedObject var model: ShoppingCartModel = .init()
     
-    public init() {
-        
-    }
+    public init() {}
     
     public var body: some View {
         NavigationStack {

@@ -16,8 +16,6 @@ public class DependencyContainer: ObservableObject {
 }
 
 public class FeaturesContainer {
-    
-    // Content Feature
     public lazy var contentFeature: ContentInjector = {
         ContentInjector()
     }()

@@ -9,7 +9,7 @@ import SwiftUI
 import Domain
 import UISharedElements
 
-public struct ProductListScreen: View {
+internal struct ProductListScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
     @State private var openDetailScreen: Bool = false
@@ -17,12 +17,12 @@ public struct ProductListScreen: View {
     @Binding private var path: NavigationPath
     var title: String
     
-    public init(title: String, path: Binding<NavigationPath>) {
+    internal init(title: String, path: Binding<NavigationPath>) {
         self.title = title
         self._path = path
     }
     
-    public var body: some View {
+    internal var body: some View {
         ScrollView {
             ProductsGridComponent(products: $appManager.products,
                                   selectedProduct: $selectedProduct, 

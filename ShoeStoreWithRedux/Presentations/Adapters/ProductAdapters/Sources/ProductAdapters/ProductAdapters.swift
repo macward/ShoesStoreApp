@@ -5,12 +5,13 @@ import SwiftUI
 import Domain
 
 public protocol ProductAdapters {
-    associatedtype Output
-    
     @ViewBuilder
     func openProduct(title: String, path: Binding<NavigationPath>) -> AnyView
     
     @ViewBuilder
     func openProductDetail(product: Binding<Product?>) -> AnyView
+    
+    @ViewBuilder
+    func favoriteScreen() -> AnyView
 }
 
