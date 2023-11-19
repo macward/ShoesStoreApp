@@ -7,15 +7,16 @@
 
 import SwiftUI
 import Domain
+import CoreData
 
 public struct MainSliderView<Content: View>: View {
     
-    var products: [Product]
+    private var products: FetchedResults<Product>
     @Binding var selectedProduct: Product?
     @Binding var actionOnTap: Bool
     @ViewBuilder var content: (Product) -> Content
     
-    public init(products: [Product], 
+    public init(products: FetchedResults<Product>,
          selectedProduct: Binding<Product?>,
          actionOnTap: Binding<Bool>,
          content: @escaping (Product) -> Content

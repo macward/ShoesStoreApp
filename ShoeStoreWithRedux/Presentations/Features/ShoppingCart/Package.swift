@@ -12,13 +12,15 @@ let package = Package(
             targets: ["ShoppingCart"]),
     ],
     dependencies: [
-        .package(path: "../UISharedElements")
+        .package(path: "../UISharedElements"),
+        .package(path: "../ModuleAdapter")
     ],
     targets: [
         .target(
             name: "ShoppingCart",
             dependencies: [
-                .product(name: "UISharedElements", package: "UISharedElements")
+                .product(name: "UISharedElements", package: "UISharedElements"),
+                .product(name: "ModuleAdapter", package: "ModuleAdapter")
             ]
         ),
         .testTarget(

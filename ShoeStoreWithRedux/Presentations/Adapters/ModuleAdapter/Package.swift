@@ -4,25 +4,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "ProductAdapters",
+    name: "ModuleAdapter",
     platforms: [.iOS(.v17)],
     products: [
         .library(
-            name: "ProductAdapters",
-            targets: ["ProductAdapters"]),
+            name: "ModuleAdapter",
+            targets: ["ModuleAdapter"]),
     ],
     dependencies: [
-        .package(path: "../Domain"),
+        .package(path: "../Domain")
     ],
     targets: [
         .target(
-            name: "ProductAdapters",
+            name: "ModuleAdapter",
             dependencies: [
                 .product(name: "Domain", package: "Domain")
             ]
         ),
         .testTarget(
-            name: "ProductAdaptersTests",
-            dependencies: ["ProductAdapters"]),
+            name: "ModuleAdapterTests",
+            dependencies: ["ModuleAdapter"]),
     ]
 )

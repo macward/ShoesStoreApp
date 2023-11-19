@@ -7,18 +7,19 @@
 
 import SwiftUI
 import Domain
+import CoreData
 import UISharedElements
 
 public struct ProductSliderView: View {
     
     var sectionTitle: String
-    var products: [Product]
+    var products: FetchedResults<Product>
     var callback: () -> Void
     @Binding var selectedProduct: Product?
     @Binding var actionOnTap: Bool
     
     public init(sectionTitle: String,
-         products: [Product],
+         products: FetchedResults<Product>,
          selectedProduct: Binding<Product?>,
          actionOnTap: Binding<Bool>,
          callback: @escaping () -> Void

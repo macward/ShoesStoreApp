@@ -11,11 +11,11 @@ import UISharedElements
 
 public struct ProductCardView: View {
     
-    @Binding var product: Product
-    var action: (Binding<Product>) -> Void
+    var product: Product
+    var action: (Product) -> Void
     
-    public init(product: Binding<Product>, action: @escaping (Binding<Product>) -> Void) {
-        self._product = product
+    public init(product: Product, action: @escaping (Product) -> Void) {
+        self.product = product
         self.action = action
     }
     
@@ -55,7 +55,7 @@ public struct ProductCardView: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
                 .onTapGesture {
-                    action($product)
+                    action(product)
                 }
         }
     }

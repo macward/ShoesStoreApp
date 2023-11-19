@@ -9,16 +9,23 @@ import SwiftUI
 import Domain
 import UISharedElements
 import Combine
+import ModuleAdapter
 
 public struct ShoppingCartScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
     @ObservedObject var model: ShoppingCartModel = .init()
+    @State private var openCheckout: Bool = false
     
-    public init() {}
+    @State private var path: NavigationPath = .init()
+    private var adapter: (any CheckoutAdapter)?
+    
+    public init(adapter: (any CheckoutAdapter)?) {
+        self.adapter = adapter
+    }
     
     public var body: some View {
-        NavigationStack {
+        NavigationStack (path: $path) {
             ScrollView {
                 VStack {
                     viewSelector(isEmpty: appManager.shopingCart.isEmpty)
@@ -29,6 +36,9 @@ public struct ShoppingCartScreen: View {
             .onAppear() {
                 model.config(cart: appManager.shopingCart)
             }
+            .navigationDestination(isPresented: $openCheckout, destination: {
+                adapter?.openCheckout()
+            })
         }
     }
     
@@ -53,7 +63,7 @@ public struct ShoppingCartScreen: View {
     @ViewBuilder
     func checkOutButton() -> some View {
         Button {
-            //
+            openCheckout.toggle()
         } label: {
             HStack {
                 Spacer()

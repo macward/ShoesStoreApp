@@ -1,7 +1,7 @@
 import XCTest
-@testable import ProductAdapters
+@testable import ModuleAdapter
 
-final class ProductAdaptersTests: XCTestCase {
+final class ModuleAdapterTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

@@ -15,7 +15,8 @@ let package = Package(
         .package(path: "../Home"),
         .package(path: "../ProductDetails"),
         .package(path: "../ShoppingCart"),
-        .package(path: "../ProductAdapters"),
+        .package(path: "../Checkout"),
+        .package(path: "../ModuleAdapter"),
         .package(path: "../Data")
     ],
     targets: [
@@ -25,7 +26,8 @@ let package = Package(
                 .product(name: "Home", package: "Home"),
                 .product(name: "ProductDetails", package: "ProductDetails"),
                 .product(name: "ShoppingCart", package: "ShoppingCart"),
-                .product(name: "ProductAdapters", package: "ProductAdapters"),
+                .product(name: "ModuleAdapter", package: "ModuleAdapter"),
+                .product(name: "Checkout", package: "Checkout"),
                 .product(name: "Data", package: "Data")
 
             ]

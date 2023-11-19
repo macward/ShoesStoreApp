@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol GetProductsUseCase {
-    func call() async throws -> [Product]
+    func call() async throws
 }
 
 public struct GetProductsUseCaseDefault: GetProductsUseCase {
@@ -19,7 +19,7 @@ public struct GetProductsUseCaseDefault: GetProductsUseCase {
         self.repository = repo
     }
     
-    public func call() async throws -> [Product] {
+    public func call() async throws {
         try await repository.getProducts()
     }
 }

@@ -14,7 +14,8 @@ public struct ProductsAPIDataSourceDefault: ProductDataSource {
     public init() {}
     
     public func getProducts() async throws -> [ProductScheme] {
-        return try await service.getAll()
+        let schemes = try await service.getAll()
+        return schemes
     }
     
     

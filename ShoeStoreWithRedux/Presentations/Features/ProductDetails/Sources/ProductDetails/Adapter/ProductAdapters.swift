@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import ProductAdapters
+import ModuleAdapter
 import Domain
 
 public struct ProductAdapterDefault: ProductAdapters {

@@ -21,26 +21,26 @@ public struct Order: Identifiable, Equatable {
     }
 }
 
-public struct Product: Identifiable, Equatable, Hashable {
-    public var id: String = UUID().uuidString
-    public var title: String
-    public var price: Double
-    public var image: String
-    public var isFav: Bool = false
-    public var isFeatured: Bool = false
-    public var isTop: Bool = false
-    public var imageUrl: URL {
-        return URL(string: "\(BASE_URL)\(image).png")!
-    }
-    
-    public init(title: String, price: Double, image: String, isFeatured: Bool, isTop: Bool) {
-        self.title = title
-        self.price = price
-        self.image = image
-        self.isFeatured = isFeatured
-        self.isTop = isTop
-    }
-}
+//public struct Product: Identifiable, Equatable, Hashable {
+//    public var id: String = UUID().uuidString
+//    public var title: String
+//    public var price: Double
+//    public var image: String
+//    public var isFav: Bool = false
+//    public var isFeatured: Bool = false
+//    public var isTop: Bool = false
+//    public var imageUrl: URL {
+//        return URL(string: "\(BASE_URL)\(image).png")!
+//    }
+//    
+//    public init(title: String, price: Double, image: String, isFeatured: Bool, isTop: Bool) {
+//        self.title = title
+//        self.price = price
+//        self.image = image
+//        self.isFeatured = isFeatured
+//        self.isTop = isTop
+//    }
+//}
 
 public struct ColorControlItem: Identifiable {
     public var id: String = UUID().uuidString

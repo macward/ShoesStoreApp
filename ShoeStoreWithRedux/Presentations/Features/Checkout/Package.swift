@@ -11,9 +11,16 @@ let package = Package(
             name: "Checkout",
             targets: ["Checkout"]),
     ],
+    dependencies: [
+        .package(path: "../ModuleAdapter")
+    ],
     targets: [
         .target(
-            name: "Checkout"),
+            name: "Checkout",
+            dependencies: [
+                .product(name: "ModuleAdapter", package: "ModuleAdapter")
+            ]
+        ),
         .testTarget(
             name: "CheckoutTests",
             dependencies: ["Checkout"]),

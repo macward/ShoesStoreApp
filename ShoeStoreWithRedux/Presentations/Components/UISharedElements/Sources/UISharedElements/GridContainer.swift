@@ -9,11 +9,11 @@ import SwiftUI
 
 public struct GridContainer<Content: View, Item: RandomAccessCollection>: View where Item: MutableCollection, Item.Element: Identifiable {
     
-    @Binding var data: Item
-    @ViewBuilder var content: (Binding<Item.Element>) -> Content
+    var data: Item
+    @ViewBuilder var content: (Item.Element) -> Content
     
-    public init(data: Binding<Item>, content: @escaping (Binding<Item.Element>) -> Content) {
-        self._data = data
+    public init(data: Item, content: @escaping (Item.Element) -> Content) {
+        self.data = data
         self.content = content
     }
     
@@ -21,8 +21,8 @@ public struct GridContainer<Content: View, Item: RandomAccessCollection>: View w
         let gridItemLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
         
         LazyVGrid(columns: gridItemLayout, spacing: 20) {
-            ForEach($data) { $item in
-                content($item)
+            ForEach(data) { item in
+                content(item)
             }
         }
     }

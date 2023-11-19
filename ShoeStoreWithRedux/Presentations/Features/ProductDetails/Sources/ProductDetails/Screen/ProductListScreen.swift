@@ -8,10 +8,16 @@
 import SwiftUI
 import Domain
 import UISharedElements
+import Data
 
 internal struct ProductListScreen: View {
     
     @EnvironmentObject var appManager: GlobalDataManager
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Product.id, ascending: true)],
+        animation: .default)
+    private var productos: FetchedResults<Product>
+    
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
     @Binding private var path: NavigationPath
@@ -24,16 +30,16 @@ internal struct ProductListScreen: View {
     
     internal var body: some View {
         ScrollView {
-            ProductsGridComponent(products: $appManager.products,
-                                  selectedProduct: $selectedProduct, 
-                                  openDetails: $openDetailScreen, 
-                                  showAction: {}, likeAction: { $product in
-                product.isFav = true
-            })
-            .preference(key: ComponentTitlePreferenceKey.self, value: "")
-            .fullScreenCover(isPresented: $openDetailScreen, content: {
-                ProductDetailScreen(product: $selectedProduct)
-            })
+//            ProductsGridComponent(products: $appManager.products,
+//                                  selectedProduct: $selectedProduct, 
+//                                  openDetails: $openDetailScreen, 
+//                                  showAction: {}, likeAction: { $product in
+//                product.isFav = true
+//            })
+//            .preference(key: ComponentTitlePreferenceKey.self, value: "")
+//            .fullScreenCover(isPresented: $openDetailScreen, content: {
+//                ProductDetailScreen(product: $selectedProduct)
+//            })
         }
         .contentMargins(16, for: .scrollContent)
         .navigationTitle(title)
@@ -47,6 +53,9 @@ internal struct ProductListScreen: View {
                         .foregroundStyle(Color.black)
                 }
             }
+        }
+        .onAppear() {
+            print(productos.count)
         }
     }
 }

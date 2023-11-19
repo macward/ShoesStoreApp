@@ -21,18 +21,18 @@ internal struct FavoritesScreen: View {
         NavigationStack {
             ScrollView {
                 if appManager.favourites.count > 0 {
-                    GridContainer(data: $appManager.favourites, content: { $product in
-                        ProductCardView(product: $product, action: { product in
-                            appManager.handleFavourites(product.wrappedValue)
-                        })
-                        .onTapGesture {
-                            selectedProduct = product
-                            openDetailScreen.toggle()
-                        }
-                    })
-                    .fullScreenCover(isPresented: $openDetailScreen, content: {
-                        ProductDetailScreen(product: $selectedProduct)
-                    })
+//                    GridContainer(data: $appManager.favourites, content: { $product in
+//                        ProductCardView(product: $product, action: { product in
+//                            appManager.handleFavourites(product.wrappedValue)
+//                        })
+//                        .onTapGesture {
+//                            selectedProduct = product
+//                            openDetailScreen.toggle()
+//                        }
+//                    })
+//                    .fullScreenCover(isPresented: $openDetailScreen, content: {
+//                        ProductDetailScreen(product: $selectedProduct)
+//                    })
                 } else {
                     Text("No hay favoritos")
                         .font(.title2.bold())

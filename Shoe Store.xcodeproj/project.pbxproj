@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		500FF86D2B00274200349532 /* Application in Frameworks */ = {isa = PBXBuildFile; productRef = 500FF86C2B00274200349532 /* Application */; };
+		5045DC5A2B094EE5004632A4 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5045DC582B094EE5004632A4 /* Database.xcdatamodeld */; };
 		50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA62CA2ACB74A1008DC0DD /* Main.swift */; };
 		50AA62CF2ACB74A3008DC0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62CE2ACB74A3008DC0DD /* Assets.xcassets */; };
 		50AA62D22ACB74A3008DC0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AA62D12ACB74A3008DC0DD /* Preview Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5045DC592B094EE5004632A4 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		505556F92B05CEF5002242C1 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = ShoeStoreWithRedux/Data; sourceTree = SOURCE_ROOT; };
 		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UISharedElements; path = ShoeStoreWithRedux/Presentations/Components/UISharedElements; sourceTree = SOURCE_ROOT; };
 		50910C812B0026AB00A7B432 /* Application */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Application; sourceTree = "<group>"; };
@@ -35,9 +37,9 @@
 		50BBB7942B05C98C00065334 /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ProductDetails; sourceTree = "<group>"; };
 		50BBB7952B05C98C00065334 /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Home; sourceTree = "<group>"; };
 		50BBB7962B05C98C00065334 /* ShoppingCart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ShoppingCart; sourceTree = "<group>"; };
-		50BBB7972B05C99400065334 /* ProductAdapters */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProductAdapters; path = Presentations/Adapters/ProductAdapters; sourceTree = "<group>"; };
 		50BD7AF52B07E96E007B36CB /* Injector */ = {isa = PBXFileReference; lastKnownFileType = text; name = Injector; path = Sources/Injector; sourceTree = SOURCE_ROOT; };
 		50BD7AF72B0859DB007B36CB /* Checkout */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Checkout; sourceTree = "<group>"; };
+		50BD7AF92B085C26007B36CB /* ModuleAdapter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ModuleAdapter; path = Presentations/Adapters/ModuleAdapter; sourceTree = "<group>"; };
 		50C8196A2B05BEFE0090FB93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ShoeStoreWithRedux/Domain; sourceTree = SOURCE_ROOT; };
 		50FADD812AF6BC2C00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 		50AA62C92ACB74A1008DC0DD /* ShoeStoreWithRedux */ = {
 			isa = PBXGroup;
 			children = (
+				5045DC582B094EE5004632A4 /* Database.xcdatamodeld */,
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
 				50910C372AFD895D00A7B432 /* Config */,
 				500262502AF70E8E009BC50F /* Assets */,
@@ -153,7 +156,7 @@
 		50E063DF2B04703000F6E694 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				50BBB7972B05C99400065334 /* ProductAdapters */,
+				50BD7AF92B085C26007B36CB /* ModuleAdapter */,
 			);
 			name = Adapters;
 			path = ..;
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5045DC5A2B094EE5004632A4 /* Database.xcdatamodeld in Sources */,
 				50AA62CB2ACB74A1008DC0DD /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +483,19 @@
 			productName = Application;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		5045DC582B094EE5004632A4 /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5045DC592B094EE5004632A4 /* Database.xcdatamodel */,
+			);
+			currentVersion = 5045DC592B094EE5004632A4 /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50AA62BF2ACB74A1008DC0DD /* Project object */;
 }

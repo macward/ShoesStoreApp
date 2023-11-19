@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../UISharedElements"),
-        .package(path: "../ProductAdapters"),
+        .package(path: "../ModuleAdapter"),
         .package(path: "../ProductDetails"),
         .package(path: "../Injector")
     ],
@@ -23,7 +23,7 @@ let package = Package(
             dependencies: [
                 .product(name: "UISharedElements", package: "UISharedElements"),
                 .product(name: "ProductDetails", package: "ProductDetails"),
-                .product(name: "ProductAdapters", package: "ProductAdapters"),
+                .product(name: "ModuleAdapter", package: "ModuleAdapter"),
                 .product(name: "Injector", package: "Injector")
             ]
         ),

@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol ProductRepository {
-    func getProducts() async throws -> [Product]
+    func getProducts() async throws
 }

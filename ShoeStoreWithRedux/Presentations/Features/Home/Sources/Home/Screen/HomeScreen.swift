@@ -9,22 +9,26 @@ import SwiftUI
 import Domain
 import SwiftCommonLibrary
 import UISharedElements
-import ProductAdapters
+import ModuleAdapter
 import ProductDetails
 
 public struct HomeScreen: View {
-    @EnvironmentObject var appManager: GlobalDataManager
     
     @State private var path = NavigationPath()
+    private var repo: any ProductRepository
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
     private var adapter: (any ProductAdapters)?
     
-    public init(adapter: (any ProductAdapters)?) {
-        self.adapter = adapter
-    }
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Product.id, ascending: true)],
+        animation: .default)
+    private var products: FetchedResults<Product>
     
-    public init() {}
+    public init(repo: any ProductRepository, adapter: (any ProductAdapters)?) {
+        self.adapter = adapter
+        self.repo = repo
+    }
     
     public var body: some View {
         NavigationStack(path: $path) {
@@ -32,7 +36,7 @@ public struct HomeScreen: View {
                 VStack {
                     // Main Slider
                     MainSliderView(
-                        products: appManager.featured,
+                        products: products,
                         selectedProduct: $selectedProduct,
                         actionOnTap: $openDetailScreen
                     ) { product in
@@ -42,7 +46,7 @@ public struct HomeScreen: View {
                     // Popular Slider
                     ProductSliderView(
                         sectionTitle: "Popular",
-                        products: appManager.popular,
+                        products: products,
                         selectedProduct: $selectedProduct,
                         actionOnTap: $openDetailScreen
                     ) {
@@ -51,20 +55,20 @@ public struct HomeScreen: View {
                     
                     // all prods
                     ProductsGridComponent(
-                        products: $appManager.products,
+                        products: products,
                         selectedProduct: $selectedProduct,
                         openDetails: $openDetailScreen
                     ) {
                         // navigation action
                         path.append("New Shoes")
-                    } likeAction: { $product in
+                    } likeAction: { product in
                         // like callback
                         product.isFav.toggle()
                     }
                     .padding(.horizontal)
                 }
             }
-            .activityIndicatorDefault(isLoading: appManager.globalLoadingState)
+            .activityIndicatorDefault(isLoading: false)
             .navigationDestination(for: String.self) { title in
                 adapter?.openProduct(title: title, path: $path)
             }
@@ -72,8 +76,9 @@ public struct HomeScreen: View {
                 adapter?.openProductDetail(product: $selectedProduct)
             })
             .task {
-                if !appManager.products.isEmpty { return }
-                await appManager.loadData()
+//                if !appManager.products.isEmpty { return }
+//                await appManager.loadData()
+//                try? await repo.getProducts()
             }
         }
     }

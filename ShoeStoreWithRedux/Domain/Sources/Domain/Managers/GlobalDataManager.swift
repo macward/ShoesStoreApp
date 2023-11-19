@@ -84,12 +84,10 @@ public class GlobalDataManager: ObservableObject {
     public func loadData() async {
         do {
             self.globalLoadingState = true
-            let productResponse = try await getProductsUseCase.call()
-            productResponse
-                .publisher
-                .collect()
-                .assign(to: &$products)
-            self.globalLoadingState = false
+            defer {
+                self.globalLoadingState = false
+            }
+            try await getProductsUseCase.call()
         } catch {
             // handle errors
             print("errors")

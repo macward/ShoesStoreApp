@@ -9,14 +9,15 @@ import Foundation
 import Domain
 
 public struct ProductRepositoryDefault: ProductRepository {
-    var dataSource: ProductDataSource
     
+    var dataSource: ProductDataSource
+    private var localStorage = ProductLocalDataSource()
     public init(dataSource: ProductDataSource) {
         self.dataSource = dataSource
     }
     
-    public func getProducts() async throws -> [Product] {
+    public func getProducts() async throws {
         let schemes = try await dataSource.getProducts()
-        return schemes.map { Product.build(scheme: $0) }
+        localStorage.storeVieo(schemes)
     }
 }

@@ -10,19 +10,23 @@ import Home
 import ProductDetails
 import ShoppingCart
 import Domain
-import ProductAdapters
+import Data
+import ModuleAdapter
+import Checkout
 
 public struct TabViewScreen: View {
     
     @State private var tabState: Visibility = .visible
     @EnvironmentObject var appManager: GlobalDataManager
     
+    let repo = ProductRepositoryDefault(dataSource: ProductsAPIDataSourceDefault())
+    
     public init() {}
     
     public var body: some View {
         TabView {
             
-            HomeScreen(adapter: ProductAdapterDefault())
+            HomeScreen(repo: repo, adapter: ProductAdapterDefault())
                 .toolbar(tabState, for: .tabBar)
                 .animation(.easeInOut(duration: 0.3), value: tabState)
                 .tabItem {
@@ -34,7 +38,7 @@ public struct TabViewScreen: View {
                     Label("Favourites", systemImage: "heart.fill")
                 }
             
-            ShoppingCartScreen()
+            ShoppingCartScreen(adapter: CheckoutAdapterDefault())
                 .tabItem {
                     Label("Cart", systemImage: "bag")
                 }
