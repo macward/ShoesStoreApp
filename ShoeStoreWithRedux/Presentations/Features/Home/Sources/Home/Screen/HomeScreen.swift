@@ -62,18 +62,13 @@ public struct HomeScreen: View {
                     }
                     
                     // all prods
+                    
                     ProductsGridComponent(
-                        products: products,
                         selectedProduct: $selectedProduct,
-                        openDetails: $openDetailScreen
-                    ) {
-                        // navigation action
-                        path.append("New Shoes")
-                    } likeAction: { product in
-                        // like callback
-                        product.isFav.toggle()
-                    }
-                    .padding(.horizontal)
+                        openDetails: $openDetailScreen) {
+                            path.append("New Shoes")
+                        }
+                        .padding(.horizontal)
                 }
             }
             .activityIndicatorDefault(isLoading: false)

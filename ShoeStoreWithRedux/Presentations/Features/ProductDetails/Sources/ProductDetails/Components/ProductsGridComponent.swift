@@ -13,41 +13,44 @@ import CoreData
 public struct ProductsGridComponent: View {
     
     @State private var title: String = ""
-    var products: FetchedResults<Product>
     @Binding var actionOnTap: Bool
     private var showAction: () -> Void
-    private var likeAction: (Product) -> Void
     @Binding var selectedProduct: Product?
     
-    public init(products: FetchedResults<Product>,
-         selectedProduct: Binding<Product?>,
+    @FetchRequest(sortDescriptors: [])
+    var products: FetchedResults<Product>
+    
+    public init(
+        selectedProduct: Binding<Product?>,
          openDetails: Binding<Bool>,
-         showAction: @escaping () -> Void,
-         likeAction: @escaping (Product) -> Void) {
-        self.products = products
+         showAction: @escaping () -> Void){
         self._selectedProduct = selectedProduct
         self.showAction = showAction
-        self.likeAction = likeAction
         self._actionOnTap = openDetails
     }
     
     public var body: some View {
+        let gridItemLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
+        
         VStack {
             if title != "" {
                 SectionHeaderAction(title: title, callback: showAction)
             }
-//            GridContainer(data: products, content: { product in
-//                ProductCardView(product: product,
-//                                action: likeAction)
-//                .onTapGesture {
-//                    selectedProduct = product
-//                    actionOnTap.toggle()
-//                }
-//                .componentTitle(title: "Newest shoes")
-//            })
+            
+            LazyVGrid(columns: gridItemLayout, spacing: 20) {
+                ForEach(products) { product in
+                    ProductCardView(product: product)
+                    .onTapGesture {
+                        selectedProduct = product
+                        actionOnTap.toggle()
+                    }
+                    .componentTitle(title: "Newest shoes")
+                    .onPreferenceChange(ComponentTitlePreferenceKey.self, perform: { value in
+                        self.title = value
+                    })
+                }
+            }
         }
-        .onPreferenceChange(ComponentTitlePreferenceKey.self, perform: { value in
-            self.title = value
-        })
+        
     }
 }

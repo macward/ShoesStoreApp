@@ -12,11 +12,9 @@ import UISharedElements
 public struct ProductCardView: View {
     
     var product: Product
-    var action: (Product) -> Void
     
-    public init(product: Product, action: @escaping (Product) -> Void) {
+    public init(product: Product) {
         self.product = product
-        self.action = action
     }
     
     public var body: some View {
@@ -55,7 +53,7 @@ public struct ProductCardView: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
                 .onTapGesture {
-                    action(product)
+                    // like element
                 }
         }
     }

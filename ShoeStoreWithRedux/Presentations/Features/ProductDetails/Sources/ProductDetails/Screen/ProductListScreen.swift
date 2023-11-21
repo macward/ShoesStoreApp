@@ -12,7 +12,6 @@ import Data
 
 internal struct ProductListScreen: View {
     
-    @EnvironmentObject var appManager: GlobalDataManager
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Product.id, ascending: true)],
         animation: .default)
@@ -30,16 +29,12 @@ internal struct ProductListScreen: View {
     
     internal var body: some View {
         ScrollView {
-//            ProductsGridComponent(products: $appManager.products,
-//                                  selectedProduct: $selectedProduct, 
-//                                  openDetails: $openDetailScreen, 
-//                                  showAction: {}, likeAction: { $product in
-//                product.isFav = true
-//            })
-//            .preference(key: ComponentTitlePreferenceKey.self, value: "")
-//            .fullScreenCover(isPresented: $openDetailScreen, content: {
-//                ProductDetailScreen(product: $selectedProduct)
-//            })
+            ProductsGridComponent(
+                selectedProduct: $selectedProduct,
+                openDetails: $openDetailScreen) {
+                // no se que hace
+            }
+            
         }
         .contentMargins(16, for: .scrollContent)
         .navigationTitle(title)
