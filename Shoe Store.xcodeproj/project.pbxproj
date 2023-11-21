@@ -83,6 +83,14 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		50A564A82B0AFBF00037EE67 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5045DC582B094EE5004632A4 /* Database.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		50AA62BE2ACB74A1008DC0DD = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +111,7 @@
 		50AA62C92ACB74A1008DC0DD /* ShoeStoreWithRedux */ = {
 			isa = PBXGroup;
 			children = (
-				5045DC582B094EE5004632A4 /* Database.xcdatamodeld */,
+				50A564A82B0AFBF00037EE67 /* CoreData */,
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
 				50910C372AFD895D00A7B432 /* Config */,
 				500262502AF70E8E009BC50F /* Assets */,

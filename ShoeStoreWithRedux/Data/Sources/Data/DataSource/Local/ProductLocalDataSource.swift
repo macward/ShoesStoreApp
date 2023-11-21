@@ -7,14 +7,16 @@
 
 import Foundation
 import Domain
+import CoreData
 
 public struct ProductLocalDataSource {
     
-    private var viewContext = PersistenceController.shared.container.viewContext
+    private var container = PersistenceController.shared.container
     
-    func storeVieo(_ schemes: [ProductScheme]) {
+    func storeVieo(_ schemes: [ProductScheme]) async {
+        
         schemes.forEach { scheme in
-            let product = Product(context: viewContext)
+            let product = Product(context: container.viewContext)
             product.id = UUID()
             product.title = scheme.title
             product.price = scheme.price
@@ -22,7 +24,24 @@ public struct ProductLocalDataSource {
             product.isFav = false
             product.isFeatured = scheme.featured
             product.isTop = scheme.top
-            try? viewContext.save()
+            try? container.viewContext.save()
+        }
+        
+    }
+    
+    func batchStore(_ schemes: [ProductScheme]) async throws {
+        
+    }
+    
+    static public func deleteAllelements() {
+        let container = PersistenceController.shared.container
+        let storeContainer = container.persistentStoreCoordinator
+        for store in storeContainer.persistentStores {
+            try? storeContainer.destroyPersistentStore(at: store.url!,
+                                                      ofType: store.type,
+                                                      options: nil)
         }
     }
+    
+    
 }

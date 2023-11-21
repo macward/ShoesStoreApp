@@ -21,9 +21,17 @@ public struct HomeScreen: View {
     private var adapter: (any ProductAdapters)?
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Product.id, ascending: true)],
-        animation: .default)
-    private var products: FetchedResults<Product>
+        sortDescriptors: [],
+        predicate: NSPredicate(format: "isTop == true")
+    ) var topProducts: FetchedResults<Product>
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        predicate: NSPredicate(format: "isFeatured == true")
+    ) var featuredProducts: FetchedResults<Product>
+    
+    @FetchRequest(sortDescriptors: [])
+    var products: FetchedResults<Product>
     
     public init(repo: any ProductRepository, adapter: (any ProductAdapters)?) {
         self.adapter = adapter
@@ -36,7 +44,7 @@ public struct HomeScreen: View {
                 VStack {
                     // Main Slider
                     MainSliderView(
-                        products: products,
+                        products: featuredProducts,
                         selectedProduct: $selectedProduct,
                         actionOnTap: $openDetailScreen
                     ) { product in
@@ -46,7 +54,7 @@ public struct HomeScreen: View {
                     // Popular Slider
                     ProductSliderView(
                         sectionTitle: "Popular",
-                        products: products,
+                        products: topProducts,
                         selectedProduct: $selectedProduct,
                         actionOnTap: $openDetailScreen
                     ) {
@@ -76,9 +84,9 @@ public struct HomeScreen: View {
                 adapter?.openProductDetail(product: $selectedProduct)
             })
             .task {
-//                if !appManager.products.isEmpty { return }
-//                await appManager.loadData()
-//                try? await repo.getProducts()
+                if self.products.isEmpty {
+                    try? await repo.getProducts()
+                }
             }
         }
     }
