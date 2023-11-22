@@ -11,6 +11,7 @@ import UISharedElements
 
 public struct ProductCardView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
     var product: Product
     
     public init(product: Product) {
@@ -43,7 +44,7 @@ public struct ProductCardView: View {
                 Text(String(describing: product.price))
                     .font(.title.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
-            
+                
             }
         }
         .overlay(alignment: .topTrailing) {
@@ -53,8 +54,18 @@ public struct ProductCardView: View {
                 .padding(.trailing, 8)
                 .padding(.top, 8)
                 .onTapGesture {
-                    // like element
+                    self.likeElement()
                 }
+        }
+    }
+    
+    private func likeElement() {
+        product.isFav.toggle()
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
 }

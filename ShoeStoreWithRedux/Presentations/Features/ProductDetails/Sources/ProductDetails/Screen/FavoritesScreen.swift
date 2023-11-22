@@ -11,28 +11,34 @@ import UISharedElements
 
 internal struct FavoritesScreen: View {
     
-    @EnvironmentObject var appManager: GlobalDataManager
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
+    
+    @FetchRequest(
+        sortDescriptors: [],
+        predicate: NSPredicate(format: "isFav == true")
+    ) var products: FetchedResults<Product>
     
     internal init() {}
     
     internal var body: some View {
+        let gridItemLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
+        
         NavigationStack {
             ScrollView {
-                if appManager.favourites.count > 0 {
-//                    GridContainer(data: $appManager.favourites, content: { $product in
-//                        ProductCardView(product: $product, action: { product in
-//                            appManager.handleFavourites(product.wrappedValue)
-//                        })
-//                        .onTapGesture {
-//                            selectedProduct = product
-//                            openDetailScreen.toggle()
-//                        }
-//                    })
-//                    .fullScreenCover(isPresented: $openDetailScreen, content: {
-//                        ProductDetailScreen(product: $selectedProduct)
-//                    })
+                
+                if !products.isEmpty {
+                    VStack {
+                        
+                        LazyVGrid(columns: gridItemLayout, spacing: 20) {
+                            ForEach(products) { product in
+                                ProductCardView(product: product)
+                                    .onTapGesture {
+                                        selectedProduct = product
+                                    }
+                            }
+                        }
+                    }
                 } else {
                     Text("No hay favoritos")
                         .font(.title2.bold())

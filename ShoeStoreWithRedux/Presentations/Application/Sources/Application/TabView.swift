@@ -17,7 +17,6 @@ import Checkout
 public struct TabViewScreen: View {
     
     @State private var tabState: Visibility = .visible
-    @EnvironmentObject var appManager: GlobalDataManager
     
     let repo = ProductRepositoryDefault(dataSource: ProductsAPIDataSourceDefault())
     

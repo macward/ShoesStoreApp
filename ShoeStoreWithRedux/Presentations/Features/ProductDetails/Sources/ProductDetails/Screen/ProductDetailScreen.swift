@@ -12,8 +12,6 @@ import SwiftCommonLibrary
 import Combine
 
 internal struct ProductDetailScreen: View {
-    
-    @EnvironmentObject var appManager: GlobalDataManager
     // MARK: Properties
     @Binding var product: Product?
     @Environment(\.dismiss) var dismiss
@@ -85,7 +83,7 @@ internal struct ProductDetailScreen: View {
                         guard let product else { return }
                         isLoading.turnOn()
                         buttonDisabled.toggle()
-                        appManager.shopingCart.append(Order(product: product, number: 1))
+                        //appManager.shopingCart.append(Order(product: product, number: 1))
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                             self.dismiss()
                         }

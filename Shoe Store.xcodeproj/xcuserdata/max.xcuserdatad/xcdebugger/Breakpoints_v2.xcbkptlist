@@ -52,5 +52,83 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AA7B96F-1E1B-4BE4-929D-598CF58F95E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoeStoreWithRedux/Presentations/Features/Home/Sources/Home/Screen/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "9AA7B96F-1E1B-4BE4-929D-598CF58F95E1 - 28b9073032f23f68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #4 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in Home.HomeScreen.body.getter : some"
+                  moduleName = "Shoe Store"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/max/Developer/iOS/Portfolio/ShoeStoreWithRedux/ShoeStoreWithRedux/Presentations/Features/Home/Sources/Home/Screen/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "9AA7B96F-1E1B-4BE4-929D-598CF58F95E1 - e32e2885c743b843"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #4 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in Home.HomeScreen.body.getter : some"
+                  moduleName = "Shoe Store"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/max/Developer/iOS/Portfolio/ShoeStoreWithRedux/ShoeStoreWithRedux/Presentations/Features/Home/Sources/Home/Screen/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  uuid = "9AA7B96F-1E1B-4BE4-929D-598CF58F95E1 - 7b5881629954f36a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #4 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in Home.HomeScreen.body.getter : some"
+                  moduleName = "Shoe Store"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/max/Developer/iOS/Portfolio/ShoeStoreWithRedux/ShoeStoreWithRedux/Presentations/Features/Home/Sources/Home/Screen/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  uuid = "9AA7B96F-1E1B-4BE4-929D-598CF58F95E1 - 12e84f8dcaf8156d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #4 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in Home.HomeScreen.body.getter : some"
+                  moduleName = "Shoe Store"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/max/Developer/iOS/Portfolio/ShoeStoreWithRedux/ShoeStoreWithRedux/Presentations/Features/Home/Sources/Home/Screen/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

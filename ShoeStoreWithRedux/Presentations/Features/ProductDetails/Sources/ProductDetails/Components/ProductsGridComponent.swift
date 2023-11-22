@@ -22,8 +22,9 @@ public struct ProductsGridComponent: View {
     
     public init(
         selectedProduct: Binding<Product?>,
-         openDetails: Binding<Bool>,
-         showAction: @escaping () -> Void){
+        openDetails: Binding<Bool>,
+        showAction: @escaping () -> Void)
+    {
         self._selectedProduct = selectedProduct
         self.showAction = showAction
         self._actionOnTap = openDetails
@@ -31,7 +32,6 @@ public struct ProductsGridComponent: View {
     
     public var body: some View {
         let gridItemLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
-        
         VStack {
             if title != "" {
                 SectionHeaderAction(title: title, callback: showAction)
@@ -51,6 +51,5 @@ public struct ProductsGridComponent: View {
                 }
             }
         }
-        
     }
 }

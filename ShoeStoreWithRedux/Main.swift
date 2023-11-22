@@ -13,10 +13,6 @@ import Application
 @main
 struct ShoeStoreWithReduxApp: App {
     
-    @StateObject var appManager: GlobalDataManager = GlobalDataManager(getProductsUseCase: GetProductsUseCaseDefault(repo: ProductRepositoryDefault(dataSource: ProductsAPIDataSourceDefault())))
-    
-    let persistenceController = PersistenceController.shared
-    
     init() {
         ApiConfig.shared.setUrl("http://192.168.0.129:3000/")
     }
@@ -24,8 +20,7 @@ struct ShoeStoreWithReduxApp: App {
     var body: some Scene {
         WindowGroup {
             TabViewScreen()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(appManager)
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
                 .preferredColorScheme(.light)
             
                 

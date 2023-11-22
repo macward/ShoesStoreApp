@@ -11,6 +11,7 @@ import SwiftCommonLibrary
 import UISharedElements
 import ModuleAdapter
 import ProductDetails
+import CoreData
 
 public struct HomeScreen: View {
     
@@ -30,12 +31,16 @@ public struct HomeScreen: View {
         predicate: NSPredicate(format: "isFeatured == true")
     ) var featuredProducts: FetchedResults<Product>
     
-    @FetchRequest(sortDescriptors: [])
+    @FetchRequest
     var products: FetchedResults<Product>
     
     public init(repo: any ProductRepository, adapter: (any ProductAdapters)?) {
         self.adapter = adapter
         self.repo = repo
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+        request.sortDescriptors = []
+        request.fetchLimit = 4
+        _products = FetchRequest(fetchRequest: request)
     }
     
     public var body: some View {
