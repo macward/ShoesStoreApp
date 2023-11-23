@@ -10,35 +10,14 @@ import SwiftUI
 
 let BASE_URL = "http://192.168.0.129:3000/"
 
-public struct Order: Identifiable, Equatable {
-    public var id: String = UUID().uuidString
-    public var product: Product
-    public var number: Int
-    
-    public init(product: Product, number: Int) {
-        self.product = product
-        self.number = number
-    }
-}
-
-//public struct Product: Identifiable, Equatable, Hashable {
+//public struct Order: Identifiable, Equatable {
 //    public var id: String = UUID().uuidString
-//    public var title: String
-//    public var price: Double
-//    public var image: String
-//    public var isFav: Bool = false
-//    public var isFeatured: Bool = false
-//    public var isTop: Bool = false
-//    public var imageUrl: URL {
-//        return URL(string: "\(BASE_URL)\(image).png")!
-//    }
+//    public var product: Product
+//    public var number: Int
 //    
-//    public init(title: String, price: Double, image: String, isFeatured: Bool, isTop: Bool) {
-//        self.title = title
-//        self.price = price
-//        self.image = image
-//        self.isFeatured = isFeatured
-//        self.isTop = isTop
+//    public init(product: Product, number: Int) {
+//        self.product = product
+//        self.number = number
 //    }
 //}
 

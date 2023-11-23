@@ -26,5 +26,4 @@ public struct ProductAdapterDefault: ProductAdapters {
     public func favoriteScreen() -> AnyView {
         AnyView(FavoritesScreen())
     }
-    
 }

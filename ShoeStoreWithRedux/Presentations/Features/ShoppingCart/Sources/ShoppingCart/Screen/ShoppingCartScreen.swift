@@ -13,12 +13,15 @@ import ModuleAdapter
 
 public struct ShoppingCartScreen: View {
     
-    @EnvironmentObject var appManager: GlobalDataManager
     @ObservedObject var model: ShoppingCartModel = .init()
     @State private var openCheckout: Bool = false
     
     @State private var path: NavigationPath = .init()
     private var adapter: (any CheckoutAdapter)?
+    
+    @FetchRequest(
+        sortDescriptors: []
+    ) var orders: FetchedResults<Order>
     
     public init(adapter: (any CheckoutAdapter)?) {
         self.adapter = adapter
@@ -28,13 +31,13 @@ public struct ShoppingCartScreen: View {
         NavigationStack (path: $path) {
             ScrollView {
                 VStack {
-                    viewSelector(isEmpty: appManager.shopingCart.isEmpty)
+                    viewSelector(isEmpty: orders.isEmpty)
                 }
             }
             .contentMargins(16, for: .scrollContent)
             .navigationTitle("Shopping cart")
             .onAppear() {
-                model.config(cart: appManager.shopingCart)
+                //model.config(cart: orders)
             }
             .navigationDestination(isPresented: $openCheckout, destination: {
                 adapter?.openCheckout()
@@ -49,7 +52,7 @@ public struct ShoppingCartScreen: View {
                 .font(.title2.bold())
         } else {
             ScrollView {
-                ForEach(model.cart) { order in
+                ForEach(orders) { order in
                     self.cartRow(order)
                 }
                 total(model.cart)

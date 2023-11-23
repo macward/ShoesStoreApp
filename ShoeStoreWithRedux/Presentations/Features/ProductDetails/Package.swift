@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
         .package(path: "../UISharedElements"),
         .package(path: "../ModuleAdapter"),
-        .package(path: "../Data")
+        .package(path: "../Domain")
     ],
     targets: [
         .target(
@@ -22,7 +22,7 @@ let package = Package(
             dependencies: [
                 .product(name: "UISharedElements", package: "UISharedElements"),
                 .product(name: "ModuleAdapter", package: "ModuleAdapter"),
-                .product(name: "Data", package: "Data")
+                .product(name: "Domain", package: "Domain")
             ]
         ),
         .testTarget(

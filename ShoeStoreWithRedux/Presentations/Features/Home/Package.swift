@@ -15,7 +15,7 @@ let package = Package(
         .package(path: "../UISharedElements"),
         .package(path: "../ModuleAdapter"),
         .package(path: "../ProductDetails"),
-        .package(path: "../Injector")
+        .package(path: "../Domain")
     ],
     targets: [
         .target(
@@ -24,7 +24,7 @@ let package = Package(
                 .product(name: "UISharedElements", package: "UISharedElements"),
                 .product(name: "ProductDetails", package: "ProductDetails"),
                 .product(name: "ModuleAdapter", package: "ModuleAdapter"),
-                .product(name: "Injector", package: "Injector")
+                .product(name: "Domain", package: "Domain")
             ]
         ),
         .testTarget(

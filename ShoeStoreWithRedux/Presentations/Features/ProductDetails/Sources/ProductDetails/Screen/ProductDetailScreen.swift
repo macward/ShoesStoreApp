@@ -9,11 +9,11 @@ import SwiftUI
 import Domain
 import UISharedElements
 import SwiftCommonLibrary
-import Combine
 
 internal struct ProductDetailScreen: View {
     // MARK: Properties
     @Binding var product: Product?
+    @Environment(\.managedObjectContext) var viewContext
     @Environment(\.dismiss) var dismiss
     @State private var appear = [false, false, false, false]
     @State private var selectedColor: ColorControlItem?
@@ -84,6 +84,7 @@ internal struct ProductDetailScreen: View {
                         isLoading.turnOn()
                         buttonDisabled.toggle()
                         //appManager.shopingCart.append(Order(product: product, number: 1))
+                        self.addToCart(product)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                             self.dismiss()
                         }
@@ -156,6 +157,13 @@ internal struct ProductDetailScreen: View {
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.2) {
             dismiss()
         }
+    }
+    
+    func addToCart(_ product: Product) {
+        let order = Order(context: viewContext)
+        order.product = product
+        order.quantity = 1
+        let _ = try? viewContext.saveIfNeeded()
     }
 }
 

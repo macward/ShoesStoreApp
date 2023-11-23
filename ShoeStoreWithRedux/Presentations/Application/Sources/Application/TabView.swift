@@ -25,7 +25,7 @@ public struct TabViewScreen: View {
     public var body: some View {
         TabView {
             
-            HomeScreen(repo: repo, adapter: ProductAdapterDefault())
+            HomeScreen()
                 .toolbar(tabState, for: .tabBar)
                 .animation(.easeInOut(duration: 0.3), value: tabState)
                 .tabItem {
@@ -37,7 +37,7 @@ public struct TabViewScreen: View {
                     Label("Favourites", systemImage: "heart.fill")
                 }
             
-            ShoppingCartScreen(adapter: CheckoutAdapterDefault())
+            ShoppingEmptyScreen()
                 .tabItem {
                     Label("Cart", systemImage: "bag")
                 }

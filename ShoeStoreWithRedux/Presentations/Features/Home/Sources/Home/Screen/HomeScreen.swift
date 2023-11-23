@@ -12,14 +12,18 @@ import UISharedElements
 import ModuleAdapter
 import ProductDetails
 import CoreData
+import Injector
 
 public struct HomeScreen: View {
     
+    
+    @Injector(.runtime) private var repo: ProductRepository
+    @Injector(.runtime) private var adapter: ProductAdapters?
+    
     @State private var path = NavigationPath()
-    private var repo: any ProductRepository
+    
     @State private var selectedProduct: Product?
     @State private var openDetailScreen: Bool = false
-    private var adapter: (any ProductAdapters)?
     
     @FetchRequest(
         sortDescriptors: [],
@@ -34,9 +38,7 @@ public struct HomeScreen: View {
     @FetchRequest
     var products: FetchedResults<Product>
     
-    public init(repo: any ProductRepository, adapter: (any ProductAdapters)?) {
-        self.adapter = adapter
-        self.repo = repo
+    public init() {
         let request: NSFetchRequest<Product> = Product.fetchRequest()
         request.sortDescriptors = []
         request.fetchLimit = 4
