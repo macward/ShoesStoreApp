@@ -8,7 +8,11 @@
 import Foundation
 import NetworkWrapper
 
-public class NWProductService {
+public protocol ProductApiService {
+    func getAll() async throws -> [ProductScheme]
+}
+
+public class NWProductService: ProductApiService {
     
     private var dispatcher = Dispatcher(baseUrl: ApiConfig.shared.baseUrl)
     

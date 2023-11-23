@@ -7,17 +7,17 @@
 
 import Foundation
 import Domain
+import Injector
 
 public struct ProductRepositoryDefault: ProductRepository {
     
-    var dataSource: ProductDataSource
-    private var localStorage = ProductLocalDataSource()
-    public init(dataSource: ProductDataSource) {
-        self.dataSource = dataSource
-    }
+    @Injector(.runtime) private var dataSource: ProductDataSource
+    @Injector(.runtime) private var localStorage: ProductLocalDataSource
+    
+    public init() {}
     
     public func getProducts() async throws {
         let schemes = try await dataSource.getProducts()
-        await localStorage.storeVieo(schemes)
+        await localStorage.storeProduct(schemes)
     }
 }

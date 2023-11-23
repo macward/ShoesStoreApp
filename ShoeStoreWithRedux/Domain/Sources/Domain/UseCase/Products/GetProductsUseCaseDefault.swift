@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Injector
 
 public protocol GetProductsUseCase {
     func call() async throws
@@ -13,11 +14,9 @@ public protocol GetProductsUseCase {
 
 public struct GetProductsUseCaseDefault: GetProductsUseCase {
     
-    var repository: any ProductRepository
+    @Injector(.runtime) var repository: ProductRepository
     
-    public init(repo: any ProductRepository) {
-        self.repository = repo
-    }
+    public init() {}
     
     public func call() async throws {
         try await repository.getProducts()

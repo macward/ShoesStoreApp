@@ -9,11 +9,15 @@ import Foundation
 import Domain
 import CoreData
 
-public struct ProductLocalDataSource {
+public protocol ProductLocalDataSource {
+    func storeProduct(_ schemes: [ProductScheme]) async
+}
+
+public struct ProductLocalDataSourceDefault: ProductLocalDataSource {
     
     private var container = PersistenceController.shared.container
-    
-    func storeVieo(_ schemes: [ProductScheme]) async {
+    public init() {}
+    public func storeProduct(_ schemes: [ProductScheme]) async {
         
         schemes.forEach { scheme in
             let product = Product(context: container.viewContext)
@@ -29,7 +33,7 @@ public struct ProductLocalDataSource {
         
     }
     
-    func batchStore(_ schemes: [ProductScheme]) async throws {
+    public func batchStore(_ schemes: [ProductScheme]) async throws {
         
     }
     

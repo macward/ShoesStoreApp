@@ -18,7 +18,7 @@ public struct TabViewScreen: View {
     
     @State private var tabState: Visibility = .visible
     
-    let repo = ProductRepositoryDefault(dataSource: ProductsAPIDataSourceDefault())
+    let repo = ProductRepositoryDefault()
     
     public init() {}
     

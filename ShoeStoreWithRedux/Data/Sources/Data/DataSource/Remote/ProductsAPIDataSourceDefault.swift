@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Injector
 
 public struct ProductsAPIDataSourceDefault: ProductDataSource {
     
-    private var service = NWProductService()
+    @Injector(.runtime) private var service: ProductApiService
     
     public init() {}
     
