@@ -18,10 +18,7 @@ struct ShoeStoreWithReduxApp: App {
     
     init() {
         ApiConfig.shared.setUrl("http://192.168.0.129:3000/")
-        Dependencies.load()
-        Domain.LoadDependencies.load()
-        DependencyInjector.register(type: ProductAdapters.self, injectType: .runtime, factory: ProductAdapterDefault())
-        DependencyInjector.register(type: ProductRepository.self, injectType: .runtime, factory: ProductRepositoryDefault())
+        Application.Dependencies.load()
     }
     
     var body: some Scene {
