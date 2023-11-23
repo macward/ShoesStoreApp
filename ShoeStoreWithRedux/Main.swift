@@ -6,27 +6,28 @@
 //
 
 import SwiftUI
-import DataLayer
-import Services
+import Domain
+import Data
 import Application
-
+import Injector
+import ModuleAdapter
+import ProductDetails
 
 @main
 struct ShoeStoreWithReduxApp: App {
     
-    @StateObject var appManager: GlobalDataManager = .init()
-    
     init() {
-        ServicesConfig.shared.setUrl("http://192.168.0.129:3000/")
+        ApiConfig.shared.setUrl("http://192.168.0.129:3000/")
+        Application.Dependencies.load()
     }
     
     var body: some Scene {
         WindowGroup {
             TabViewScreen()
-                .environmentObject(appManager)
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
                 .preferredColorScheme(.light)
-            
-                
         }
     }
+    
+    
 }
