@@ -13,14 +13,16 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../Domain"),
-        .package(url: "https://github.com/macward/network-wrapper.git", branch: "main")
+        .package(url: "https://github.com/macward/network-wrapper.git", branch: "main"),
+        .package(url: "git@github.com:macward/SwiftCommonLibrary.git", branch: "main")
     ],
     targets: [
         .target(
             name: "Data",
             dependencies: [
                 .product(name: "Domain", package: "Domain"),
-                .product(name: "NetworkWrapper", package: "network-wrapper")
+                .product(name: "NetworkWrapper", package: "network-wrapper"),
+                .product(name: "SwiftCommonLibrary", package: "SwiftCommonLibrary")
             ]
         ),
         .testTarget(

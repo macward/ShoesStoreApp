@@ -18,6 +18,6 @@ public struct ProductRepositoryDefault: ProductRepository {
     
     public func getProducts() async throws {
         let schemes = try await dataSource.getProducts()
-        await localStorage.storeProduct(schemes)
+        try? await localStorage.storeProduct(schemes)
     }
 }

@@ -9,14 +9,14 @@ import SwiftUI
 import Domain
 import Data
 import Application
-import Injector
 
 @main
 struct ShoeStoreWithReduxApp: App {
     
     init() {
         ApiConfig.shared.setUrl("http://192.168.0.129:3000/")
-        dependencies()
+        Dependencies.load()
+        Domain.LoadDependencies.load()
     }
     
     var body: some Scene {
