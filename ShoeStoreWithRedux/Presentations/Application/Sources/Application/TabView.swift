@@ -42,9 +42,9 @@ public struct TabViewScreen: View {
                     Label("Cart", systemImage: "bag")
                 }
             
-            Text("View 3")
+            AccountScreen()
                 .tabItem {
-                    Label("Account", systemImage: "person")
+                    Label("Account", systemImage: "gear")
                 }
         }
     }

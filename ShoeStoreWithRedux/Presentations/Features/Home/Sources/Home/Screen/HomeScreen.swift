@@ -18,7 +18,7 @@ public struct HomeScreen: View {
     
     
     @Injector(.runtime) private var repo: ProductRepository
-    @Injector(.runtime) private var adapter: ProductAdapters?
+    @Injector(.runtime) private var adapter: ProductAdapters
     
     @State private var path = NavigationPath()
     
@@ -80,11 +80,11 @@ public struct HomeScreen: View {
             }
             .activityIndicatorDefault(isLoading: false)
             .navigationDestination(for: String.self) { title in
-                adapter?.openProduct(title: title, path: $path)
+                adapter.openProduct(title: title, path: $path)
             }
             .fullScreenCover(isPresented: $openDetailScreen, content: {
-                adapter?.openProductDetail(product: $selectedProduct)
-            })
+                adapter.openProductDetail(product: $selectedProduct)
+            })            
             .task {
                 if self.products.isEmpty {
                     try? await repo.getProducts()

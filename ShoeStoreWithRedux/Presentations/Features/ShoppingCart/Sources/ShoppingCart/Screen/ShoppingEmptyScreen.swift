@@ -20,7 +20,7 @@ public struct ShoppingEmptyScreen: View {
             ScrollView {
                 ForEach(orders) { order in
                     VStack {
-                        Text(order.product.title)
+                        Text(String(describing: order.quantity))
                     }
                 }
             }
