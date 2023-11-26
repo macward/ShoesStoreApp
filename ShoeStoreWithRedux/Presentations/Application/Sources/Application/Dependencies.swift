@@ -11,6 +11,7 @@ import ProductDetails
 import Data
 import Domain
 import ModuleAdapter
+import Checkout
 
 public struct Dependencies {
     public static func load() {
@@ -38,6 +39,12 @@ public struct Dependencies {
         DependencyInjector.register(type: ProductRepository.self,
                                     injectType: .runtime,
                                     factory: ProductRepositoryDefault())
+        
+        DependencyInjector.register(type: CheckoutAdapter.self,
+                                    injectType: .runtime,
+                                    factory: CheckoutAdapterDefault())
+        
+        
         
     }
 }

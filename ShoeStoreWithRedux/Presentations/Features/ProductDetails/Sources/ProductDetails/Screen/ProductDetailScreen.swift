@@ -161,9 +161,15 @@ internal struct ProductDetailScreen: View {
     
     func addToCart(_ product: Product) {
         let order = Order(context: viewContext)
-        order.product = product
+        order.toProduct = product
         order.quantity = 1
-        let _ = try? viewContext.saveIfNeeded()
+        do {
+            let _ = try viewContext.saveIfNeeded()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        
     }
 }
 

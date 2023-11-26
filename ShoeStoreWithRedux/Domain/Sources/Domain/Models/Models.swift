@@ -10,17 +10,6 @@ import SwiftUI
 
 let BASE_URL = "http://192.168.0.129:3000/"
 
-//public struct Order: Identifiable, Equatable {
-//    public var id: String = UUID().uuidString
-//    public var product: Product
-//    public var number: Int
-//    
-//    public init(product: Product, number: Int) {
-//        self.product = product
-//        self.number = number
-//    }
-//}
-
 public struct ColorControlItem: Identifiable {
     public var id: String = UUID().uuidString
     public var name: String

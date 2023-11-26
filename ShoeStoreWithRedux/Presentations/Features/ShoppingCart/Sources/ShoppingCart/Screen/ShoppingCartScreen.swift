@@ -10,6 +10,7 @@ import Domain
 import UISharedElements
 import Combine
 import ModuleAdapter
+import Injector
 
 public struct ShoppingCartScreen: View {
     
@@ -17,15 +18,13 @@ public struct ShoppingCartScreen: View {
     @State private var openCheckout: Bool = false
     
     @State private var path: NavigationPath = .init()
-    private var adapter: (any CheckoutAdapter)?
+    @Injector(.runtime) private var adapter: CheckoutAdapter
     
     @FetchRequest(
         sortDescriptors: []
     ) var orders: FetchedResults<Order>
     
-    public init(adapter: (any CheckoutAdapter)?) {
-        self.adapter = adapter
-    }
+    public init() {}
     
     public var body: some View {
         NavigationStack (path: $path) {
@@ -37,10 +36,10 @@ public struct ShoppingCartScreen: View {
             .contentMargins(16, for: .scrollContent)
             .navigationTitle("Shopping cart")
             .onAppear() {
-                //model.config(cart: orders)
+                model.config(cart: orders.map{$0})
             }
             .navigationDestination(isPresented: $openCheckout, destination: {
-                adapter?.openCheckout()
+                adapter.openCheckout()
             })
         }
     }
@@ -110,7 +109,7 @@ public struct ShoppingCartScreen: View {
         VStack {
             VStack {
                 HStack {
-                    AsyncImageCached(url: order.product.imageUrl) { image in
+                    AsyncImageCached(url: order.toProduct.imageUrl) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -123,7 +122,7 @@ public struct ShoppingCartScreen: View {
                     }
                     
                     VStack (alignment: .leading) {
-                        Text(order.product.title)
+                        Text(order.toProduct.title ?? "")
                             .font(.headline)
                         Text("Brand: Nike")
                             .font(.caption)
@@ -131,9 +130,9 @@ public struct ShoppingCartScreen: View {
                     }
                     Spacer()
                     VStack (alignment: .trailing) {
-                        Text((String(format: "1 x $%.2f", order.product.price)))
+                        Text((String(format: "1 x $%.2f", order.toProduct.price)))
                             .font(.caption2)
-                        Text((String(format: "$%.2f", order.product.price)))
+                        Text((String(format: "$%.2f", order.toProduct.price)))
                             .font(.headline)
                     }
                 }

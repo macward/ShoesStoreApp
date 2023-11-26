@@ -37,7 +37,7 @@ public struct ProductCardView: View {
             }
             // description
             VStack {
-                Text(product.title)
+                Text(product.title ?? "")
                     .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 

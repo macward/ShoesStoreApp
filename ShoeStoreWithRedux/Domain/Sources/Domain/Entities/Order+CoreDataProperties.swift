@@ -2,12 +2,13 @@
 //  Order+CoreDataProperties.swift
 //  Shoe Store
 //
-//  Created by Max Ward on 23/11/2023.
+//  Created by Max Ward on 24/11/2023.
 //
 //
 
 import Foundation
 import CoreData
+
 
 extension Order {
 
@@ -15,9 +16,9 @@ extension Order {
         return NSFetchRequest<Order>(entityName: "Order")
     }
 
-    @NSManaged public var id: UUID
+    @NSManaged public var id: UUID?
     @NSManaged public var quantity: Int16
-    @NSManaged public var product: Product
+    @NSManaged public var toProduct: Product
 
 }
 

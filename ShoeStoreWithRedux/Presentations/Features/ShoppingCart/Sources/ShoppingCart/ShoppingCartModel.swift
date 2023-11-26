@@ -21,7 +21,7 @@ public class ShoppingCartModel: ObservableObject {
         $cart
             .map { order in
                 order.reduce(0) { result, order in
-                    result + order.product.price
+                    result + order.toProduct.price
                 }
             }
         .eraseToAnyPublisher()
