@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let BASE_URL = "http://192.168.0.129:3000/"
+let BASE_URL = "http://localhost:3000/"
 
 public struct ColorControlItem: Identifiable {
     public var id: String = UUID().uuidString

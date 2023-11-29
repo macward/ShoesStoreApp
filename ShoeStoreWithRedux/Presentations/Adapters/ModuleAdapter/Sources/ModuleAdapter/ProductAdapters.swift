@@ -6,7 +6,7 @@ import Domain
 
 public protocol ProductAdapters {
     @ViewBuilder
-    func openProduct(title: String, path: Binding<NavigationPath>) -> AnyView
+    func productList(title: String, path: Binding<NavigationPath>) -> AnyView
     
     @ViewBuilder
     func openProductDetail(product: Binding<Product?>) -> AnyView

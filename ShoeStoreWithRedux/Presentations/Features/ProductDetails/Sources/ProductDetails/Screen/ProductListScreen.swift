@@ -29,11 +29,7 @@ internal struct ProductListScreen: View {
     
     internal var body: some View {
         ScrollView {
-            ProductsGridComponent(
-                selectedProduct: $selectedProduct,
-                openDetails: $openDetailScreen) {
-                // no se que hace
-            }
+            ProductsGridComponent(path: $path)
             
         }
         .contentMargins(16, for: .scrollContent)

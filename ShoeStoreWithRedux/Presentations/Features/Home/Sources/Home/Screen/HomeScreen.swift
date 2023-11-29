@@ -35,14 +35,16 @@ public struct HomeScreen: View {
         predicate: NSPredicate(format: "isFeatured == true")
     ) var featuredProducts: FetchedResults<Product>
     
-    @FetchRequest
+    @FetchRequest(sortDescriptors: [])
     var products: FetchedResults<Product>
     
+    let gridItemLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
+    
     public init() {
-        let request: NSFetchRequest<Product> = Product.fetchRequest()
-        request.sortDescriptors = []
-        request.fetchLimit = 4
-        _products = FetchRequest(fetchRequest: request)
+//        let request: NSFetchRequest<Product> = Product.fetchRequest()
+//        request.sortDescriptors = []
+//        request.fetchLimit = 4
+//        _products = FetchRequest(fetchRequest: request)
     }
     
     public var body: some View {
@@ -69,22 +71,17 @@ public struct HomeScreen: View {
                     }
                     
                     // all prods
-                    
-                    ProductsGridComponent(
-                        selectedProduct: $selectedProduct,
-                        openDetails: $openDetailScreen) {
-                            path.append("New Shoes")
-                        }
+                    ProductsGridComponent(path: $path)
                         .padding(.horizontal)
                 }
             }
             .activityIndicatorDefault(isLoading: false)
             .navigationDestination(for: String.self) { title in
-                adapter.openProduct(title: title, path: $path)
+                adapter.productList(title: title, path: $path)
             }
             .fullScreenCover(isPresented: $openDetailScreen, content: {
                 adapter.openProductDetail(product: $selectedProduct)
-            })            
+            })
             .task {
                 if self.products.isEmpty {
                     try? await repo.getProducts()

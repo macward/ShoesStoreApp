@@ -62,7 +62,7 @@ public struct ProductCardView: View {
     private func likeElement() {
         product.isFav.toggle()
         do {
-            try viewContext.save()
+            try viewContext.saveIfNeeded()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

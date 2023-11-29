@@ -8,9 +8,12 @@
 import SwiftUI
 import Domain
 import UISharedElements
+import ModuleAdapter
+import Injector
 
 internal struct FavoritesScreen: View {
     
+    @Injector(.runtime) private var adapter: ProductAdapters
     @State private var openDetailScreen: Bool = false
     @State private var selectedProduct: Product?
     
@@ -26,15 +29,14 @@ internal struct FavoritesScreen: View {
         
         NavigationStack {
             ScrollView {
-                
                 if !products.isEmpty {
                     VStack {
-                        
                         LazyVGrid(columns: gridItemLayout, spacing: 20) {
                             ForEach(products) { product in
                                 ProductCardView(product: product)
                                     .onTapGesture {
                                         selectedProduct = product
+                                        openDetailScreen = true
                                     }
                             }
                         }
@@ -46,6 +48,9 @@ internal struct FavoritesScreen: View {
             }
             .contentMargins(16, for: .scrollContent)
             .navigationTitle("Favourites")
+            .fullScreenCover(isPresented: $openDetailScreen, content: {
+                adapter.openProductDetail(product: $selectedProduct)
+            })
         }
     }
 }

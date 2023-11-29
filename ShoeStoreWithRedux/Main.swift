@@ -17,7 +17,7 @@ import ProductDetails
 struct ShoeStoreWithReduxApp: App {
     
     init() {
-        ApiConfig.shared.setUrl("http://192.168.0.129:3000/")
+        ApiConfig.shared.setUrl("http://localhost:3000/")
         Application.Dependencies.load()
     }
     

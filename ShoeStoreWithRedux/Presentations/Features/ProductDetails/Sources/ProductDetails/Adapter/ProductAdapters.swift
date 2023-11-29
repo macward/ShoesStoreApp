@@ -15,7 +15,7 @@ public struct ProductAdapterDefault: ProductAdapters {
     
     public init() {}
     
-    public func openProduct(title: String, path: Binding<NavigationPath>) -> AnyView {
+    public func productList(title: String, path: Binding<NavigationPath>) -> AnyView {
         AnyView(ProductListScreen(title: title, path: path))
     }
     

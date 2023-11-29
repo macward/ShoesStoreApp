@@ -9,40 +9,38 @@ import SwiftUI
 import Domain
 import UISharedElements
 import CoreData
+import ModuleAdapter
+import Injector
 
 public struct ProductsGridComponent: View {
     
+    @Injector(.runtime) private var adapter: ProductAdapters
+    @State private var openDetailScreen: Bool = false
     @State private var title: String = ""
-    @Binding var actionOnTap: Bool
-    private var showAction: () -> Void
-    @Binding var selectedProduct: Product?
+    @Binding var path: NavigationPath
+    @State private var selectedProduct: Product?
     
     @FetchRequest(sortDescriptors: [])
     var products: FetchedResults<Product>
     
-    public init(
-        selectedProduct: Binding<Product?>,
-        openDetails: Binding<Bool>,
-        showAction: @escaping () -> Void)
-    {
-        self._selectedProduct = selectedProduct
-        self.showAction = showAction
-        self._actionOnTap = openDetails
+    public init(path: Binding<NavigationPath>) {
+        self._path = path
     }
     
     public var body: some View {
         let gridItemLayout: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
         VStack {
             if title != "" {
-                SectionHeaderAction(title: title, callback: showAction)
+                SectionHeaderAction(title: title, callback: {
+                    path.append("New shoes")
+                })
             }
-            
             LazyVGrid(columns: gridItemLayout, spacing: 20) {
                 ForEach(products) { product in
                     ProductCardView(product: product)
                     .onTapGesture {
                         selectedProduct = product
-                        actionOnTap.toggle()
+                        openDetailScreen = true
                     }
                     .componentTitle(title: "Newest shoes")
                     .onPreferenceChange(ComponentTitlePreferenceKey.self, perform: { value in
@@ -51,5 +49,8 @@ public struct ProductsGridComponent: View {
                 }
             }
         }
+        .fullScreenCover(isPresented: $openDetailScreen, content: {
+            adapter.openProductDetail(product: $selectedProduct)
+        })
     }
 }
