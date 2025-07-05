@@ -8,7 +8,7 @@
 import SwiftUI
 import Domain
 import UISharedElements
-import Data
+//import Data
 
 internal struct ProductListScreen: View {
     
