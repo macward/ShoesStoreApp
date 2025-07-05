@@ -26,7 +26,7 @@ public struct Dependencies {
         
         DependencyInjector.register(type: ProductApiService.self, 
                                     injectType: .runtime,
-                                    factory: NWProductService())
+                                    factory: SupabaseApiService())
         
         DependencyInjector.register(type: GetProductsUseCase.self, 
                                     injectType: .runtime,

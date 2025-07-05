@@ -40,6 +40,8 @@ public struct ProductCardView: View {
                 Text(product.title ?? "")
                     .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
                 
                 Text(String(describing: product.price))
                     .font(.title.bold())

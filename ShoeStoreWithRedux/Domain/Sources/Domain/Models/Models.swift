@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-let BASE_URL = "http://localhost:3000/"
+//let BASE_URL = "http://localhost:3000/"
+let BASE_URL = "https://bjzcxtottwohpmsrxmqt.supabase.co/storage/v1/object/public/productimages/"
 
 public struct ColorControlItem: Identifiable {
     public var id: String = UUID().uuidString

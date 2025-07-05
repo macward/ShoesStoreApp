@@ -17,6 +17,9 @@
 		50AA63082ACBBF7E008DC0DD /* Satoshi-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63042ACBBF7D008DC0DD /* Satoshi-Black.ttf */; };
 		50AA63092ACBBF7E008DC0DD /* Satoshi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */; };
 		50AA630D2ACBBFE2008DC0DD /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */; };
+		B9BF5C102E18EB8F00AC547B /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = B9BF5C0F2E18EB8F00AC547B /* PostgREST */; };
+		B9BF5C122E18EB8F00AC547B /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B9BF5C112E18EB8F00AC547B /* Storage */; };
+		B9BF5C142E18EB8F00AC547B /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = B9BF5C132E18EB8F00AC547B /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BF5C142E18EB8F00AC547B /* Supabase in Frameworks */,
+				B9BF5C122E18EB8F00AC547B /* Storage in Frameworks */,
+				B9BF5C102E18EB8F00AC547B /* PostgREST in Frameworks */,
 				500FF86D2B00274200349532 /* Application in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +213,9 @@
 			name = "Shoe Store";
 			packageProductDependencies = (
 				500FF86C2B00274200349532 /* Application */,
+				B9BF5C0F2E18EB8F00AC547B /* PostgREST */,
+				B9BF5C112E18EB8F00AC547B /* Storage */,
+				B9BF5C132E18EB8F00AC547B /* Supabase */,
 			);
 			productName = ShoeStoreWithRedux;
 			productReference = 50AA62C72ACB74A1008DC0DD /* Shoe Store.app */;
@@ -237,6 +246,7 @@
 			);
 			mainGroup = 50AA62BE2ACB74A1008DC0DD;
 			packageReferences = (
+				B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = 50AA62C82ACB74A1008DC0DD /* Products */;
 			projectDirPath = "";
@@ -485,10 +495,36 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		500FF86C2B00274200349532 /* Application */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Application;
+		};
+		B9BF5C0F2E18EB8F00AC547B /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		B9BF5C112E18EB8F00AC547B /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		B9BF5C132E18EB8F00AC547B /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 

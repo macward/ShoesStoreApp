@@ -16,7 +16,6 @@ import Injector
 
 public struct HomeScreen: View {
     
-    
     @Injector(.runtime) private var repo: ProductRepository
     @Injector(.runtime) private var adapter: ProductAdapters
     

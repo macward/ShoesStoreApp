@@ -12,7 +12,7 @@ public struct ProductsScheme: Codable {
 }
 
 public struct ProductScheme: Codable {
-    public var id: Int
+    public var id: UUID
     public var title: String
     public var description: String?
     public var price: Double

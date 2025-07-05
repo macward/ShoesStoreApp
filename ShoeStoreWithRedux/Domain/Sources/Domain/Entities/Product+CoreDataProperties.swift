@@ -31,6 +31,6 @@ extension Product : Identifiable {}
 
 extension Product {
     public var imageUrl: URL {
-        return URL(string: "\(BASE_URL)\(String(describing: image)).png")!
+        return URL(string: "\(BASE_URL)\(String(describing: image))")!
     }
 }
