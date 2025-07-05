@@ -24,8 +24,6 @@
 
 /* Begin PBXFileReference section */
 		5045DC592B094EE5004632A4 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
-		505556F92B05CEF5002242C1 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = ShoeStoreWithRedux/Data; sourceTree = SOURCE_ROOT; };
-		5087FE682AF73C550087F52F /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UISharedElements; path = ShoeStoreWithRedux/Presentations/Components/UISharedElements; sourceTree = SOURCE_ROOT; };
 		50910C812B0026AB00A7B432 /* Application */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Application; sourceTree = "<group>"; };
 		50AA62C72ACB74A1008DC0DD /* Shoe Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoe Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA62CA2ACB74A1008DC0DD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -43,8 +41,10 @@
 		50BD7AF52B07E96E007B36CB /* Injector */ = {isa = PBXFileReference; lastKnownFileType = text; name = Injector; path = Sources/Injector; sourceTree = SOURCE_ROOT; };
 		50BD7AF72B0859DB007B36CB /* Checkout */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Checkout; sourceTree = "<group>"; };
 		50BD7AF92B085C26007B36CB /* ModuleAdapter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ModuleAdapter; path = Presentations/Adapters/ModuleAdapter; sourceTree = "<group>"; };
-		50C8196A2B05BEFE0090FB93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ShoeStoreWithRedux/Domain; sourceTree = SOURCE_ROOT; };
 		50FADD812AF6BC2C00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = "<group>"; };
+		B91FCD2E2E1985550068B5EA /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		B91FCD2F2E19855B0068B5EA /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		B91FCD302E1985750068B5EA /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UISharedElements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				50BD7AF52B07E96E007B36CB /* Injector */,
-				50C8196A2B05BEFE0090FB93 /* Domain */,
-				505556F92B05CEF5002242C1 /* Data */,
+				B91FCD2E2E1985550068B5EA /* Data */,
+				B91FCD2F2E19855B0068B5EA /* Domain */,
 			);
 			name = Clean;
 			sourceTree = "<group>";
@@ -100,7 +100,7 @@
 		50AA62BE2ACB74A1008DC0DD = {
 			isa = PBXGroup;
 			children = (
-				50AA62C92ACB74A1008DC0DD /* ShoeStoreWithRedux */,
+				50AA62C92ACB74A1008DC0DD /* ShoeStore */,
 				50AA62C82ACB74A1008DC0DD /* Products */,
 				50FADD692AF496CE00119D11 /* Frameworks */,
 			);
@@ -114,7 +114,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		50AA62C92ACB74A1008DC0DD /* ShoeStoreWithRedux */ = {
+		50AA62C92ACB74A1008DC0DD /* ShoeStore */ = {
 			isa = PBXGroup;
 			children = (
 				50A564A82B0AFBF00037EE67 /* CoreData */,
@@ -125,7 +125,7 @@
 				505556FA2B05CEFF002242C1 /* Clean */,
 				50AA62D02ACB74A3008DC0DD /* Preview Content */,
 			);
-			path = ShoeStoreWithRedux;
+			path = ShoeStore;
 			sourceTree = "<group>";
 		};
 		50AA62D02ACB74A3008DC0DD /* Preview Content */ = {
@@ -151,7 +151,7 @@
 		50BD7AF62B081750007B36CB /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5087FE682AF73C550087F52F /* UISharedElements */,
+				B91FCD302E1985750068B5EA /* UISharedElements */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -413,11 +413,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ShoeStoreWithRedux/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShoeStore/Preview Content\"";
 				DEVELOPMENT_TEAM = AAL663Y363;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShoeStoreWithRedux/Config/Info.plist;
+				INFOPLIST_FILE = ShoeStore/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,11 +446,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ShoeStoreWithRedux/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShoeStore/Preview Content\"";
 				DEVELOPMENT_TEAM = AAL663Y363;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShoeStoreWithRedux/Config/Info.plist;
+				INFOPLIST_FILE = ShoeStore/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
