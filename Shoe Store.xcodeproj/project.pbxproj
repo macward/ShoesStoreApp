@@ -17,9 +17,6 @@
 		50AA63082ACBBF7E008DC0DD /* Satoshi-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63042ACBBF7D008DC0DD /* Satoshi-Black.ttf */; };
 		50AA63092ACBBF7E008DC0DD /* Satoshi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA63052ACBBF7E008DC0DD /* Satoshi-Regular.ttf */; };
 		50AA630D2ACBBFE2008DC0DD /* Satoshi-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50AA630C2ACBBFE2008DC0DD /* Satoshi-Medium.ttf */; };
-		B9BF5C102E18EB8F00AC547B /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = B9BF5C0F2E18EB8F00AC547B /* PostgREST */; };
-		B9BF5C122E18EB8F00AC547B /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B9BF5C112E18EB8F00AC547B /* Storage */; };
-		B9BF5C142E18EB8F00AC547B /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = B9BF5C132E18EB8F00AC547B /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,13 +35,13 @@
 		50BBB7942B05C98C00065334 /* ProductDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ProductDetails; sourceTree = "<group>"; };
 		50BBB7952B05C98C00065334 /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Home; sourceTree = "<group>"; };
 		50BBB7962B05C98C00065334 /* ShoppingCart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ShoppingCart; sourceTree = "<group>"; };
-		50BD7AF52B07E96E007B36CB /* Injector */ = {isa = PBXFileReference; lastKnownFileType = text; name = Injector; path = Sources/Injector; sourceTree = SOURCE_ROOT; };
 		50BD7AF72B0859DB007B36CB /* Checkout */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Checkout; sourceTree = "<group>"; };
 		50BD7AF92B085C26007B36CB /* ModuleAdapter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ModuleAdapter; path = Presentations/Adapters/ModuleAdapter; sourceTree = "<group>"; };
 		50FADD812AF6BC2C00119D11 /* StoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StoreNetwork; path = Sources/StoreNetwork; sourceTree = "<group>"; };
 		B91FCD2E2E1985550068B5EA /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
 		B91FCD2F2E19855B0068B5EA /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		B91FCD302E1985750068B5EA /* UISharedElements */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UISharedElements; sourceTree = "<group>"; };
+		B91FCD3C2E1A34A20068B5EA /* Injector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Injector; path = Sources/Injector; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9BF5C142E18EB8F00AC547B /* Supabase in Frameworks */,
-				B9BF5C122E18EB8F00AC547B /* Storage in Frameworks */,
-				B9BF5C102E18EB8F00AC547B /* PostgREST in Frameworks */,
 				500FF86D2B00274200349532 /* Application in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,9 +68,9 @@
 		505556FA2B05CEFF002242C1 /* Clean */ = {
 			isa = PBXGroup;
 			children = (
-				50BD7AF52B07E96E007B36CB /* Injector */,
 				B91FCD2E2E1985550068B5EA /* Data */,
 				B91FCD2F2E19855B0068B5EA /* Domain */,
+				B91FCD3C2E1A34A20068B5EA /* Injector */,
 			);
 			name = Clean;
 			sourceTree = "<group>";
@@ -117,8 +111,8 @@
 		50AA62C92ACB74A1008DC0DD /* ShoeStore */ = {
 			isa = PBXGroup;
 			children = (
-				50A564A82B0AFBF00037EE67 /* CoreData */,
 				50AA62CA2ACB74A1008DC0DD /* Main.swift */,
+				50A564A82B0AFBF00037EE67 /* CoreData */,
 				50910C372AFD895D00A7B432 /* Config */,
 				500262502AF70E8E009BC50F /* Assets */,
 				50C8196B2B05C8E50090FB93 /* Presentations */,
@@ -213,9 +207,6 @@
 			name = "Shoe Store";
 			packageProductDependencies = (
 				500FF86C2B00274200349532 /* Application */,
-				B9BF5C0F2E18EB8F00AC547B /* PostgREST */,
-				B9BF5C112E18EB8F00AC547B /* Storage */,
-				B9BF5C132E18EB8F00AC547B /* Supabase */,
 			);
 			productName = ShoeStoreWithRedux;
 			productReference = 50AA62C72ACB74A1008DC0DD /* Shoe Store.app */;
@@ -246,7 +237,6 @@
 			);
 			mainGroup = 50AA62BE2ACB74A1008DC0DD;
 			packageReferences = (
-				B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = 50AA62C82ACB74A1008DC0DD /* Products */;
 			projectDirPath = "";
@@ -495,36 +485,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/supabase/supabase-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		500FF86C2B00274200349532 /* Application */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Application;
-		};
-		B9BF5C0F2E18EB8F00AC547B /* PostgREST */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = PostgREST;
-		};
-		B9BF5C112E18EB8F00AC547B /* Storage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Storage;
-		};
-		B9BF5C132E18EB8F00AC547B /* Supabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B9BF5C0E2E18EB8F00AC547B /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 
